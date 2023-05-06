@@ -1,0 +1,172 @@
+/* General */
+.hide {
+  display: none;
+}
+
+/* Header */
+.menuIcon {
+  font-size: 2rem;
+  color: var(--text-main);
+  cursor: pointer;
+  display: none;
+}
+
+.header img {
+  width: 55px;
+  height: 45px;
+  border-radius: 100%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  margin-right: 5%;
+  padding-left: 2%;
+  width: 100%;
+  background: var(--bg-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+}
+
+.logo {
+  position: relative;
+  padding-left: 5%;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: var(--text-white);
+  text-decoration: none;
+  font-weight: 700;
+  margin-right: 25px;
+  transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--text-secondary);
+}
+
+.header .navbar .sigIn {
+  margin-left: 90px;
+}
+
+.header .navbar .register {
+  margin-right: 30px;
+  padding: 10px 20px;
+  color: var(--button-text);
+  background-color: var(--button-bg);
+  border: 2px solid var(--button-border);
+  font-size: 20px;
+  border-radius: 6px;
+  transition: all .5s;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+}
+
+.header .navbar .register:hover {
+  -webkit-animation: pulsate-fwd 0.5s ease-in-out both;
+	        animation: pulsate-fwd 0.5s ease-in-out both;
+}
+
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .headerOpacity,
+  .header {
+    padding: 2rem 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerOpacity img,
+  .header img {
+    position: absolute;
+    top: 10%;
+    left: 3%;  
+  }
+
+  .headerOpacity,
+  .header {
+    min-height: 30px;  
+  }
+  
+  .menuIcon {
+    position: absolute;
+    display: block;
+    top: 5%;  
+    font-size: 50px;
+    margin-left: 80%;
+  }
+
+  .navbar {
+    transition: .25s ease;
+    transition-delay: .25s;
+    width: 100%;
+    margin-top: 10%;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    width: 100%;
+    padding-right: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuIcon {
+    margin-left: 77%;
+  }
+}
+
+@media (max-width: 350px) {
+  .menuIcon {
+    margin-left: 74%;
+  }
+}
+
+@media (max-width: 280px) {
+  .menuIcon {
+    margin-left: 71%;
+  }
+}

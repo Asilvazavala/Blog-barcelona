@@ -1,0 +1,42 @@
+:root {
+  --text-main: #003300;
+  --text-secondary: #99FF99;
+  --text-white: #fff;
+  --text-black: #000;
+  --text-semiBlack: #333333c1;
+  --text-underline: #99FF99;
+
+  --bg-main: #003300;
+  --bg-secondary: #99FF99;
+  --bg-semiBlack: rgba(0, 0, 0, 0.885);
+  --bg-black: #000;
+  --bg-white: #fff;
+
+  --border-black: #000;
+  --border-green: #99FF99;
+
+  --button-text: #000;
+  --button-bg: #99FF99;
+  --button-border: #003300;
+
+  --social-text: #003300;
+  --social-bg: #99FF99;
+  --social-border: #99FF99;
+}
+
+
+body {
+  text-decoration: none;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  display: flex;
+  place-items: center;
+  background: rgb(232, 232, 232);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: 'Poppins', sans-serif;
+}
