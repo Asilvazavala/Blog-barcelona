@@ -1,0 +1,24 @@
+.categories {
+  margin-top: 60px;
+}
+
+.rightMenu .rightMenuItem {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.142);
+}
+
+.rightMenu .categories {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  background: var(--text-main);
+  padding: 5px 10px;
+}
+
+.rightMenu h3 {
+  font-size: 17px;
+  cursor: pointer;
+  transition: color 0.7s ease;
+}

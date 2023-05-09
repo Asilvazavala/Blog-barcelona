@@ -1,0 +1,72 @@
+.containerMain {
+  margin: 100px 5% 0 5%;
+}
+
+.containerMain .containerTitle {
+  display: flex;
+  justify-content: center;
+}
+
+.containerMain .containerTitle .spanTitle {
+  color: var(--text-secondary);
+  padding: 5px 10px;
+  background-color: var(--text-main);
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.accordion {
+  width: 80%;
+  background: var(--text-white);
+  box-shadow: 2px 5px 4px 5px #888888;
+}
+
+.itemSelected,
+.item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.142);
+  padding: 20px 50px;
+}
+
+.itemSelected {
+  box-shadow: 0px 2px 4px var(--text-semiBlack);
+  background: var(--text-secondary);
+}
+
+.item span {
+  color: var(--text-main);
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.title {
+  color: var(--text-main);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.content {
+  max-height: 0;
+  color: var(--text-semiBlack);
+  overflow: hidden;
+  transition: max-height 0.7s cubic-bezier(0, 1, 0, 1);
+}
+
+.show {
+  height: auto;
+  color: var(--text-semiBlack);
+  max-height: 9999px;
+  overflow: hidden;
+  padding: 15px 0;
+  transition: max-height 0.7s cubic-bezier(1, 0, 1, 0);
+}

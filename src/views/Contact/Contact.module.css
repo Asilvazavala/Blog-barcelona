@@ -1,0 +1,184 @@
+/* General */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  padding-left: 5%;
+  margin-top: 150px;
+  display: flex;
+  height: 100%;
+}
+
+/* leftContainer */
+.main .leftContainer {
+  padding: 30px 100px 0 0;
+  width: 50%;
+}
+
+.main .leftContainer .containerInfo {
+ display: flex;
+ gap: 12%;
+ flex-wrap: wrap;
+}
+
+.main .leftContainer .containerInfo .icons {
+ margin-left: 10px;
+}
+
+.main .leftContainer h2 {
+  font-size: 35px;
+  margin-bottom: 30px;
+  color: var(--text-main);
+}
+
+.main .leftContainer h3 {
+  text-decoration: underline var(--text-underline) 10px;
+}
+
+.main .leftContainer p {
+  color: var(--text-semiBlack);
+  padding: 10px 0;
+  font-style: italic;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+
+/* Iconos  */
+.leftContainer .icons a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid var(--text-main);
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--text-main);
+  text-decoration: none;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.leftContainer .icons a:hover {
+  background: var(--text-secondary);
+}
+
+
+/* rightContainer */
+.main .rightContainer {
+  padding: 30px 60px;
+  margin-right: 3%;
+  width: 50%;
+  background: var(--bg-white);
+}
+
+.main .rightContainer form {
+  display: flex;
+  flex-direction: column;
+}
+
+.main .rightContainer form h3, 
+.main .rightContainer form input, 
+.main .rightContainer form textarea {
+  margin-bottom: 40px;
+}
+
+.main .rightContainer form h3 {
+  font-weight: 600;
+  font-size: 30px;
+  text-decoration: underline var(--text-underline) 10px;
+}
+
+.main .rightContainer form input {
+  height: 30px;
+  padding: 7px 15px;
+}
+
+.main .rightContainer form textarea {
+  height: 90px;
+  padding: 7px 15px;
+}
+
+.main .rightContainer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100px;
+}
+
+/* Button Submit */
+.main .rightContainer button {
+  position: relative;
+  width: 200px;
+  padding: 12px 17px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  font-weight: 700;
+  z-index: 1;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.main .rightContainer button:hover {
+  -webkit-animation: pulsate-fwd 0.5s ease-in-out both;
+	        animation: pulsate-fwd 0.5s ease-in-out both;
+}
+
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* Resposive */
+@media (max-width: 851px) {
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main .leftContainer {
+    width: 100%;
+    padding-right: 5%;
+  }
+
+  .main .rightContainer {
+    width: 100%;
+    margin-right: 5%;
+    margin-top: 30px;
+  }
+}

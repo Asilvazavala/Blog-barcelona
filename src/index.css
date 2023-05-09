@@ -1,6 +1,7 @@
 :root {
   --text-main: #003300;
   --text-secondary: #99FF99;
+  --text-third: rgb(60, 152, 64);
   --text-white: #fff;
   --text-black: #000;
   --text-semiBlack: #333333c1;

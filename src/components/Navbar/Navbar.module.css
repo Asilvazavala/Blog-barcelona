@@ -18,28 +18,31 @@
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   padding: 20px 0;
-  margin-right: 5%;
-  padding-left: 2%;
   width: 100%;
-  background: var(--bg-main);
+  background: var(--text-main);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   opacity: 1;
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 .logo {
   position: relative;
-  padding-left: 5%;
-  text-decoration: none;
-  font-weight: 800;
+  border-radius: 50%;
   font-size: 20px;
+  margin-right: 25px;
 }
 
 .navbar a {
@@ -47,8 +50,9 @@
   color: var(--text-white);
   text-decoration: none;
   font-weight: 700;
-  margin-right: 25px;
   transition: .3s;
+  margin-right: 25px;
+  overflow: hidden;
 }
 
 .navbar a:hover,
@@ -56,12 +60,33 @@
   color: var(--text-secondary);
 }
 
+.navbar .logoLinks {
+  margin-left: 5%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .login {
+  width: 30%;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5%;
+}
+
 .header .navbar .sigIn {
-  margin-left: 90px;
+  margin-right: 25px;
+}
+
+.header .navbar .containerRegister {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 .header .navbar .register {
-  margin-right: 30px;
   padding: 10px 20px;
   color: var(--button-text);
   background-color: var(--button-bg);

@@ -35,38 +35,40 @@ function Navbar () {
   return (
     <div>
       <header id='navBar' className={styles.header}>
-        <img src={LogoAS} alt='LogoAS' title='Antonio Silva' />
         <div id='menuIcon' className={styles.menuIcon}>
           <i onClick={showNav} className={showNavbar === false ? 'bx bx-menu' : 'bx bx-x'} />
         </div>
         <nav className={isSmallScreen && showNavbar === false ? styles.hide : styles.navbar}>
-          <NavLink to='/' onClick={goTop}>
-            <a className={window.location.href === BASE_URL ? styles.active : ''}>Home</a>
-          </NavLink>
+          <div className={styles.logoLinks}>
+            <img className={styles.logo} src={LogoAS} alt='LogoAS' title='Antonio Silva' />
+              <NavLink to='/' onClick={goTop}>
+                <a className={window.location.href === BASE_URL ? styles.active : ''}>Home</a>
+              </NavLink>
 
-          <NavLink to='/blogs' onClick={goTop}>
-            <a className={window.location.href === BASE_URL + 'blog' ? styles.active : ''}>Blog</a>
-          </NavLink>
+              <NavLink to='/blog' onClick={goTop}>
+                <a className={window.location.href === BASE_URL + 'blog' ? styles.active : ''}>Blog</a>
+              </NavLink>
 
-          <NavLink to='/free' onClick={goTop}>
-            <a className={window.location.href === BASE_URL + 'free' ? styles.active : ''}>Free</a>
-          </NavLink>
+              <NavLink to='/tools' onClick={goTop}>
+                <a className={window.location.href === BASE_URL + 'tools' ? styles.active : ''}>Tools</a>
+              </NavLink>
 
-          <NavLink to='/services' onClick={goTop}>
-            <a className={window.location.href === BASE_URL + 'services' ? styles.active : ''}>Services</a>
-          </NavLink>
+              <NavLink to='/contact' onClick={goTop}>
+                <a className={window.location.href === BASE_URL + 'contact' ? styles.active : ''}>Contact</a>
+              </NavLink>
+            </div>
+          
+          <div className={styles.login}>
+            <NavLink to='/login' onClick={goTop}>
+              <a className={styles.sigIn}>Sign in</a>
+            </NavLink>
 
-          <NavLink to='/contact' onClick={goTop}>
-            <a className={window.location.href === BASE_URL + 'contact' ? styles.active : ''}>Contact</a>
-          </NavLink>
-
-          <NavLink to='/login' onClick={goTop}>
-            <a className={styles.sigIn}>Sign in</a>
-          </NavLink>
-
-          <NavLink to='/register' onClick={goTop}>
-            <button className={styles.register}>Register</button>
-          </NavLink>
+            <div className={styles.containerRegister}>
+              <NavLink to='/register' onClick={goTop}>
+                <button className={styles.register}>Register</button>
+              </NavLink>
+            </div>
+          </div>
         </nav>
       </header>
     </div>
