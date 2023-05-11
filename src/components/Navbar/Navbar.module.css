@@ -88,7 +88,7 @@
 
 .header .navbar .register {
   padding: 10px 20px;
-  color: var(--button-text);
+  color: var(--text-white);
   background-color: var(--button-bg);
   border: 2px solid var(--button-border);
   font-size: 20px;

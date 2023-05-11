@@ -29,8 +29,8 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/blog' element={<Blog />} />
-        <Route path='/tools' element={<Tools />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/extras' element={<Tools />} />
+        <Route path='/contacto' element={<Contact />} />
         <Route path='*' element={<Error404 />} />
       </Routes>
       {showNavbar && <Footer />}

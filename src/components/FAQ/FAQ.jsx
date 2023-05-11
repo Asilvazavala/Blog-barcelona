@@ -5,28 +5,28 @@ export const FAQ = () => {
   const questions = [
     {
       id: 1,
-      question: '1. Is your emergency fund sufficient?',
-      answer: 'Experts recommend that you keep enough money in your emergency fund to cover at least three to six months worth of living expenses. This may vary based on a number of factors, including: your lifestyle, cost of living in your area, income and the long-range security of your job, whether or not you have affordable health insurance.'
+      question: '1. ¿Cuándo fue fundado el FC Barcelona?',
+      answer: 'EL Fútbol Club Barcelona fue fundado el 29 de noviembre de 1899 por un grupo de doce aficionados al fútbol, convocados por el suizo Hans Gamper mediante un anuncio publicado en la revista Los Deportes el 22 de octubre del mismo año. Entre los doce fundadores del club había seis españoles, tres suizos, dos ingleses y un alemán.'
     },
     {
       id: 2,
-      question: '2. Are you ever done saving?',
-      answer: 'In a word, no. Your savings account should stretch to cover periodic but not unexpected expenses such as routine home and vehicle maintenance, vacations, and gifts for special occasions. You should also have enough regular savings to pay for acute emergencies like replacing your car´s tires or paying off credit card debt. .'
+      question: '2. ¿Por qué se les llama culés a los aficionados del FC Barcelona?',
+      answer: 'El término "culers" o "cules"  utilizado para referirse a los aficionados del FC Barcelona se originó a partir de una vista única. Al caminar por las inmediaciones del estadio, lo primero que veían las personas eran los aficionados sentados en la pared, mostrando sus traseros. Esto llevó al apodo catalán "culers", que significa "los que muestran sus traseros". La pronunciación de "culers" es "culés", y ha permanecido como un apodo popular para los fanáticos del Barça hasta el día de hoy.'
     },
     {
       id: 3,
-      question: '3. How do I make a budget?',
-      answer: 'First, sit down and track all of your income and spending over the next few months. Once you have a full picture of your budget, you can start making changes. You´ll get an idea of what expenses you can cut and where you can save a little extra or pay toward any debt you have. A budget isn´t static, so make a plan to revisit it once or twice a year, especially if you´ve had any big changes to your income or expenses.'
+      question: '3. ¿Qué es el FC Barcelona a nivel institucional?',
+      answer: 'A nivel institucional es uno de los cuatro clubes profesionales de fútbol del país cuya entidad jurídica no es la de sociedad anónima deportiva (S. A. D.),​ ya que su propiedad recae en sus más de 143 000 socios. Otra salvedad comparte con el Athletic Club y el Real Madrid Club de Fútbol al participar sin interrupción en la máxima categoría de la Liga Nacional de Fútbol Profesional, la Primera División de España, desde su establecimiento en 1929.​ En ella posee los honores de haber sido el primer campeón histórico de la competición'
     },
     {
       id: 4,
-      question: '4. How much should I save each month for retirement?',
-      answer: 'Here´s another question where a financial professional can help you make a plan that aligns with your budget. Generally speaking, you want to look at your current budget, when you plan to retire and your retirement goals to come up with a savings strategy. You´ll want to think about the expenses you´ll need to consider in retirement, plus consider costs such as health insurance and long-term care.'
+      question: '4. ¿Qué representa el FC Barcelona en el fútbol mundial?',
+      answer: 'Es el primer campeón histórico de la competición española, su segundo club con más títulos, y el de la máxima puntuación en una sola edición. Sumando torneos nacionales e internacionales, es el segundo club español más laureado, a nivel nacional domina el palmarés con setenta y seis campeonatos y a nivel internacional ostenta veintidós trofeos, situado en el segundo puesto europeo.'
     },
     {
       id: 5,
-      question: '5. How do I save for my children´s education?',
-      answer: 'There´s no doubt education is expensive — that´s why many parents start planning to save for college costs early. It´s something else you can make space for in your budget. One popular option with parents is a 529 College Savings Plan. It allows you to start saving for educational costs even if your kids are still young.'
+      question: '5. ¿Cuáles distinciones polideportivas tiene el FC Barcelona?',
+      answer: 'Se distingue por ser una de las instituciones polideportivas más laureadas, entre las que destacan sus secciones de fútbol, baloncesto, balonmano y hockey, todas ellas con un amplio palmarés europeo.​ Es el primer club europeo en ser campeón continental en la rama masculina y femenina, y el primero en lograr un triplete con ambas. Asimismo, los medallistas olímpicos que han representado a la entidad blaugrana han conquistado once oros, veintitrés platas y veintiocho bronces en las distintas disciplinas deportivas.'
     }
   ]
 
@@ -42,7 +42,7 @@ export const FAQ = () => {
   return (
     <div className={styles.containerMain}>
       <div className={styles.containerTitle}>
-        <span className={styles.spanTitle}>Frequently Asked Questions</span>
+        <span className={styles.spanTitle}>Conoce a nuestro club</span>
       </div>
       <section className={styles.wrapper}>
        <div className={styles.accordion}>

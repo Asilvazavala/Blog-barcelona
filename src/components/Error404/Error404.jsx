@@ -6,10 +6,10 @@ export const Error404 = () => {
     <div className={styles.containerError}>
       <div className={styles.error}>
         <h1>Error 404</h1>
-        <p>This page currently not active.</p>
-        <p>Sorry.</p>
+        <p>Esta página no está activa.</p>
+        <p>Disculpe las molestias.</p>
         <NavLink to='/'>
-          <button>Home</button>
+          <button>Inicio</button>
         </NavLink>
       </div>
     </div>

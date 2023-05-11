@@ -6,7 +6,7 @@ export const BlogMostViewed = () => {
     <div className={styles.containerBlog}>
       <main className={styles.main}>
         <div className={styles.rightMenu}>
-          <h2>Most viewed</h2>
+          <h2>Lo más visto</h2>
           {blogJson && blogJson.map(el => {
             return (
               <ul key={el.id}>

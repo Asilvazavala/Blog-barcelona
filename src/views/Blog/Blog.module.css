@@ -16,11 +16,12 @@
   overflow: hidden;
   cursor: pointer;
   transition: color 0.7s ease-in-out;
+  color: var(--text-black);
 }
 
 .containerBlog .rightMenu h3:hover,
 .containerBlog .main h1:hover {
-  color: var(--text-third);
+  color: var(--text-secondary);
 }
 
 .containerBlog .main .mainDateAuthor {

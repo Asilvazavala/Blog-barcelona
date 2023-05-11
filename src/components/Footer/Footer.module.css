@@ -110,7 +110,7 @@ body {
 }
 
 .main .rightContainer button {
-  color: var(--text-main);
+  color: var(--text-white);
   background: var(--text-secondary);
   font-weight: 700;
   width: 74%;

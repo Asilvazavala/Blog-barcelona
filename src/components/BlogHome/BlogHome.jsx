@@ -9,20 +9,20 @@ export const BlogHome = () => {
     {
       id: 1,
       image: Blog1,
-      name: 'Save regardless of your income',
-      description: 'Have you ever wondered what the rich do to have money? The answer is very simple...'
+      name: 'El emotivo adiós de Sergio Busquets',
+      description: 'El capitán del Barça anunció su marcha del club azulgrana a final de curso, poniendo fin a una etapa de 15 temporadas llena de éxitos...'
     },
     {
       id: 2,
       image: Blog2,
-      name: 'Should I give up an inheritance?',
-      description: 'There are those who have been forced to give up an inheritance due to the impossibility of...'
+      name: 'Zubimendi sigue siendo la prioridad',
+      description: 'Se mantiene como el que más gusta a Xavi como recambio de Busquets pese a que supondría la inversión más alta a nivel de traspaso por delante de...'
     },
     {
       id: 3,
       image: Blog3,
-      name: '5 mistakes to avoid in your business',
-      description: 'Have you ever stopped to think why so many people with good business ideas don´t put it together? Well, here we are going to explain...'
+      name: 'El duelo entre Ancelotti y Guardiola',
+      description: 'Carlo Ancelotti y Pep Guardiola protagonizaron una batalla táctica en el duelo jugado en el Bernabéu. El entrenador del Real Madrid tenía claro que su equipo debía...'
     }
   ]
 
@@ -35,7 +35,7 @@ export const BlogHome = () => {
   return (
     <section className={styles.containerBlogHome}>
       <div className={styles.containerTitle}>
-        <span>What do you want to learn?</span>
+        <span>Noticias de último momento</span>
       </div>
       <main>
         {blogs && blogs.map(el => {
@@ -51,7 +51,7 @@ export const BlogHome = () => {
                   <NavLink onClick={goTop} style={{ textDecoration: 'none' }} to='/blog'>
                     <h2>{el.name}</h2>
                   </NavLink>
-                  <p>{el.description}<NavLink style={{ textDecoration: 'none' }} to='/blog'><span>Read more</span></NavLink></p>
+                  <p>{el.description}<NavLink onClick={goTop} style={{ textDecoration: 'none' }} to='/blog'><span>Leer más</span></NavLink></p>
                 </div>
               </li>
             </ul>
@@ -60,7 +60,7 @@ export const BlogHome = () => {
       </main>
         <div className={styles.containerButtonShowMore}>
           <NavLink onClick={goTop} to='/blog'>
-            <button className={styles.buttonShowMore}>See more</button>
+            <button className={styles.buttonShowMore}>Ver más</button>
           </NavLink>
         </div>
     </section>

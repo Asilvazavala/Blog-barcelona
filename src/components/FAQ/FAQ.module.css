@@ -8,10 +8,14 @@
 }
 
 .containerMain .containerTitle .spanTitle {
-  color: var(--text-secondary);
+  color: var(--text-main);
+  letter-spacing: 2px;
+  font-family: 'Lobster', cursive;
+  -webkit-text-decoration-line: overline; /* Safari */
+   text-decoration-line: overline; 
+   text-decoration-color: var(--text-secondary);
   padding: 5px 10px;
-  background-color: var(--text-main);
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 600;
 }
 
@@ -36,8 +40,7 @@
 }
 
 .itemSelected {
-  box-shadow: 0px 2px 4px var(--text-semiBlack);
-  background: var(--text-secondary);
+  background: #8794e6;
 }
 
 .item span {
@@ -47,7 +50,7 @@
 }
 
 .title {
-  color: var(--text-main);
+  color: var(--text-black);
   font-size: 13px;
   display: flex;
   justify-content: space-between;

@@ -42,30 +42,30 @@ function Navbar () {
           <div className={styles.logoLinks}>
             <img className={styles.logo} src={LogoAS} alt='LogoAS' title='Antonio Silva' />
               <NavLink to='/' onClick={goTop}>
-                <a className={window.location.href === BASE_URL ? styles.active : ''}>Home</a>
+                <a className={window.location.href === BASE_URL ? styles.active : ''}>Inicio</a>
               </NavLink>
 
               <NavLink to='/blog' onClick={goTop}>
                 <a className={window.location.href === BASE_URL + 'blog' ? styles.active : ''}>Blog</a>
               </NavLink>
 
-              <NavLink to='/tools' onClick={goTop}>
-                <a className={window.location.href === BASE_URL + 'tools' ? styles.active : ''}>Tools</a>
+              <NavLink to='/extras' onClick={goTop}>
+                <a className={window.location.href === BASE_URL + 'extras' ? styles.active : ''}>Extras</a>
               </NavLink>
 
-              <NavLink to='/contact' onClick={goTop}>
-                <a className={window.location.href === BASE_URL + 'contact' ? styles.active : ''}>Contact</a>
+              <NavLink to='/contacto' onClick={goTop}>
+                <a className={window.location.href === BASE_URL + 'contacto' ? styles.active : ''}>Contacto</a>
               </NavLink>
             </div>
           
           <div className={styles.login}>
-            <NavLink to='/login' onClick={goTop}>
-              <a className={styles.sigIn}>Sign in</a>
+            <NavLink to='/sesion' onClick={goTop}>
+              <a className={styles.sigIn}>Iniciar sesión</a>
             </NavLink>
 
             <div className={styles.containerRegister}>
-              <NavLink to='/register' onClick={goTop}>
-                <button className={styles.register}>Register</button>
+              <NavLink to='/registro' onClick={goTop}>
+                <button className={styles.register}>Registro</button>
               </NavLink>
             </div>
           </div>

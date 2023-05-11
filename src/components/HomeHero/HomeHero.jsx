@@ -8,15 +8,11 @@ export const HomeHero = () => {
       <section className={styles.home}>
         <div>
           <div className={styles.homeContent}>
-            <h1>Hi, I´m a test</h1>
-            <h3>PERSONAL FINANCES</h3>
-            <p>This is a TEST PAGE, which shows information about personal finances. <br></br>Under no circumstances, these are tips. I disclaim responsibility under the actions carried out by the person who reads this.</p>
+            <h1>¡Culemania!</h1>
+            <p>Bienvenido a tu blog donde encontrarás la mejor información en cuánto a noticias, fichajes, jugadores, técnicos, alineaciones y más... sobre el FC Barcelona, saltemos a la cancha! <br></br> “Más que un club”.</p>
             <div className={styles.btnBox}>
               <NavLink to='/blog'>
-                <a>Let´s learn</a>
-              </NavLink>
-              <NavLink to='/tools'>
-                <a>Interest calc </a>
+                <a>Ver noticias</a>
               </NavLink>
             </div>
           </div>
