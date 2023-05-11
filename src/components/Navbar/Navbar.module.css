@@ -42,21 +42,21 @@
   position: relative;
   border-radius: 50%;
   font-size: 20px;
-  margin-right: 25px;
+  margin-right: 45px;
 }
 
-.navbar a {
+.navbar span {
   font-size: 18px;
   color: var(--text-white);
   text-decoration: none;
   font-weight: 700;
   transition: .3s;
-  margin-right: 25px;
+  margin-right: 45px;
   overflow: hidden;
 }
 
-.navbar a:hover,
-.navbar a.active {
+.navbar span:hover,
+.navbar span.active {
   color: var(--text-secondary);
 }
 
@@ -67,70 +67,9 @@
   align-items: center;
 }
 
-.navbar .login {
-  width: 30%;
-  height: 70px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 5%;
-}
-
-.header .navbar .sigIn {
-  margin-right: 25px;
-}
-
-.header .navbar .containerRegister {
-  display: flex;
-  align-items: center;
+.navLink {
+  text-decoration: none;
   overflow: hidden;
-}
-
-.header .navbar .register {
-  padding: 10px 20px;
-  color: var(--text-white);
-  background-color: var(--button-bg);
-  border: 2px solid var(--button-border);
-  font-size: 20px;
-  border-radius: 6px;
-  transition: all .5s;
-  cursor: pointer;
-  font-weight: 600;
-  position: relative;
-}
-
-.header .navbar .register:hover {
-  -webkit-animation: pulsate-fwd 0.5s ease-in-out both;
-	        animation: pulsate-fwd 0.5s ease-in-out both;
-}
-
-@-webkit-keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
 }
 
 /* Responsive */

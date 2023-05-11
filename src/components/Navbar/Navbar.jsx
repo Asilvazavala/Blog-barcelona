@@ -2,10 +2,14 @@ import { useState, useEffect } from 'react'
 import styles from './Navbar.module.css'
 import LogoAS from '../../assets/images/LogoAS.png'
 import { NavLink } from 'react-router-dom'
+import { useAuth0 } from '@auth0/auth0-react'
+import { LoginButton } from '../Auth0/LoginButton/LoginButton'
+import { LogoutButton } from '../Auth0/LogoutButton/LogoutButton'
+import { Profile } from '../Auth0/Profile/Profile'
 
 function Navbar () {
-  const BASE_URL = 'http://localhost:3002/'
-  // const BASE_URL = 'https://gym-as.vercel.app/'
+  const BASE_URL = import.meta.env.VITE_BASE_URL
+  const { isAuthenticated } = useAuth0()
 
   const goTop = () => {
     window.scrollTo({
@@ -41,34 +45,28 @@ function Navbar () {
         <nav className={isSmallScreen && showNavbar === false ? styles.hide : styles.navbar}>
           <div className={styles.logoLinks}>
             <img className={styles.logo} src={LogoAS} alt='LogoAS' title='Antonio Silva' />
-              <NavLink to='/' onClick={goTop}>
-                <a className={window.location.href === BASE_URL ? styles.active : ''}>Inicio</a>
+              <NavLink to='/' className={styles.navLink} onClick={goTop}>
+                <span className={window.location.href === BASE_URL ? styles.active : ''}>Inicio</span>
               </NavLink>
 
-              <NavLink to='/blog' onClick={goTop}>
-                <a className={window.location.href === BASE_URL + 'blog' ? styles.active : ''}>Blog</a>
+              <NavLink to='/blog' className={styles.navLink} onClick={goTop}>
+                <span className={window.location.href === BASE_URL + 'blog' ? styles.active : ''}>Blog</span>
               </NavLink>
 
-              <NavLink to='/extras' onClick={goTop}>
-                <a className={window.location.href === BASE_URL + 'extras' ? styles.active : ''}>Extras</a>
+              <NavLink to='/extras' className={styles.navLink} onClick={goTop}>
+                <span className={window.location.href === BASE_URL + 'extras' ? styles.active : ''}>Extras</span>
               </NavLink>
 
-              <NavLink to='/contacto' onClick={goTop}>
-                <a className={window.location.href === BASE_URL + 'contacto' ? styles.active : ''}>Contacto</a>
+              <NavLink to='/contacto' className={styles.navLink} onClick={goTop}>
+                <span className={window.location.href === BASE_URL + 'contacto' ? styles.active : ''}>Contacto</span>
               </NavLink>
             </div>
-          
-          <div className={styles.login}>
-            <NavLink to='/sesion' onClick={goTop}>
-              <a className={styles.sigIn}>Iniciar sesión</a>
-            </NavLink>
 
-            <div className={styles.containerRegister}>
-              <NavLink to='/registro' onClick={goTop}>
-                <button className={styles.register}>Registro</button>
-              </NavLink>
-            </div>
-          </div>
+            { isAuthenticated ?
+              <LogoutButton /> 
+              :
+              <LoginButton />
+            }
         </nav>
       </header>
     </div>

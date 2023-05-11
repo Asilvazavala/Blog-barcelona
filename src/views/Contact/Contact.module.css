@@ -61,13 +61,14 @@ body {
   text-decoration: none;
   z-index: 1;
   overflow: hidden;
-  transition: .5s;
+  transition: .5s ease-in-out;
   margin-right: 20px;
   margin-top: 10px;
 }
 
 .leftContainer .icons a:hover {
-  background: var(--text-secondary);
+  color: var(--text-secondary);
+  background: var(--text-main);
 }
 
 

@@ -1,0 +1,53 @@
+.navbar {
+  overflow: hidden;
+  display: flex;
+}
+
+.navbar .buttonLogout {
+  padding: 10px 20px;
+  height: 60px;
+  color: var(--text-white);
+  background-color: var(--button-bg);
+  border: 2px solid var(--button-border);
+  font-size: 20px;
+  border-radius: 6px;
+  transition: all .5s;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar .buttonLogout:hover {
+  -webkit-animation: pulsate-fwd 0.5s ease-in-out both;
+	        animation: pulsate-fwd 0.5s ease-in-out both;
+}
+
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}

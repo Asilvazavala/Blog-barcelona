@@ -1,0 +1,10 @@
+.containerProfile {
+  display: flex;
+  margin-right: 30px;
+}
+
+.containerProfile img {
+  height: 60px;
+  width: 60px;
+}
+
