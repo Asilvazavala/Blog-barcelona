@@ -1,6 +1,6 @@
 import styles from './HomeHero.module.css'
 import { NavLink } from 'react-router-dom'
-import Avatar from '../../assets/images/home/avatar.jpg'
+import Avatar from '../../assets/images/home/avatar.webp'
 
 export const HomeHero = () => {
   return (

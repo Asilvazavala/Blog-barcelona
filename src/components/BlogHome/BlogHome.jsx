@@ -1,7 +1,7 @@
 import styles from './BlogHome.module.css'
-import Blog1 from '../../assets/images/home/blog1.png'
-import Blog2 from '../../assets/images/home/blog2.jpg'
-import Blog3 from '../../assets/images/home/blog3.jpg'
+import Blog1 from '../../assets/images/home/blog1.webp'
+import Blog2 from '../../assets/images/home/blog2.webp'
+import Blog3 from '../../assets/images/home/blog3.webp'
 import { NavLink } from 'react-router-dom'
 
 export const BlogHome = () => {

@@ -8,7 +8,7 @@ export const LogoutButton = () => {
   return (
     <section className={styles.navbar}>
       <Profile />
-      <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className={styles.buttonLogout}>Cerrar sesión</button>
+      <button onClick={() => logout({ logoutParams: { returnTo: window.location.href } })} className={styles.buttonLogout}>Cerrar sesión</button>
     </section>
   )
 }

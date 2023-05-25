@@ -3,7 +3,6 @@ import styles from './LoginButton.module.css'
 
 export const LoginButton = () => {
   const { loginWithRedirect } = useAuth0()
-  console.log(window.location.href);
   
   return (
     <section className={styles.navbar}>

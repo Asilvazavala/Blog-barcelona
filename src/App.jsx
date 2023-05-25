@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from 'axios'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { Home } from './views/Home/Home'
 import Navbar  from './components/Navbar/Navbar'
@@ -11,6 +12,9 @@ import { Tools } from './views/Tools/Tools'
 function App() {
   const [showNavbar, setShowNavbar] = useState(true)
   const location = useLocation()
+
+  const backend =import.meta.env.VITE_BACKEND_URL;
+  axios.defaults.baseURL = backend
 
   // Ocultar Navbar en una ruta específica
   const hideNavbarRoutes = ['/login', '/register']

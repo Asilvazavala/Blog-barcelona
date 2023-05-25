@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 import { LoginButton } from '../Auth0/LoginButton/LoginButton'
 import { LogoutButton } from '../Auth0/LogoutButton/LogoutButton'
-import { Profile } from '../Auth0/Profile/Profile'
 
 function Navbar () {
   const BASE_URL = import.meta.env.VITE_BASE_URL

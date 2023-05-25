@@ -11,10 +11,10 @@ export const BlogMostViewed = () => {
             return (
               <ul key={el.id}>
                 <li className={styles.rightMenuItem}>
-                  <img src={el.image} alt={el.name} />
+                  <img src={el.image} alt={el.title} />
                   <div className={styles.rightMenuItemText}>
                     <span>{el.date}</span>
-                    <h3>{el.name}</h3>
+                    <h3>{el.title}</h3>
                   </div>
                 </li>
               </ul>

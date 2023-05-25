@@ -25,7 +25,7 @@
 }
 
 .containerBlog .rightMenu img {
-  width: auto;
+  width: 200px;
   height: 100px;
   border-radius: 10px;
   cursor: pointer;

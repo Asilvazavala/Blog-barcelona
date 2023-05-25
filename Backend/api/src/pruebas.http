@@ -1,0 +1,32 @@
+### // // Obtener todas las publicaciones 
+GET  http://localhost:3001/publications HTTP/1.1
+
+
+### // Buscar publicación por nombre
+GET  http://localhost:3001/publications?title=Serg HTTP/1.1
+
+
+### // Buscar publicación por categoría
+GET  http://localhost:3001/publications/Jugadores HTTP/1.1
+
+
+
+
+### // // Obtener todos las comentarios 
+GET  http://localhost:3001/comments HTTP/1.1
+
+
+### // Crear un comentario
+POST  http://localhost:3001/comments HTTP/1.1
+Content-Type: application/json
+{ "text": "Prueba comentario" }
+
+
+### // Actualizar un comentario
+PUT http://localhost:3001/comments/59204859-5ddc-45fd-a9b2-1fd616511a02 HTTP/1.1
+Content-Type: application/json
+{ "text": "Nuevo comentario" }
+
+
+### // Eliminar un comentario
+DELETE  http://localhost:3001/comments/59204859-5ddc-45fd-a9b2-1fd616511a02 HTTP/1.1

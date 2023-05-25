@@ -20,12 +20,12 @@ export const FAQ = () => {
     },
     {
       id: 4,
-      question: '4. ¿Qué representa el FC Barcelona en el fútbol mundial?',
+      question: '4. ¿Qué representa el FC Barcelona en el fútbol?',
       answer: 'Es el primer campeón histórico de la competición española, su segundo club con más títulos, y el de la máxima puntuación en una sola edición. Sumando torneos nacionales e internacionales, es el segundo club español más laureado, a nivel nacional domina el palmarés con setenta y seis campeonatos y a nivel internacional ostenta veintidós trofeos, situado en el segundo puesto europeo.'
     },
     {
       id: 5,
-      question: '5. ¿Cuáles distinciones polideportivas tiene el FC Barcelona?',
+      question: '5. ¿Cuáles distinciones deportivas tiene el FC Barcelona?',
       answer: 'Se distingue por ser una de las instituciones polideportivas más laureadas, entre las que destacan sus secciones de fútbol, baloncesto, balonmano y hockey, todas ellas con un amplio palmarés europeo.​ Es el primer club europeo en ser campeón continental en la rama masculina y femenina, y el primero en lograr un triplete con ambas. Asimismo, los medallistas olímpicos que han representado a la entidad blaugrana han conquistado once oros, veintitrés platas y veintiocho bronces en las distintas disciplinas deportivas.'
     }
   ]
