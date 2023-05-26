@@ -2,35 +2,35 @@ const { Router } = require('express');
 const router = Router();
 const { Publications } = require('../db');
 
-// Obtener todas las publicaciones || Buscar publicación por nombre
+// Obtener todas las publicaciones || Buscar publicación por categoría
 router.get('/', async (req, res) => {  
   const allPublications = await Publications.findAll()
-  const { title } = req.query;
+  const { category } = req.query;
 
-  if (title) {
-    const findPubName = await allPublications.filter(
-      pub => pub.title.toLowerCase().includes(title.toLowerCase()));
+  if (category) {
+    const findCategory = await allPublications.filter(
+      pub => pub.category.toLowerCase().includes(category.toLowerCase()));
       
-    findPubName.length > 0 
-    ? res.send(findPubName) 
-    : res.status(404).send(`No existe ninguna publicación con nombre "${title}" intenta con otro nombre`);
+    findCategory.length > 0 
+    ? res.send(findCategory) 
+    : res.status(404).send(`No hay publicaciones de la categoría "${category}" intenta con otra`);
   } else {
       res.send(allPublications);
     }
 });
 
-// Buscar publicación por categoría
-router.get('/:category', async (req, res) => {  
+// Buscar publicación por id
+router.get('/:id', async (req, res) => {  
   const allPublications = await Publications.findAll()
-  const { category } = req.params;
+  const { id } = req.params;
   
-    if (category) {
-    const findPubCategory = await allPublications.filter(
-      pub => pub.category === (category));
+    if (id) {
+    const findId = await allPublications.filter(
+      pub => pub.id === (id));
       
-    findPubCategory.length > 0 
-    ? res.send(findPubCategory) 
-    : res.status(404).send(`No existe ninguna publicación con categoría "${category}" intenta con otra categoría`);
+    findId.length > 0 
+    ? res.send(findId) 
+    : res.status(404).send(`No existe ninguna publicación con ID "${id}" intenta con otro`);
   } 
 });
 

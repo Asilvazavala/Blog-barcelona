@@ -2,18 +2,16 @@ import { BlogCategories } from '../../components/BlogCategories/BlogCategories'
 import { BlogMostViewed } from '../../components/BlogMostViewed/BlogMostViewed'
 import styles from './Blog.module.css'
 import { NavLink } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
-import { getPublications } from '../../redux/actions'
+import { usePublications } from '../../hooks/usePublications'
 
 export const Blog = () => {
-  const dispatch = useDispatch()
+  const { publications } = usePublications()
 
-  useEffect(() => {
-    dispatch(getPublications())
-  }, [dispatch])
-
-  const publications = useSelector(state => state.publications)
+  const goTop = () => {
+    window.scrollTo({
+      top: 0
+    })
+  }
 
   return (
     <section className={styles.containerBlog}>
@@ -22,10 +20,10 @@ export const Blog = () => {
           return (
             <ul key={el.id}>
               <li>
-                <h1>{el.title}</h1>
-                <p className={styles.mainDateAuthor}>{el.date} por {el.author} - <NavLink className={styles.mainComment} to='/blog'>Deja tu comentario</NavLink></p>
+                <NavLink onClick={goTop} className={styles.mainComment} to={`/blog/${el.id}`}><h1 className={styles.titlePub}>{el.title}</h1></NavLink>
+                <p className={styles.mainDateAuthor}>{el.date} por {el.author} - #{el.category}</p>
                 <img src={el.image} alt={el.title} />
-                <p className={styles.mainDescription}>{el.description}<NavLink style={{ textDecoration: 'none' }} to='/blog'><span>Leer más</span></NavLink></p>
+                <p className={styles.mainDescription}>{el.description.slice(0, 200) + '...'}<NavLink onClick={goTop} style={{ textDecoration: 'none' }} to={`/blog/${el.id}`}><span>Leer más</span></NavLink></p>
               </li>
             </ul>
           )

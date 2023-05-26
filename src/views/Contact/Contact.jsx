@@ -10,7 +10,7 @@ export const Contact = () => {
         <div className={styles.containerInfo}>
           <div className={styles.infoBottom}>
             <h3>Información:</h3>
-            <p>+800-123-4567 <br />test@gmail.com</p>
+            <p>+800-123-4567 <br />asilvazavala@gmail.com</p>
           </div>
           <div className={styles.icons}>
             <h3>Síguenos en:</h3>
@@ -24,9 +24,9 @@ export const Contact = () => {
       <div className={styles.rightContainer}>
         <form action='https://formsubmit.co/asilvazavala@gmail.com' method='POST'>
           <h3>¡Te escuchamos!</h3>
-          <input type='text' name='name' id='name' placeholder='Antonio silva...' />
+          <input type='text' name='name' id='name' placeholder='Tu nombre...' />
           <input type='email' name='email' id='email' placeholder='tu@correo.com...' />
-          <textarea name='message' id='message' placeholder='Tu valioso comentario...' />
+          <textarea name='message' id='message' placeholder='Tu comentario...' />
           <div>
             <button>ENVIAR</button>
           </div>

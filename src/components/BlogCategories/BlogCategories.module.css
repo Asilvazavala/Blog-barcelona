@@ -21,4 +21,5 @@
   font-size: 17px;
   cursor: pointer;
   transition: color 0.7s ease;
+  color: var(--text-black);
 }

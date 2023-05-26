@@ -25,15 +25,10 @@
 }
 
 .containerBlog .rightMenu img {
-  width: 200px;
-  height: 100px;
+  width: 50%;
+  height: 100%;
   border-radius: 10px;
-  cursor: pointer;
   transition: all 1s ease;
-}
-
-.rightMenu img:hover {
-  box-shadow: 5px 5px 10px var(--text-semiBlack);
 }
 
 .rightMenuItemText {
@@ -49,4 +44,5 @@
   font-size: 17px;
   cursor: pointer;
   transition: color 0.7s ease;
+  color: var(--text-black);
 }

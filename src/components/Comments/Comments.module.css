@@ -1,0 +1,54 @@
+.comments .myComment textarea {
+  width: 90%;
+  height: 100px;
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.comments .myComment .buttonAddComment {
+  margin: 20px 30px;
+  padding: 7px 14px;
+  color: var(--text-white);
+  background-color: var(--text-secondary);
+  font-size: 18px;
+  border-radius: 6px;
+  transition: all .5s;
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.comments .myComment .buttonAddComment:hover {
+  -webkit-animation: pulsate-fwd 0.5s ease-in-out both;
+	        animation: pulsate-fwd 0.5s ease-in-out both;
+}
+
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}

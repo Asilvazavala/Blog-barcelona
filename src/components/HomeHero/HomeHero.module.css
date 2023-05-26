@@ -88,6 +88,7 @@
 
 .btnBox a {
   position: relative;
+  margin-left: 10px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
