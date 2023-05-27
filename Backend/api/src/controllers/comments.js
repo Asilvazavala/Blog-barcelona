@@ -23,10 +23,10 @@ router.get('/', async (req, res) => {
 // Crear una comentario
 router.post('/', async (req, res) => {
   // Nueva info pasada por el usuario
-  let { text, createdInDB } = req.body;
+  let { text, publicationId, image, username, createdInDB } = req.body;
   
-  if (text.length > 10) {
-    await Comments.create({ text, createdInDB })
+  if (text) {
+    await Comments.create({ text, publicationId, image, username, createdInDB })
     res.send('Comentario creado con éxito');
   } else {
       res.status(404).send('El comentario debe tener al menos 10 carácteres')

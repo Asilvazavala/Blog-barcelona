@@ -2,6 +2,7 @@ import {
   GET_PUBLICATIONS,
   SEARCH_PUBLICATION_BY_CATEGORY,
   SEARCH_PUBLICATION_BY_ID,
+  GET_COMMENTS,
   CREATE_COMMENT,
   DELETE_COMMENT,
   UPDATE_COMMENT
@@ -17,29 +18,36 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch(action.type) {
     case GET_PUBLICATIONS: 
-      return {...state,
+      return { ...state,
         publications: action.payload,
-        category: action.payload};
+        category: action.payload };
 
     case SEARCH_PUBLICATION_BY_CATEGORY:
-      return {...state, 
-        publications: action.payload};
+      return { ...state, 
+        publications: action.payload };
 
     case SEARCH_PUBLICATION_BY_ID:
-      return {...state, 
-        detailPublication: action.payload};
+      return { ...state, 
+        detailPublication: action.payload };
+
+    case GET_COMMENTS: 
+      return { ...state,
+        comments: action.payload };
 
     case CREATE_COMMENT:
-      return {...state,}
+      return { ...state, 
+        comments: action.payload };
 
     case DELETE_COMMENT:
-      return {...state,}
+      return { ...state, 
+        comments: action.payload };
 
-    case UPDATE_COMMENT:
-      return {...state,}
+    case UPDATE_COMMENT:    
+      return { ...state, 
+        comments: action.payload };
 
     default:
-      return { ...state}
+      return { ...state };
   }
 }
 

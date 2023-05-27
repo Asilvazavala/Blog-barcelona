@@ -7,6 +7,7 @@ export const Profile = () => {
   return (
     <section>
       <div className={styles.containerProfile}>
+        {/* <span>{user.given_name}</span> */}
         <img src={user.picture} alt={user.name} title={user.name} />
       </div>
     </section>

@@ -12,14 +12,30 @@ module.exports = (sequelize) => {
           },
 
         text: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,            
         },
 
-        score: {
+        like: {
             type: DataTypes.INTEGER,
             defaultValue: 0,
             allowNull: true, 
+        },
+
+        unlike: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
+            allowNull: true, 
+        },
+
+        image: { 
+          type: DataTypes.STRING(500),
+          allowNull: false,
+        },
+
+        username: {
+          type: DataTypes.STRING,
+          allowNull: false,
         },
     },
     {

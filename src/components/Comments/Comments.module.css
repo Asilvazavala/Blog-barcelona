@@ -1,12 +1,19 @@
-.comments .myComment textarea {
-  width: 90%;
+.comments .usersComments h2 {
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+  background: var(--text-main);
+  padding: 5px 10px;
+}
+
+.comments .form textarea {
+  width: 95%;
   height: 100px;
   padding: 4px 6px;
   border-radius: 6px;
 }
 
-.comments .myComment .buttonAddComment {
-  margin: 20px 30px;
+.comments .form .buttonAddComment {
+  margin: 10px 0px 50px 0;
   padding: 7px 14px;
   color: var(--text-white);
   background-color: var(--text-secondary);
@@ -15,11 +22,9 @@
   transition: all .5s;
   cursor: pointer;
   font-weight: 600;
-  position: relative;
-  overflow: hidden;
 }
 
-.comments .myComment .buttonAddComment:hover {
+.comments .form .buttonAddComment:hover {
   -webkit-animation: pulsate-fwd 0.5s ease-in-out both;
 	        animation: pulsate-fwd 0.5s ease-in-out both;
 }
@@ -51,4 +56,61 @@
     -webkit-transform: scale(1);
             transform: scale(1);
   }
+}
+
+.comments .usersComments ul li {
+  display: flex;
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.142);
+  border-radius: 10px;
+  background: var(--text-white);
+  position: relative;
+  min-height: 70px;
+  overflow: hidden;
+} 
+
+.comments .usersComments ul li header {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(0, 0, 0, 0.142);
+  padding: 15px;
+}
+
+.comments .usersComments ul li header img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.comments .usersComments ul li p {
+  padding: 15px;
+}
+
+.comments .usersComments ul li .fecha span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 5px 2px 0;
+  font-size: 12px;
+  color: var(--text-semiBlack);
+}
+
+.comments .usersComments ul li .buttons span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  padding: 0 5px 2px 0;
+  transition: all linear 0.5s;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+.comments .usersComments ul li .buttons span:hover {
+  color: var(--text-main);
+  transform: scale(1.5);
+}
+
+.hide {
+  display: none !important;
 }
