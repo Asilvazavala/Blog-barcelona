@@ -86,27 +86,67 @@
   padding: 15px;
 }
 
+.comments .usersComments ul li .like,
+.comments .usersComments ul li .unlike,
+.comments .usersComments ul li .deleteButton span {
+  position: absolute;
+  cursor: pointer;
+  padding: 0 5px 2px 0;
+  transition: all linear 0.3s;
+  overflow: hidden;
+  color: var(--text-semiBlack);
+}
+
 .comments .usersComments ul li .fecha span {
   position: absolute;
+  padding: 0 5px 2px 0;
   top: 0;
   right: 0;
-  padding: 0 5px 2px 0;
   font-size: 12px;
   color: var(--text-semiBlack);
 }
 
-.comments .usersComments ul li .buttons span {
-  position: absolute;
+.comments .usersComments ul li .like {
   bottom: 0;
+  left: 15%;
+  font-size: 20px;
+  display: flex;
+}
+
+.comments .usersComments ul li .unlike {
+  bottom: 0;
+  left: 21%;
+  font-size: 20px;
+  display: flex;
+}
+
+.buttonLike,
+.buttonUnlike {
+  transition: all linear 0.3s;
+}
+
+.buttonLike:hover {
+  color: var(--text-secondary);
+  transform: scale(1.2);
+}
+
+.buttonUnlike:hover {
+  color: var(--text-main);
+  transform: scale(1.2);
+}
+
+.counter {
+  font-size: 15px;
+  text-align: center;
+}
+
+.comments .usersComments ul li .deleteButton span {
   right: 0;
-  cursor: pointer;
-  padding: 0 5px 2px 0;
-  transition: all linear 0.5s;
-  overflow: hidden;
+  bottom: 0;
   font-size: 20px;
 }
 
-.comments .usersComments ul li .buttons span:hover {
+.comments .usersComments ul li .deleteButton span:hover {
   color: var(--text-main);
   transform: scale(1.5);
 }

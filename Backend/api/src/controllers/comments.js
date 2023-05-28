@@ -23,10 +23,10 @@ router.get('/', async (req, res) => {
 // Crear una comentario
 router.post('/', async (req, res) => {
   // Nueva info pasada por el usuario
-  let { text, publicationId, image, username, createdInDB } = req.body;
+  const { text, publicationId, userID, image, username, like, unlike, createdInDB } = req.body;
   
   if (text) {
-    await Comments.create({ text, publicationId, image, username, createdInDB })
+    await Comments.create({ text, publicationId, userID, image, username, like, unlike, createdInDB })
     res.send('Comentario creado con éxito');
   } else {
       res.status(404).send('El comentario debe tener al menos 10 carácteres')
@@ -51,15 +51,16 @@ router.delete('/:id', async (req, res) => {
 // Actualizar una comentario
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
-  const { text } = req.body;
+  const { text, publicationId, userID, image, username, like, unlike, createdInDB } = req.body;
 
   const findId = await Comments.findByPk(id)
   if (!findId) {
     res.status(400).send(`Comnetario con ID ${id} no encontrado`)
   } else {
-    await Comments.update ({ text }, { where : { id } },); 
+    await Comments.update ({ like, unlike }, { where : { id } },); 
     res.send('Comentario modificado correctamente!!');
     }
 });
+
 
 module.exports = router;

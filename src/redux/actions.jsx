@@ -13,7 +13,7 @@ export const getPublications = () => {
       const allPublications = await axios.get('/publications')
       dispatch({ type: GET_PUBLICATIONS, payload: allPublications.data })
     } catch (error) {
-        window.alert('No se pudieron cargar las publicaciones')
+        console('No se pudieron cargar las publicaciones')
       }
   }
 }
@@ -24,7 +24,7 @@ export const searchPublicationByCategory = (search) => {
       const json = await axios.get(`/publications?category=${search}`);
       dispatch({ type: SEARCH_PUBLICATION_BY_CATEGORY, payload: json.data });
     } catch (error) {
-        alert(`No hay publicaciones de la categoría "${search}", intenta con otro`);
+        console(`No hay publicaciones de la categoría "${search}", intenta con otro`);
       }
   }
 }
@@ -35,7 +35,7 @@ export const searchPublicationById = (search) => {
       const json = await axios.get(`/publications/${search}`);
       dispatch({ type: SEARCH_PUBLICATION_BY_ID, payload: json.data });
     } catch (error) {
-        alert(`La publicación con ID "${search}" no existe, intenta con otro`);
+        console(`La publicación con ID "${search}" no existe, intenta con otro`);
       }
   }
 }
@@ -47,7 +47,7 @@ export const getComments = () => {
       dispatch({ type: GET_COMMENTS, payload: comments.data })
     }
     catch (error) {
-      window.alert('No se pudieron cargar los comentarios')
+      console('No se pudieron cargar los comentarios')
     }
   }
 }
@@ -57,10 +57,9 @@ export const createComment = (comment) => {
     try {
       await axios.post('/comments', comment)
       const comments = await axios.get('/comments')
-      // alert('Comentario agregado con éxito!!')
       dispatch({ type: CREATE_COMMENT, payload: comments.data });
     } catch(error) {            
-        alert('No se pudo crear el comentario')        
+        console('No se pudo crear el comentario')        
       }
   }
 }
@@ -70,23 +69,21 @@ export const deleteComment = (id) => {
     try {
       await axios.delete(`/comments/${id}`)
       const comments = await axios.get('/comments')
-      // alert('Comentario eliminado con éxito!!')
       dispatch({ type: DELETE_COMMENT, payload: comments.data });
     } catch (error) {
-        alert(`No se puedo eliminar el comentario, no existe el comentario con ID ${id}`)
+        console(`No se puedo eliminar el comentario, no existe el comentario con ID ${id}`)
       }
   }
 }
 
-export const updateComment = (id) => {
+export const updateComment = (id, comment) => {
   return async function (dispatch) {
     try {
-      await axios.put(`/comments/${id}`)
+      await axios.put(`/comments/${id}`, comment)
       const comments = await axios.get('/comments')
-      // alert('Comentario actualizado con éxito!!')
       dispatch({ type: UPDATE_COMMENT, payload: comments.data });
     } catch (error) {
-        alert(`No se pudo actualizar el comentario, no existe el comentario con ID ${id}`)
+        console(`No se pudo actualizar el comentario, no existe el comentario con ID ${id}`)
       }
   }
 }

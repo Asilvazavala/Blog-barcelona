@@ -9,25 +9,33 @@ export function useComments () {
   const { isAuthenticated, user } = useAuth0()
   const comments = useSelector(state => state.comments)
   const { id } = useParams()
+
+  const [like, setLike] = useState(0)
+  const [unlike, setUnlike] = useState(0)
+  const [isLikeActive, setIsLikeActive] = useState(false)
+  const [isUnlikeActive, setIsUnlikeActive] = useState(false)
   const [comment, setComment] = useState({
     text: '',
-    publicationId: id
-  })  
-    
-  console.log(comments);
+    publicationId: id,
+    userID: user?.email,
+    image: user?.picture,
+    username: user?.given_name,
+    like: like,
+    unlike: unlike
+  })    
   
-  // console.log(user)
-  // console.log(id);
-  
-// console.log(comments.userId);
-// console.log(comments.publicationId);
-
   useEffect(() => {
     dispatch(getComments())
   }, [dispatch])
   
   const handleChange = (e) => {
-    setComment({ text: e.target.value, publicationId: id })
+    setComment({ 
+      text: e.target.value, 
+      publicationId: id,
+      userID: user.email,
+      image: user.picture,
+      username: user.given_name,
+     })
   }
   
   const handleSubmit = useCallback((e) => {
@@ -39,9 +47,17 @@ export function useComments () {
         alert('Los comentarios deben tener menos de 255 carácteres')
      } else {
         dispatch(createComment(comment))
-        setComment({ text: '', publicationId: id })
+        setComment({ 
+          text: '', 
+          publicationId: id,
+          userID: user.email,
+          image: user.picture,
+          username: user.given_name,
+          like: 0,
+          unlike: 0
+         })
       }
-  }, [comment, dispatch, id])
+  }, [comment, dispatch, id, user])
 
   const handleDelete = useCallback((idDelete) => {    
     dispatch(deleteComment(idDelete))
@@ -51,5 +67,49 @@ export function useComments () {
     dispatch(updateComment(idUpdate))
   }, [dispatch])
 
-  return { comment, comments, handleChange, handleSubmit, handleDelete, handleUpdate, id, user, isAuthenticated }
+  const handleLike = (idUpdate, prevLike) => {
+    if (isUnlikeActive) return
+
+    if (!isLikeActive) {  
+      setLike(prevLike + 1)
+    } else {
+        setLike(prevLike - 1)
+      }
+      
+      setIsLikeActive(!isLikeActive)
+      const updateLikes = {
+        like: prevLike + (isLikeActive ? -1 : 1)
+      }
+      dispatch(updateComment(idUpdate, updateLikes))
+  }
+
+  const handleUnlike = (idUpdate, prevUnlike) => {
+    if (isLikeActive) return 
+
+    if (!isUnlikeActive) { 
+      setUnlike(prevUnlike - 1)
+    } else {
+        setUnlike(prevUnlike + 1)
+      }
+      
+      setIsUnlikeActive(!isUnlikeActive)
+      const updateUnlikes = {
+        unlike: prevUnlike + (isUnlikeActive ? -1 : 1)
+      }
+      dispatch(updateComment(idUpdate, updateUnlikes))
+  }
+
+  return { 
+    comment, 
+    comments, 
+    handleChange, 
+    handleSubmit, 
+    handleDelete, 
+    handleUpdate, 
+    id, 
+    user, 
+    isAuthenticated,
+    handleLike,
+    handleUnlike
+   }
 }

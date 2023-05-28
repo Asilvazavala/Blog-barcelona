@@ -37,6 +37,11 @@ module.exports = (sequelize) => {
           type: DataTypes.STRING,
           allowNull: false,
         },
+
+        userID: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
     },
     {
       paranoid: true,    
