@@ -11,11 +11,11 @@ export const Comments = () => {
     handleChange, 
     handleSubmit, 
     handleDelete, 
+    handleLike,
+    handleUnlike,
     id, 
     user, 
     isAuthenticated,
-    handleLike,
-    handleUnlike,
   } = useComments()
 
   return (
@@ -65,14 +65,22 @@ export const Comments = () => {
                 </div>
 
                 <div className={styles.deleteButton}>
-                <Modal modal={modal} setModal={setModal} titulo='¿Estás seguro?' handleDelete={handleDelete} el={el}>
-                  <p>Esta acción <strong>eliminará</strong> tu comentario</p>
-                </Modal>
+                { modal && 
+                  <Modal 
+                    setModal={setModal} 
+                    titulo='¿Estás seguro?' 
+                    mensaje={'Esta acción ELIMINARÁ tu comentario'} 
+                    textButton1={'Eliminar'} 
+                    textButton2={'Cancelar'} 
+                    handleDelete={handleDelete} 
+                    el={el}
+                  />
+                }
                   <span 
                     className={isAuthenticated && el.userID === user.email ? '' : styles.hide} 
                     data-bs-toggle="modal" 
                     data-bs-target="#staticBackdrop"
-                    onClick={() => setModal(!modal)}
+                    onClick={() => setModal(true)}
                     title='Eliminar comentario'>
                     <i className='bx bx-trash'></i>
                   </span>

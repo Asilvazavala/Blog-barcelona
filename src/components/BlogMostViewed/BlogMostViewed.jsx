@@ -10,7 +10,7 @@ export const BlogMostViewed = () => {
       <main className={styles.main}>
         <div className={styles.rightMenu}>
           <h2>Lo más visto</h2>
-          {category && category.map(el => {
+          {category && category.slice(3,6).map(el => {
             return (
               <ul key={el.id}>
                 <li className={styles.rightMenuItem}>

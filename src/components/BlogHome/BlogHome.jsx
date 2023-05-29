@@ -1,15 +1,11 @@
 import styles from './BlogHome.module.css'
 import { NavLink } from 'react-router-dom'
 import { usePublications } from '../../hooks/usePublications'
+import { useFunction } from '../../hooks/useFunction'
 
 export const BlogHome = () => {
   const { publications } = usePublications()
-
-  const goTop = () => {
-    window.scrollTo({
-      top: 0
-    })
-  }
+  const { goTop } = useFunction()
 
   return (
     <section className={styles.containerBlogHome}>

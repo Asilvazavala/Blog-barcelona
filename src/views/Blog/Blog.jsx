@@ -3,19 +3,19 @@ import { BlogMostViewed } from '../../components/BlogMostViewed/BlogMostViewed'
 import styles from './Blog.module.css'
 import { NavLink } from 'react-router-dom'
 import { usePublications } from '../../hooks/usePublications'
+import { useFunction } from '../../hooks/useFunction'
+import { Paginado } from '../../components/Paginado/Paginado'
 
 export const Blog = () => {
   const { publications } = usePublications()
-
-  const goTop = () => {
-    window.scrollTo({
-      top: 0
-    })
-  }
+  const { totalItems, currentPage, handlePrev, handleNext } = Paginado()
+  const { goTop } = useFunction()
 
   return (
     <section className={styles.containerBlog}>
       <main className={styles.main}>
+        {window.location.search && <h2><u>Resultados de: #{window.location.search.includes('%') ? 'Fútbol Mundial' : window.location.search.slice(10,20)}</u></h2>}
+        
         {publications && publications.map(el => {
           return (
             <ul key={el.id}>
@@ -28,6 +28,15 @@ export const Blog = () => {
             </ul>
           )
         })}
+        { window.location.href === 'http://localhost:3002/blog' &&
+          <div className={styles.paginado}>
+            <h3>Página {currentPage} de {totalItems}</h3>
+            <div className={styles.buttonsPaginado}>
+              <i onClick={handlePrev} className='bx bxs-left-arrow-circle' title='página anterior'></i>
+              <i onClick={handleNext} className='bx bxs-right-arrow-circle' title='página siguiente'></i>
+            </div>
+          </div>
+        }
       </main>
 
       {/* Menu lateral derecho */}

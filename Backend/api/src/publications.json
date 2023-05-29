@@ -1,8 +1,32 @@
 {
   "Search": [
     {
+      "title": "Jordi Alba anuncia su adiós al Barca",
+      "date": "Mayo 20, 2023",
+      "author": "Antonio Silva",
+      "image": "https://cdnuploads.aa.com.tr/uploads/Contents/2023/05/24/thumbs_b_c_3c36eee4f528c7a6253f01cd46870594.jpg?v=171202",
+      "category": "Jugadores",
+      "description": "Jordi Alba deja el Barça. Este próximo fin de semana, como Busquets, se despedirá del barcelonismo en el partido ante el Mallorca en el Camp Nou, y luego podría jugar su último partido con la camiseta del Barça en Vigo ante el Celta en la última jornada de la Florentino League que ha ganado el Barça. El jugador habría hecho una última gran contribución al club, renunciando a una gran parte económica que le correspondía por contrato. Gracias Jordi Alba."
+    },
+    {
+      "title": "City 4-0 Madrid, exhibición del City ante el actual campeón",
+      "date": "Mayo 18, 2023",
+      "author": "Antonio Silva",
+      "image": "https://st1.uvnimg.com/21/e2/39f1adb04adfb8d71a604e506053/real-madrid-4-0.jpg",
+      "category": "Fútbol Mundial",
+      "description": "El City apalizó 4-0 al Madrid con un auténtico baño (sobre todo en la 1ª parte) demostrando una diferencia abismal entre ambos equipos, que en buena medida ya habíamos visto la pasada temporada, pero la suerte en el fútbol también juega y el formato de eliminatorias de la Champions hace que sea demasiado determinante y que un equipo CLARAMENTE INFERIOR pueda echar a UNO SUPERIOR, sumando luego títulos de un torneo mediáticamente más reconocido y haciendo un enorme daño al fútbol porque desde luego para mí es evidente que el ganador o el que más Champions gana no es necesariamente el mejor equipo de Europa, porque en 1-2 partidos, el azar influye demasiado. Cuando consigues controlar ese azar y te sale un buen partido, pues pasa lo de hoy, un abismo entre el mejor equipo del mundo y una banda."
+    },
+    {
+      "title": "El fichaje de Gundogan o Kimmich, punto de inflexión",
+      "date": "Mayo 14, 2023",
+      "author": "Antonio Silva",
+      "image": "https://static.footballtransfers.com/images/cn/image/upload/q_75,w_1200,h_674,ar_600.337/footballcritic/g8z5t9umubo6mwl04fxw.webp",
+      "category": "Fichajes",
+      "description": "El próximo mercado europeo veraniego de fichajes pareciera no tener cambios de figuras relevantes, sin embargo un nombre es el que resuena por sobre el resto, el de İlkay Gündoğan. En su afán por volver a ser protagonista en Europa, el Barcelona busca nombres para reforzarse y el del alemán del Manchester City sería uno de los apuntados. En The Sporting News repasamos todos los detalles. ¿Cómo es el contrato de Gündoğan con el Manchester City? El contrato de Gündoğan con el Manchester City expira el 30 de junio de 2023. De esa manera el alemán terminará el vínculo que lo unió a los Ciudadanos desde el 1 de julio de 2016 cuando arribó desde el Borussia Dortmund."
+    },
+    {
       "title": "El emotivo adiós de Sergio Busquets",
-      "date": "Mayo 5, 2023",
+      "date": "Mayo 10, 2023",
       "author": "Antonio Silva",
       "image": "https://a1.eestatic.com/cronicaglobal/2015/01/19/culemania/primer-equipo/primer_equipo_4509674_328882_1706x960.jpg",
       "category": "Jugadores",
@@ -10,7 +34,7 @@
     },
     {
       "title": "Zubimendi sigue siendo la prioridad",
-      "date": "Mayo 6, 2023",
+      "date": "Mayo 9, 2023",
       "author": "Antonio Silva",
       "image": "https://estaticos-cdn.sport.es/clip/d8b47056-6d97-44d6-b708-839a8b23e5a0_alta-libre-aspect-ratio_default_0.jpg",
       "category": "Fichajes",
@@ -25,6 +49,6 @@
       "description": "Carlo Ancelotti y Pep Guardiola protagonizaron una batalla táctica en el duelo jugado en el Bernabéu. El entrenador del Real Madrid tenía claro que su equipo debía de priorizar el sistema defensivo para frenar a Haaland y De Bruyne, pero con Camavinga realizando un papel clave a la hora de sacar el balón. Mientras Guardiola siguió fiel a su estilo de fútbol de toque, pero con un detalle, poblar el centro del campo. Ancelotti insistió a sus jugadores para que estuviesen muy atentos a los pases interiores del City y así, desactivar a Haaland. Eso, además de que Rüdiger estuviese encima del noruego con Alaba y Kroos como guardaespaldas. Valverde, por su parte, estuvo muy atento a la De Bruyne para que el belga nunca pudiese recibir con facilidad y espacios. Aunque la gran variación táctica de Ancelotti fue que Camavinga dejara el lateral izquierdo cuando el Real Madrid debía sacar el balón. El francés se situaba como tercer pivote blanco para ayudar a la salida del esférico. Algo que se vio sobre todo en la segunda parte. En ataque, la solución de Ancelotti fue fiarlo todo al tridente Rodrygo-Benzema-Vinicius que con sus combinaciones destrozaron por momentos a la defensa del City."
     }
   ],
-  "totalResults": "3",
+  "totalResults": "6",
   "Response": "True"
 }

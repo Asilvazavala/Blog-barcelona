@@ -5,7 +5,7 @@ import {
   GET_COMMENTS,
   CREATE_COMMENT,
   DELETE_COMMENT,
-  UPDATE_COMMENT
+  UPDATE_COMMENT,
 } from './actions'
 
 const initialState = {

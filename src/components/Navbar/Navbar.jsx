@@ -49,7 +49,7 @@ function Navbar () {
               </NavLink>
 
               <NavLink to='/blog' className={styles.navLink} onClick={goTop}>
-                <span className={window.location.href === BASE_URL + 'blog' ? styles.active : ''}>Blog</span>
+                <span className={window.location.href.includes('blog') ? styles.active : ''}>Blog</span>
               </NavLink>
 
               <NavLink to='/extras' className={styles.navLink} onClick={goTop}>
