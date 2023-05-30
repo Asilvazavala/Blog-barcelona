@@ -2,8 +2,11 @@ import styles from './Comments.module.css'
 import { useComments } from '../../hooks/useComments'
 import { Modal } from '../Modal/Modal'
 import { useState } from 'react'
+import { useFunction } from '../../hooks/useFunction'
+
 export const Comments = () => {
   const [modal, setModal] = useState(false)
+  const { ToastContainer } = useFunction()
 
   const { 
     comment, 
@@ -11,11 +14,16 @@ export const Comments = () => {
     handleChange, 
     handleSubmit, 
     handleDelete, 
+    handleUpdate,
     handleLike,
     handleUnlike,
+    handleEdit,
     id, 
     user, 
     isAuthenticated,
+    isEditing,
+    editingItem,
+    textAreaRef
   } = useComments()
 
   return (
@@ -38,7 +46,12 @@ export const Comments = () => {
                   <img src={el.image} alt={el.username} title={el.username} />
                   <span>{el.username}</span>
                 </header>
-                <p>{el.text}</p>
+
+                { 
+                  isEditing && editingItem === el.id
+                  ? <textarea ref={editingItem === el.id ? textAreaRef : undefined} className={styles.editInput} type="text" onChange={handleChange} name='text' value={comment.text}></textarea>
+                  : <p>{el.text}</p>
+                }
 
                 <div className={styles.like}>
                   <span
@@ -72,7 +85,7 @@ export const Comments = () => {
                     mensaje={'Esta acción ELIMINARÁ tu comentario'} 
                     textButton1={'Eliminar'} 
                     textButton2={'Cancelar'} 
-                    handleDelete={handleDelete} 
+                    handleFunction={handleDelete} 
                     el={el}
                   />
                 }
@@ -85,11 +98,28 @@ export const Comments = () => {
                     <i className='bx bx-trash'></i>
                   </span>
                 </div>
+
+                <div className={isAuthenticated && el.userID === user.email ? styles.editButton : styles.hide}>
+                  <span
+                    className={isEditing && editingItem === el.id ? styles.isEditing : ''}
+                    onClick={() => handleEdit(el.id, el.text)}
+                    title='Editar comentario'>
+                    <i className='bx bx-edit'></i>
+                  </span>
+                </div>
+
+                <div className={isEditing && editingItem === el.id ? styles.updateButton : styles.hide}>
+                  <button
+                    onClick={() => handleUpdate(el.id, comment.text)}
+                    title='Actualizar comentario'>Actualizar
+                  </button>
+                </div>
               </li>
             )
           })
         }
         </ul>
+        <ToastContainer />
       </main>
     </section>
   )

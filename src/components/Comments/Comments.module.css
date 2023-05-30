@@ -65,12 +65,13 @@
   border-radius: 10px;
   background: var(--text-white);
   position: relative;
-  min-height: 70px;
+  min-height: auto;
   overflow: hidden;
 } 
 
 .comments .usersComments ul li header {
   display: flex;
+  min-width: 9%;
   flex-direction: column;
   border-right: 1px solid rgba(0, 0, 0, 0.142);
   padding: 15px;
@@ -82,12 +83,26 @@
   border-radius: 50%;
 }
 
+.comments .usersComments ul li .editInput {
+  width: 100%;
+  min-height: 80px;
+  padding: 5px 10px;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  background: transparent;
+  overflow: hidden;
+  font-size: 15px;
+}
+
 .comments .usersComments ul li p {
-  padding: 15px;
+  padding: 15px 15px 35px 15px;
+  font-size: 15px;
 }
 
 .comments .usersComments ul li .like,
 .comments .usersComments ul li .unlike,
+.comments .usersComments ul li .editButton span,
+.comments .usersComments ul li .updateButton button,
 .comments .usersComments ul li .deleteButton span {
   position: absolute;
   cursor: pointer;
@@ -140,6 +155,26 @@
   text-align: center;
 }
 
+.comments .usersComments ul li .editButton span {
+  right: 30px;
+  bottom: 0;
+  font-size: 20px;
+}
+
+.comments .usersComments ul li .editButton .isEditing {
+  color: var(--text-secondary);
+}
+
+.comments .usersComments ul li .editButton .isEditing:hover {
+  color: var(--text-semiBlack);
+  transform: scale(1.2);
+}
+
+.comments .usersComments ul li .editButton span:hover {
+  color: var(--text-secondary);
+  transform: scale(1.2);
+}
+
 .comments .usersComments ul li .deleteButton span {
   right: 0;
   bottom: 0;
@@ -148,8 +183,39 @@
 
 .comments .usersComments ul li .deleteButton span:hover {
   color: var(--text-main);
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
+
+.comments .usersComments ul li .updateButton button {
+  right: 10%;
+  bottom: 5px;
+  font-size: 20px;
+  width: 80px;
+  height: 25px;
+  font-size: 13px;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--text-white);
+  background: var(--text-secondary);
+}
+
+.comments .usersComments ul li .updateButton button:hover {
+  transform: scale(1.1);
+}
+
+.comments .usersComments ul li .updateButton button {
+  right: 10%;
+  bottom: 5px;
+  font-size: 20px;
+  width: 80px;
+  height: 25px;
+  font-size: 13px;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--text-white);
+  background: var(--text-secondary);
+}
+
 
 .hide {
   display: none !important;

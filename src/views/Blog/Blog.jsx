@@ -8,15 +8,15 @@ import { Paginado } from '../../components/Paginado/Paginado'
 
 export const Blog = () => {
   const { publications } = usePublications()
-  const { totalItems, currentPage, handlePrev, handleNext } = Paginado()
+  const { items, totalItems, currentPage, handlePrev, handleNext } = Paginado()
   const { goTop } = useFunction()
 
   return (
     <section className={styles.containerBlog}>
       <main className={styles.main}>
         {window.location.search && <h2><u>Resultados de: #{window.location.search.includes('%') ? 'Fútbol Mundial' : window.location.search.slice(10,20)}</u></h2>}
-        
-        {publications && publications.map(el => {
+
+        {items && items.map(el => {
           return (
             <ul key={el.id}>
               <li>

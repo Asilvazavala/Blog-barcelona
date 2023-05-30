@@ -1,17 +1,20 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { getComments, createComment, deleteComment, updateComment } from '../redux/actions'
-import { useCallback, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useCallback, useEffect, useState, useRef } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
+import { useFunction } from '../hooks/useFunction'
 
 export function useComments () {
-  const dispatch = useDispatch()
-  const { isAuthenticated, user } = useAuth0()
   const comments = useSelector(state => state.comments)
-  const { id } = useParams()
+  const { isAuthenticated, user } = useAuth0()
+  const { dispatch, id, notificationSuccess, notificationWarning } = useFunction()
+  const textAreaRef = useRef(null)
 
   const [like, setLike] = useState(0)
+  const [isEditing, setIsEditing] = useState(false)
+  const [editingItem, setEditingItem] = useState(null)
   const [unlike, setUnlike] = useState(0)
+
   const [isLikeActive, setIsLikeActive] = useState(false)
   const [isUnlikeActive, setIsUnlikeActive] = useState(false)
   const [comment, setComment] = useState({
@@ -28,6 +31,7 @@ export function useComments () {
     dispatch(getComments())
   }, [dispatch])
   
+
   const handleChange = (e) => {
     setComment({ 
       text: e.target.value, 
@@ -38,13 +42,14 @@ export function useComments () {
      })
   }
   
+
   const handleSubmit = useCallback((e) => {
     e.preventDefault()
 
     if (comment.text.length < 10) {
-      alert('Los comentarios deben tener al menos 10 carácteres')
+      notificationWarning('Los comentarios deben tener al menos 10 carácteres')
     } else if(comment.text.length > 255) {
-        alert('Los comentarios deben tener menos de 255 carácteres')
+        notificationWarning('Los comentarios deben tener menos de 255 carácteres')
      } else {
         dispatch(createComment(comment))
         setComment({ 
@@ -56,16 +61,25 @@ export function useComments () {
           like: 0,
           unlike: 0
          })
+         notificationSuccess('¡Comentario creado exitosamente!')
       }
-  }, [comment, dispatch, id, user])
+  }, [comment, dispatch, id, user, notificationSuccess, notificationWarning])
+
 
   const handleDelete = useCallback((idDelete) => {    
     dispatch(deleteComment(idDelete))
-  }, [dispatch])
+    notificationSuccess('¡Comentario eliminado exitosamente!')  
+  }, [dispatch, notificationSuccess])
 
-  const handleUpdate = useCallback((idUpdate) => {
-    dispatch(updateComment(idUpdate))
-  }, [dispatch])
+
+  const handleUpdate = (idUpdate, text) => {
+    const updateText = { text: text }
+    dispatch(updateComment(idUpdate, updateText))
+    setIsEditing(false)
+    setEditingItem(null)
+    notificationSuccess('¡Comentario actualizado exitosamente!')
+  }
+
 
   const handleLike = (idUpdate, prevLike) => {
     if (isUnlikeActive) return
@@ -83,6 +97,7 @@ export function useComments () {
       dispatch(updateComment(idUpdate, updateLikes))
   }
 
+
   const handleUnlike = (idUpdate, prevUnlike) => {
     if (isLikeActive) return 
 
@@ -99,6 +114,13 @@ export function useComments () {
       dispatch(updateComment(idUpdate, updateUnlikes))
   }
 
+  const handleEdit = (id, text) => {
+    setComment({ text: text })
+    setIsEditing(!isEditing)
+    setEditingItem(id)
+    textAreaRef.current.focus()
+  }
+
   return { 
     comment, 
     comments, 
@@ -106,10 +128,14 @@ export function useComments () {
     handleSubmit, 
     handleDelete, 
     handleUpdate, 
+    handleLike,
+    handleUnlike,
+    handleEdit,
     id, 
     user, 
     isAuthenticated,
-    handleLike,
-    handleUnlike
+    isEditing,
+    editingItem,
+    textAreaRef
    }
 }

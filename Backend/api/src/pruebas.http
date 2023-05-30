@@ -24,13 +24,13 @@ Content-Type: application/json
 
 
 ### // Actualizar un comentario
-PUT http://localhost:3001/comments/c146cf60-20a2-4dfe-b0e4-8dbab3d494a4 HTTP/1.1
+PUT http://localhost:3001/comments/1ecf2bd0-292c-46db-bcec-2bd3818e8cac HTTP/1.1
 Content-Type: application/json
 
 { 
   "text": "Nuevo comentario", 
-  "like": 1, 
-  "unlike": 1 
+  "like": 0, 
+  "unlike": 0 
   }
 
 

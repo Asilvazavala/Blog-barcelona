@@ -51,13 +51,13 @@ router.delete('/:id', async (req, res) => {
 // Actualizar una comentario
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
-  const { text, publicationId, userID, image, username, like, unlike, createdInDB } = req.body;
+  const { text, like, unlike } = req.body;
 
   const findId = await Comments.findByPk(id)
   if (!findId) {
     res.status(400).send(`Comnetario con ID ${id} no encontrado`)
   } else {
-    await Comments.update ({ like, unlike }, { where : { id } },); 
+    await Comments.update ({ text, like, unlike }, { where : { id } },); 
     res.send('Comentario modificado correctamente!!');
     }
 });

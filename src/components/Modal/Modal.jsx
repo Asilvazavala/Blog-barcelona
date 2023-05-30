@@ -1,6 +1,6 @@
 import styles from './Modal.module.css'
 
-export const Modal = ({ setModal, titulo='titulo', mensaje='mensaje', textButton1='aceptar', textButton2='cancelar', handleDelete, el }) => {
+export const Modal = ({ setModal, titulo='titulo', mensaje='mensaje', textButton1='aceptar', textButton2='cancelar', handleFunction, el='' }) => {
   return (
     <div className={styles.modalBackground}>
       <div className={styles.modalContainer}>
@@ -17,7 +17,7 @@ export const Modal = ({ setModal, titulo='titulo', mensaje='mensaje', textButton
         </div>
 
         <div onClick={() => setModal(false)} className={styles.footer}>
-          <button className={styles.fisrtButton} onClick={() => handleDelete(el.id)}>{textButton1}</button>
+          <button className={styles.fisrtButton} onClick={() => handleFunction(el.id)}>{textButton1}</button>
           <button onClick={() => setModal(false)}>{textButton2}</button>
         </div>
 
