@@ -7,24 +7,17 @@ import { useFunction } from '../hooks/useFunction'
 export function useComments () {
   const comments = useSelector(state => state.comments)
   const { isAuthenticated, user } = useAuth0()
-  const { dispatch, id, notificationSuccess, notificationWarning } = useFunction()
-  const textAreaRef = useRef(null)
+  const { dispatch, id, notificationSuccess, notificationWarning, notificationError } = useFunction()
+  const textareaRef  = useRef()
 
-  const [like, setLike] = useState(0)
   const [isEditing, setIsEditing] = useState(false)
   const [editingItem, setEditingItem] = useState(null)
-  const [unlike, setUnlike] = useState(0)
-
-  const [isLikeActive, setIsLikeActive] = useState(false)
-  const [isUnlikeActive, setIsUnlikeActive] = useState(false)
   const [comment, setComment] = useState({
     text: '',
     publicationId: id,
     userID: user?.email,
     image: user?.picture,
     username: user?.given_name,
-    like: like,
-    unlike: unlike
   })    
   
   useEffect(() => {
@@ -46,6 +39,9 @@ export function useComments () {
   const handleSubmit = useCallback((e) => {
     e.preventDefault()
 
+    if(!isAuthenticated) return notificationError('Inicia sesión primero para poder crear comentarios')
+    if (isEditing) return notificationWarning('No se pueden crear comentarios mientras se está editando un comentario')
+    
     if (comment.text.length < 10) {
       notificationWarning('Los comentarios deben tener al menos 10 carácteres')
     } else if(comment.text.length > 255) {
@@ -58,12 +54,10 @@ export function useComments () {
           userID: user.email,
           image: user.picture,
           username: user.given_name,
-          like: 0,
-          unlike: 0
          })
          notificationSuccess('¡Comentario creado exitosamente!')
       }
-  }, [comment, dispatch, id, user, notificationSuccess, notificationWarning])
+  }, [comment, dispatch, id, user, notificationSuccess, notificationWarning, notificationError,  isEditing, isAuthenticated])
 
 
   const handleDelete = useCallback((idDelete) => {    
@@ -77,48 +71,66 @@ export function useComments () {
     dispatch(updateComment(idUpdate, updateText))
     setIsEditing(false)
     setEditingItem(null)
+    setComment({ 
+      text: '', 
+      publicationId: id,
+      userID: user.email,
+      image: user.picture,
+      username: user.given_name,
+     })
     notificationSuccess('¡Comentario actualizado exitosamente!')
   }
 
+  const handleLike = (pubID, userID) => {
+    if(!isAuthenticated) return notificationError('Inicia sesión primero para dar like')
+    const commentToLike = comments.find((c) => c.id === pubID);
+    if (commentToLike.dislikedBy.includes(userID)) return
 
-  const handleLike = (idUpdate, prevLike) => {
-    if (isUnlikeActive) return
-
-    if (!isLikeActive) {  
-      setLike(prevLike + 1)
-    } else {
-        setLike(prevLike - 1)
-      }
-      
-      setIsLikeActive(!isLikeActive)
+    if (!commentToLike.likedBy.includes(userID)) {
       const updateLikes = {
-        like: prevLike + (isLikeActive ? -1 : 1)
+        like: commentToLike.like + 1,
+        likedBy: [...commentToLike.likedBy, userID]
+      };
+      dispatch(updateComment(pubID, updateLikes));
+    } else {
+        const indexToRemove = comments.findIndex((c) => c.id === pubID); 
+        const removeComment = comments.splice(indexToRemove, 1)
+        const updateLikes = {
+          like: commentToLike.like - 1,
+          likedBy: [removeComment]
+        };
+        dispatch(updateComment(pubID, updateLikes));
       }
-      dispatch(updateComment(idUpdate, updateLikes))
   }
 
 
-  const handleUnlike = (idUpdate, prevUnlike) => {
-    if (isLikeActive) return 
+  const handleDislike = (pubID, userID) => {
+    if(!isAuthenticated) return notificationError('Inicia sesión primero para dar dislike')
+    const commentToDislike = comments.find((c) => c.id === pubID);
+    if (commentToDislike.likedBy.includes(userID)) return
 
-    if (!isUnlikeActive) { 
-      setUnlike(prevUnlike - 1)
+    if (!commentToDislike.dislikedBy.includes(userID)) {
+      const updateDislikes = {
+        dislike: commentToDislike.dislike + 1,
+        dislikedBy: [...commentToDislike.dislikedBy, userID]
+      };
+      dispatch(updateComment(pubID, updateDislikes));
     } else {
-        setUnlike(prevUnlike + 1)
+        const indexToRemove = comments.findIndex((c) => c.id === pubID); 
+        const removeComment = comments.splice(indexToRemove, 1)
+        const updateDislikes = {
+          dislike: commentToDislike.dislike - 1,
+          dislikedBy: [removeComment]
+        };
+        dispatch(updateComment(pubID, updateDislikes));
       }
-      
-      setIsUnlikeActive(!isUnlikeActive)
-      const updateUnlikes = {
-        unlike: prevUnlike + (isUnlikeActive ? -1 : 1)
-      }
-      dispatch(updateComment(idUpdate, updateUnlikes))
   }
 
   const handleEdit = (id, text) => {
     setComment({ text: text })
     setIsEditing(!isEditing)
     setEditingItem(id)
-    textAreaRef.current.focus()
+    textareaRef .current.focus()
   }
 
   return { 
@@ -129,13 +141,13 @@ export function useComments () {
     handleDelete, 
     handleUpdate, 
     handleLike,
-    handleUnlike,
+    handleDislike,
     handleEdit,
     id, 
     user, 
     isAuthenticated,
     isEditing,
     editingItem,
-    textAreaRef
+    textareaRef 
    }
 }

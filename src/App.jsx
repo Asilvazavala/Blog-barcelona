@@ -8,7 +8,6 @@ import { Error404 } from './components/Error404/Error404'
 import { Contact } from './views/Contact/Contact'
 import { Blog } from './views/Blog/Blog'
 import { BlogId } from './views/Blog/BlogId/BlogId'
-import { Tools } from './views/Tools/Tools'
 
 function App() {
   const [showNavbar, setShowNavbar] = useState(true)
@@ -35,7 +34,6 @@ function App() {
         <Route exact path='/' element={<Home />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/blog/:id' element={<BlogId />} />
-        <Route path='/extras' element={<Tools />} />
         <Route path='/contacto' element={<Contact />} />
         <Route path='*' element={<Error404 />} />
       </Routes>

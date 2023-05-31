@@ -5,59 +5,6 @@
   padding: 5px 10px;
 }
 
-.comments .form textarea {
-  width: 95%;
-  height: 100px;
-  padding: 4px 6px;
-  border-radius: 6px;
-}
-
-.comments .form .buttonAddComment {
-  margin: 10px 0px 50px 0;
-  padding: 7px 14px;
-  color: var(--text-white);
-  background-color: var(--text-secondary);
-  font-size: 18px;
-  border-radius: 6px;
-  transition: all .5s;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.comments .form .buttonAddComment:hover {
-  -webkit-animation: pulsate-fwd 0.5s ease-in-out both;
-	        animation: pulsate-fwd 0.5s ease-in-out both;
-}
-
-@-webkit-keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
 .comments .usersComments ul li {
   display: flex;
   margin-bottom: 30px;
@@ -83,35 +30,6 @@
   border-radius: 50%;
 }
 
-.comments .usersComments ul li .editInput {
-  width: 100%;
-  min-height: 80px;
-  padding: 5px 10px;
-  margin-top: 2%;
-  margin-bottom: 5%;
-  background: transparent;
-  overflow: hidden;
-  font-size: 15px;
-}
-
-.comments .usersComments ul li p {
-  padding: 15px 15px 35px 15px;
-  font-size: 15px;
-}
-
-.comments .usersComments ul li .like,
-.comments .usersComments ul li .unlike,
-.comments .usersComments ul li .editButton span,
-.comments .usersComments ul li .updateButton button,
-.comments .usersComments ul li .deleteButton span {
-  position: absolute;
-  cursor: pointer;
-  padding: 0 5px 2px 0;
-  transition: all linear 0.3s;
-  overflow: hidden;
-  color: var(--text-semiBlack);
-}
-
 .comments .usersComments ul li .fecha span {
   position: absolute;
   padding: 0 5px 2px 0;
@@ -120,102 +38,6 @@
   font-size: 12px;
   color: var(--text-semiBlack);
 }
-
-.comments .usersComments ul li .like {
-  bottom: 0;
-  left: 15%;
-  font-size: 20px;
-  display: flex;
-}
-
-.comments .usersComments ul li .unlike {
-  bottom: 0;
-  left: 21%;
-  font-size: 20px;
-  display: flex;
-}
-
-.buttonLike,
-.buttonUnlike {
-  transition: all linear 0.3s;
-}
-
-.buttonLike:hover {
-  color: var(--text-secondary);
-  transform: scale(1.2);
-}
-
-.buttonUnlike:hover {
-  color: var(--text-main);
-  transform: scale(1.2);
-}
-
-.counter {
-  font-size: 15px;
-  text-align: center;
-}
-
-.comments .usersComments ul li .editButton span {
-  right: 30px;
-  bottom: 0;
-  font-size: 20px;
-}
-
-.comments .usersComments ul li .editButton .isEditing {
-  color: var(--text-secondary);
-}
-
-.comments .usersComments ul li .editButton .isEditing:hover {
-  color: var(--text-semiBlack);
-  transform: scale(1.2);
-}
-
-.comments .usersComments ul li .editButton span:hover {
-  color: var(--text-secondary);
-  transform: scale(1.2);
-}
-
-.comments .usersComments ul li .deleteButton span {
-  right: 0;
-  bottom: 0;
-  font-size: 20px;
-}
-
-.comments .usersComments ul li .deleteButton span:hover {
-  color: var(--text-main);
-  transform: scale(1.2);
-}
-
-.comments .usersComments ul li .updateButton button {
-  right: 10%;
-  bottom: 5px;
-  font-size: 20px;
-  width: 80px;
-  height: 25px;
-  font-size: 13px;
-  padding: 2px;
-  cursor: pointer;
-  color: var(--text-white);
-  background: var(--text-secondary);
-}
-
-.comments .usersComments ul li .updateButton button:hover {
-  transform: scale(1.1);
-}
-
-.comments .usersComments ul li .updateButton button {
-  right: 10%;
-  bottom: 5px;
-  font-size: 20px;
-  width: 80px;
-  height: 25px;
-  font-size: 13px;
-  padding: 2px;
-  cursor: pointer;
-  color: var(--text-white);
-  background: var(--text-secondary);
-}
-
 
 .hide {
   display: none !important;

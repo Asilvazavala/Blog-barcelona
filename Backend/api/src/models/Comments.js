@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
             allowNull: true, 
         },
 
-        unlike: {
+        dislike: {
             type: DataTypes.INTEGER,
             defaultValue: 0,
             allowNull: true, 
@@ -42,6 +42,19 @@ module.exports = (sequelize) => {
           type: DataTypes.STRING,
           allowNull: false,
         },
+
+        likedBy:{
+          type: DataTypes.ARRAY(DataTypes.JSONB),
+          allowNull: true,
+          defaultValue: []
+        },
+
+        dislikedBy:{
+          type: DataTypes.ARRAY(DataTypes.JSONB),
+          allowNull: true,
+          defaultValue: []
+        }
+  
     },
     {
       paranoid: true,    

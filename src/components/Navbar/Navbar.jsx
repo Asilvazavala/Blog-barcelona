@@ -52,10 +52,6 @@ function Navbar () {
                 <span className={window.location.href.includes('blog') ? styles.active : ''}>Blog</span>
               </NavLink>
 
-              <NavLink to='/extras' className={styles.navLink} onClick={goTop}>
-                <span className={window.location.href === BASE_URL + 'extras' ? styles.active : ''}>Extras</span>
-              </NavLink>
-
               <NavLink to='/contacto' className={styles.navLink} onClick={goTop}>
                 <span className={window.location.href === BASE_URL + 'contacto' ? styles.active : ''}>Contacto</span>
               </NavLink>

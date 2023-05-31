@@ -1,0 +1,43 @@
+.like,
+.dislike {
+  position: absolute;
+  cursor: pointer;
+  padding: 0 5px 2px 0;
+  transition: all linear 0.3s;
+  overflow: hidden;
+  color: var(--text-semiBlack);
+}
+
+.like {
+  bottom: 0;
+  left: 15%;
+  font-size: 20px;
+  display: flex;
+}
+
+.dislike {
+  bottom: 0;
+  left: 21%;
+  font-size: 20px;
+  display: flex;
+}
+
+.buttonLike,
+.buttonDislike {
+  transition: all linear 0.3s;
+}
+
+.buttonLike:hover {
+  color: var(--text-secondary);
+  transform: scale(1.2);
+}
+
+.buttonDislike:hover {
+  color: var(--text-main);
+  transform: scale(1.2);
+}
+
+.counter {
+  font-size: 15px;
+  text-align: center;
+}

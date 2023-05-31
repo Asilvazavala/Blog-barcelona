@@ -1,0 +1,79 @@
+.editButton span,
+.updateButton button {
+  position: absolute;
+  cursor: pointer;
+  padding: 0 5px 2px 0;
+  transition: all linear 0.3s;
+  overflow: hidden;
+  color: var(--text-semiBlack);
+}
+
+.editButton span {
+  right: 30px;
+  bottom: 0;
+  font-size: 20px;
+}
+
+.editButton .isEditing {
+  color: var(--text-secondary);
+}
+
+.editButton .isEditing:hover {
+  color: var(--text-semiBlack);
+  transform: scale(1.2);
+}
+
+.editButton span:hover {
+  color: var(--text-secondary);
+  transform: scale(1.2);
+}
+
+.updateButton button {
+  right: 10%;
+  bottom: 5px;
+  font-size: 20px;
+  width: 80px;
+  height: 25px;
+  font-size: 13px;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--text-white);
+  background: var(--text-secondary);
+}
+
+.updateButton button:hover {
+  transform: scale(1.1);
+}
+
+.updateButton button {
+  right: 10%;
+  bottom: 5px;
+  font-size: 20px;
+  width: 80px;
+  height: 25px;
+  font-size: 13px;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--text-white);
+  background: var(--text-secondary);
+}
+
+.editInput {
+  width: 570px;
+  min-height: 80px;
+  padding: 5px 10px;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  background: transparent;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+p {
+  padding: 15px 15px 35px 15px;
+  font-size: 15px;
+}
+
+.hide {
+  display: none !important;
+}

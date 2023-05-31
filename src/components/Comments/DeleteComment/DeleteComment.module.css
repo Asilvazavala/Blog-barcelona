@@ -1,0 +1,23 @@
+.deleteButton span {
+  position: absolute;
+  cursor: pointer;
+  padding: 0 5px 2px 0;
+  transition: all linear 0.3s;
+  overflow: hidden;
+  color: var(--text-semiBlack);
+}
+
+.deleteButton span {
+  right: 0;
+  bottom: 0;
+  font-size: 20px;
+}
+
+.deleteButton span:hover {
+  color: var(--text-main);
+  transform: scale(1.2);
+}
+
+.hide {
+  display: none !important;
+}

@@ -23,8 +23,14 @@ export const Footer = () => {
 
         <div className={styles.rightContainer}>
           <h3>Subscríbete a las últimas noticias.</h3>
-          <input type='email' placeholder='tu@correo.com'></input>
-          <button>Suscribirse</button>
+          <form id="form" action='https://formsubmit.co/asilvazavala@gmail.com' method='POST'>
+            <input required type='email' name='email' id='email' placeholder='tu@correo.com'></input>
+            <button type="submit">Suscribirse</button>
+            {/* Redirigir al enviar mensaje */}
+            <input type="hidden" name="_next" value="https://blog-barcelona.vercel.app/" />
+            {/* Autoresponse */}
+            <input type="hidden" name="_autoresponse" value="Gracias por tu suscripción, Forca Barca!." />
+          </form>
         </div>
       </div>
     </footer>
