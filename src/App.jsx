@@ -9,6 +9,10 @@ import { Contact } from './views/Contact/Contact'
 import { Blog } from './views/Blog/Blog'
 import { BlogId } from './views/Blog/BlogId/BlogId'
 
+// import { lazy, Suspense } from 'react'
+// const DetailPage = lazy(() => import('./views/Gallery/Gallery'))
+{/* <Suspense fallback='Loading...'></Suspense> */}
+
 function App() {
   const [showNavbar, setShowNavbar] = useState(true)
   const location = useLocation()

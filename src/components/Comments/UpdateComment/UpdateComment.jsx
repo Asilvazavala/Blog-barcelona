@@ -19,7 +19,7 @@ export const UpdateComment = ({ el }) => {
       { 
         isEditing && editingItem === el.id
         ? <textarea ref={isEditing && editingItem === el.id ? textareaRef  : null} className={styles.editInput} type="text" onChange={handleChange} name='text' value={comment.text}></textarea>
-        : <p>{el.text}</p>
+        : <p className={styles.text}>{el.text}</p>
       }
 
        <div className={isAuthenticated && el.userID === user.email ? styles.editButton : styles.hide}>

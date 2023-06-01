@@ -16,11 +16,8 @@
   font-size: 20px;
 }
 
-.containerBlog .main .titlePub { 
+.containerBlog .main .titlePub {
   cursor: pointer;
-}
-
-.containerBlog .main h1 {
   font-size: 35px;
   line-height: 1.5;
   overflow: hidden;

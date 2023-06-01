@@ -9,7 +9,7 @@ export const HomeHero = () => {
         <div>
           <div className={styles.homeContent}>
             <h1>¡Culemania!</h1>
-            <p>Bienvenido a tu blog donde encontrarás la mejor información en cuánto a noticias, fichajes, jugadores, técnicos, alineaciones y más... sobre el FC Barcelona, saltemos a la cancha! <br></br> “Más que un club”.</p>
+            <p>Bienvenido a tu blog, donde encontrarás la mejor información sobre el FC Barcelona en cuánto a noticias, fichajes, jugadores, técnicos, alineaciones y más... <br></br> “Más que un club”.</p>
             <div className={styles.btnBox}>
               <NavLink to='/blog'>
                 <span>Ver noticias</span>
