@@ -23,4 +23,4 @@
 
 ### LIVE DEMO: 
 
-<h3><a href="https://gym-as.vercel.app/" >LINK TO GYM AS</a></h3>
+<h3><a href="https://blog-barcelona.vercel.app/" >BLOG BARCELONA</a></h3>
