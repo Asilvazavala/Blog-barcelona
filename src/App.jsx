@@ -13,8 +13,7 @@ function App() {
   const [showNavbar, setShowNavbar] = useState(true)
   const location = useLocation()
 
-  const backend =import.meta.env.VITE_BACKEND_URL;
-  axios.defaults.baseURL = backend
+  axios.defaults.baseURL = 'https://backend-blog-barcelona.onrender.com/'
 
   // Ocultar Navbar en una ruta específica
   const hideNavbarRoutes = ['/login', '/register']
