@@ -138,6 +138,10 @@
   .containerBlog .main img {
     height: 250px;
   }
+
+  .containerBlog {
+    margin: 100px 5% 30px 5%;
+  }
 }
 
 @media (max-width: 400px) {

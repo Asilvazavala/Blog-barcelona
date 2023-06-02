@@ -1,9 +1,11 @@
 import styles from './BlogMostViewed.module.css'
 import { usePublications } from '../../hooks/usePublications'
 import { NavLink } from 'react-router-dom'
+import { useFunction } from '../../hooks/useFunction'
 
 export const BlogMostViewed = () => {
   const { category } = usePublications()
+  const { goTop } = useFunction()
 
   return (
     <div className={styles.containerBlog}>
@@ -17,7 +19,7 @@ export const BlogMostViewed = () => {
                 <img src={el.image} alt={el.title} />
                   <div className={styles.rightMenuItemText}>
                     <span>{el.date}</span>
-                    <NavLink style={{ textDecoration: 'none' }} to={`/blog/${el.id}`}><h3>{el.title}</h3></NavLink>
+                    <NavLink style={{ textDecoration: 'none' }} to={`/blog/${el.id}`}><h3 onClick={goTop}>{el.title}</h3></NavLink>
                   </div>
                 </li>
               </ul>

@@ -14,6 +14,7 @@ function App() {
   const location = useLocation()
 
   axios.defaults.baseURL = 'https://backend-blog-barcelona.onrender.com/'
+  // axios.defaults.baseURL = 'http://localhost:3001'
 
   // Ocultar Navbar en una ruta específica
   const hideNavbarRoutes = ['/login', '/register']
