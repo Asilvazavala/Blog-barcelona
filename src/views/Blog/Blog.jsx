@@ -28,7 +28,7 @@ export const Blog = () => {
             </ul>
           )
         })}
-        { window.location.href === 'http://localhost:3002/blog' &&
+        { window.location.href === 'http://localhost:3002/blog' || window.location.href === 'https://blog-barcelona.vercel.app/'&&
           <div className={styles.paginado}>
             <h3>Página {currentPage} de {totalItems}</h3>
             <div className={styles.buttonsPaginado}>

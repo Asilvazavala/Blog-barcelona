@@ -8,7 +8,6 @@ import { LogoutButton } from '../Auth0/LogoutButton/LogoutButton'
 import { useFunction } from '../../hooks/useFunction'
 
 function Navbar () {
-  // const BASE_URL = 'https://gym-as.vercel.app/'
   const BASE_URL = import.meta.env.VITE_BASE_URL
   const { isAuthenticated } = useAuth0()
   const { goTop } = useFunction()
@@ -50,7 +49,7 @@ function Navbar () {
           </NavLink>
 
           <NavLink to='/blog' className={styles.navLink} onClick={goTop}>
-            <span onClick={closeNavbar} className={window.location.href.includes('blog') ? `${styles.active} ${styles.navLinkMobile}` : styles.navLinkMobile}>Blog</span>
+            <span onClick={closeNavbar} className={window.location.href === BASE_URL + 'blog' ? `${styles.active} ${styles.navLinkMobile}` : styles.navLinkMobile}>Blog</span>
           </NavLink>
 
           <NavLink to='/contacto' className={styles.navLink} onClick={goTop}>
