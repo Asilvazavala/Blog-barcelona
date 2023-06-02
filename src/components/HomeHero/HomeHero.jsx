@@ -12,7 +12,7 @@ export const HomeHero = () => {
             <p>Bienvenido a tu blog, donde encontrarás la mejor información sobre el FC Barcelona en cuánto a noticias, fichajes, jugadores, técnicos, alineaciones y más... <br></br> “Más que un club”.</p>
             <div className={styles.btnBox}>
               <NavLink to='/blog'>
-                <span>Ver noticias</span>
+                <span className={styles.btnMain}>Ver noticias</span>
               </NavLink>
             </div>
           </div>

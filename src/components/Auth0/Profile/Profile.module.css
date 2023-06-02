@@ -1,13 +1,22 @@
-.containerProfile {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  margin-right: 30px;
-}
-
 .containerProfile img {
   height: 60px;
   width: 60px;
   border-radius: 50%;
+  margin-right: 20px;
 }
 
+/* @media (max-width: 760px) {
+  .containerProfile {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+  }
+
+  .containerProfile img {
+    font-size: 1rem;
+    margin-top: 1rem;
+    width: 100px;
+    margin-left: 5%;
+    padding: 3px;
+  }
+} */

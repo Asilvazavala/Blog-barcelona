@@ -21,3 +21,9 @@
 .hide {
   display: none !important;
 }
+
+@media (max-width: 470px) {
+  .deleteButton span {
+    font-size: 18px;
+  }
+}

@@ -43,9 +43,9 @@ export function useComments () {
     if (isEditing) return notificationWarning('No se pueden crear comentarios mientras se está editando un comentario')
     
     if (comment.text.length < 10) {
-      notificationWarning('Los comentarios deben tener al menos 10 carácteres')
+      notificationWarning('Los comentarios deben tener mínimo 10 carácteres')
     } else if(comment.text.length > 255) {
-        notificationWarning('Los comentarios deben tener menos de 255 carácteres')
+        notificationWarning('Los comentarios deben tener máximo 255 carácteres')
      } else {
         dispatch(createComment(comment))
         setComment({ 
@@ -67,18 +67,24 @@ export function useComments () {
 
 
   const handleUpdate = (idUpdate, text) => {
-    const updateText = { text: text }
-    dispatch(updateComment(idUpdate, updateText))
-    setIsEditing(false)
-    setEditingItem(null)
-    setComment({ 
-      text: '', 
-      publicationId: id,
-      userID: user.email,
-      image: user.picture,
-      username: user.given_name,
-     })
-    notificationSuccess('¡Comentario actualizado exitosamente!')
+    if (comment.text.length < 10) {
+      notificationWarning('Los comentarios deben tener mínimo 10 carácteres')
+    } else if(comment.text.length > 255) {
+        notificationWarning('Los comentarios deben tener máimo 255 carácteres')
+     } else {
+        const updateText = { text: text }
+        dispatch(updateComment(idUpdate, updateText))
+        setIsEditing(false)
+        setEditingItem(null)
+        setComment({ 
+          text: '', 
+          publicationId: id,
+          userID: user.email,
+          image: user.picture,
+          username: user.given_name,
+        })
+        notificationSuccess('¡Comentario actualizado exitosamente!')
+      }
   }
 
   const handleLike = (pubID, userID) => {

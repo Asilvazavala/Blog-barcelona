@@ -1,24 +1,16 @@
 .navbar {
-  margin-right: 2%;
-  width: 100%;
+  position: absolute;
+  right: 5%;
+  top: 14%;
 }
 
 .navbar .login {
-  height: 70px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 5%;
   overflow: hidden;
   cursor: pointer;
 }
 
 .navbar .sigIn {
   margin-right: 45px;
-}
-
-.navbar .containerRegister {
-  overflow: hidden;
 }
 
 .navbar .register {
@@ -66,5 +58,36 @@
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    margin-left: 5%;
+    position: relative;
+    width: 100%;
+  }
+
+  .navbar .register,
+  .navbar .sigIn {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    width: 100%;
+    margin-left: 5%;
+  }
+
+  .navbar .register {
+    font-size: 1.2rem;
+    width: 140px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 390px) {
+  .navbar .register {
+    font-size: 0.9rem;
+    width: 80px;
+    padding: 2px;
+    height: 50px;
   }
 }

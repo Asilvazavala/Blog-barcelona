@@ -10,7 +10,7 @@ export const BlogHome = () => {
   return (
     <section className={styles.containerBlogHome}>
       <header className={styles.containerTitle}>
-        <span>Noticias de último momento</span>
+        <span>Noticias</span>
       </header>
       <main>
         {publications && publications.map(el => {

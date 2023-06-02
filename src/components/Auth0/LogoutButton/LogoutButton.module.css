@@ -1,6 +1,8 @@
 .navbar {
-  overflow: hidden;
   display: flex;
+  position: absolute;
+  right: 5%;
+  top: 14%;
 }
 
 .navbar .buttonLogout {
@@ -49,5 +51,20 @@
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    margin-left: 5%;
+    position: relative;
+    width: 100%;
+  }
+
+  .navbar .buttonLogout {
+    font-size: 1rem;
+    margin-top: 5rem;
+    width: 120px;
+    padding: 3px;
   }
 }

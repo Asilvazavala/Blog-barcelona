@@ -1,12 +1,36 @@
 /* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
 .hide {
   display: none;
 }
 
 /* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  margin-right: 5%;
+  padding-left: 2%;
+  background: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
 .menuIcon {
   font-size: 2rem;
-  color: var(--text-main);
+  color: var(--text-secondary);
   cursor: pointer;
   display: none;
 }
@@ -17,42 +41,17 @@
   border-radius: 100%;
 }
 
-.header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 20px 0;
-  width: 100%;
-  background: var(--text-main);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
-  opacity: 1;
-}
-
 .navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.logo {
-  position: relative;
-  border-radius: 50%;
-  font-size: 20px;
-  margin-right: 45px;
+  padding-right: 65%;
 }
 
 .navbar span {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--text-white);
   text-decoration: none;
   font-weight: 700;
+  margin-right: 40px;
   transition: .3s;
-  margin-right: 45px;
-  overflow: hidden;
 }
 
 .navbar span:hover,
@@ -60,35 +59,14 @@
   color: var(--text-secondary);
 }
 
-.navbar .logoLinks {
-  margin-left: 5%;
-  width: 70%;
-  display: flex;
-  align-items: center;
-}
-
-.navLink {
-  text-decoration: none;
-  overflow: hidden;
-}
-
 /* Responsive */
-@media (max-width: 991px) {
-  .headerOpacity,
-  .header {
-    padding: 2rem 4%;
-  }
-}
-
-@media (max-width: 768px) {
-  .headerOpacity img,
+@media (max-width: 760px) {
   .header img {
     position: absolute;
-    top: 10%;
+    top: 9%;
     left: 3%;  
   }
 
-  .headerOpacity,
   .header {
     min-height: 30px;  
   }
@@ -98,7 +76,7 @@
     display: block;
     top: 5%;  
     font-size: 50px;
-    margin-left: 80%;
+    margin-left: 85%;
   }
 
   .navbar {
@@ -108,29 +86,33 @@
     margin-top: 10%;
   }
 
-  .navbar a {
+  .navbar .navLinkMobile {
     display: block;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-top: 1rem;
     width: 100%;
-    padding-right: 80%;
+    margin-left: 5%;
   }
 }
 
 @media (max-width: 480px) {
   .menuIcon {
-    margin-left: 77%;
+    margin-left: 85%;
+  }
+
+  .header img {
+    top: 5%;
   }
 }
 
 @media (max-width: 350px) {
   .menuIcon {
-    margin-left: 74%;
+    margin-left: 80%;
   }
 }
 
 @media (max-width: 280px) {
   .menuIcon {
-    margin-left: 71%;
+    margin-left: 75%;
   }
 }

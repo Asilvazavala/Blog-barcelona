@@ -59,9 +59,9 @@
 }
 
 .editInput {
-  width: 570px;
+  width: 45vw;
   min-height: 80px;
-  padding: 5px 10px;
+  padding: 3px;
   margin-top: 3%;
   margin-bottom: 5%;
   background: transparent;
@@ -76,4 +76,52 @@
 
 .hide {
   display: none !important;
+}
+
+@media (max-width: 650px) {
+  .updateButton button {
+    font-size: 15px;
+    width: 80px;
+    height: 25px;
+    font-size: 13px;
+    margin-right: 20px;
+    padding: 2px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+}
+
+@media (max-width: 1000px) {
+  .editInput {
+    width: 75vw;
+  }  
+}
+
+@media (max-width: 470px) {
+  .editButton span {
+    font-size: 18px;
+  }
+
+  .editInput {
+    width: 65vw;
+  }  
+}
+
+@media (max-width: 420px) {
+  .updateButton button {
+    margin-right: 35px;
+  }
+
+  .editInput {
+    height: 150px;
+  } 
+}
+
+@media (max-width: 370px) {
+  .editInput {
+    width: 60vw;
+  } 
 }

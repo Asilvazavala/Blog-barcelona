@@ -73,3 +73,9 @@
   padding: 15px 0;
   transition: max-height 0.7s cubic-bezier(1, 0, 1, 0);
 }
+
+@media (max-width: 500px) {
+  .containerMain .containerTitle .spanTitle {
+    font-size: 30px;
+  }
+}
