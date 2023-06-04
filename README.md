@@ -28,6 +28,7 @@
 ### RUN THE PROJECT:
 <p>Backend: npm start</p>
 <p>Frontend: npm run dev</p>
+---
 
 ### LIVE DEMO: 
 

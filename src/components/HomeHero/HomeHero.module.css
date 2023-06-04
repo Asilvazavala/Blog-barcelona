@@ -15,6 +15,10 @@
   padding: 0 5%;
 }
 
+.leftContainer {
+  width: 60%;
+}
+
 .homeContent {
   color: var(--text-black);
   max-width: 600px;
@@ -23,9 +27,8 @@
 .homeContent h1 {
   position: relative;
   padding: 2px 5px;
-  font-size: 70px;
+  font-size: 3.6rem;
   font-weight: 700;
-  line-height: 1.2;
   letter-spacing: 3px;
   color: var(--text-main);
   font-family: 'Lobster', cursive;
@@ -34,7 +37,7 @@
 
 .homeContent p {
   position: relative;
-  font-size: 16px;
+  font-size: 1.2rem;
   margin: 20px 0 40px;
   color: var(--text-black);
   font-weight: 600;
@@ -142,13 +145,13 @@
 /* Avatar */
 .containerAvatar {
   display: flex;
-  margin-left: 12%;
-  margin-top: 6%;
+  width: 40%;
+  margin: 9% 10% 0 0;
 }
 
 .containerAvatar .avatar {
-  width: 400px;
-  height: 400px;
+  width: 90vw;
+  height: 70vh;
 }
 
 /* Animation al cargar la página se van mostrando los elementos*/
@@ -226,40 +229,32 @@
     margin-bottom: 20px;
   }
 
-  .containerAvatar {
-    margin: 0 5%;
-    margin-top: 6%;
-  }
-  
-  .containerAvatar .avatar {
-    width: 450px;
-    height: 350px;
-  }
-
 }
 
 @media (max-width: 450px) {
-  .containerAvatar {
-    margin: 0 5%;
-    margin-top: 6%;
-  }
-
   .home .homeContent h1 {
-    font-size: 2.2rem;
-  }
-
-  .home .homeContent p {
-    font-size: 1rem;
+    margin-top: 20px;
+    font-size: 2.4rem;
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 400px) {
   .home .homeContent h1 {
-    font-size: 1.9rem;
+    font-size: 2.1rem;
   }
 
   .home .homeContent p {
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .home .homeContent h1 {
+    font-size: 1.8rem;
+  }
+
+  .home .homeContent p {
+    font-size: 0.8rem;
   }
 }
 
