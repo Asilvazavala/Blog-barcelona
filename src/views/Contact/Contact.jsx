@@ -1,8 +1,13 @@
 import styles from './Contact.module.css'
+import { useInputContact } from '../../hooks/useInputContact'
+import { ToastContainer } from 'react-toastify'
 
 export const Contact = () => {
+  const { input, handleChange, handleNotification } = useInputContact()
+
   return (
     <div className={styles.main}>
+    <ToastContainer />
 
       <div className={styles.leftContainer}>
         <h2>¿Tienes alguna sugerencia?</h2>
@@ -24,11 +29,11 @@ export const Contact = () => {
       <div className={styles.rightContainer}>
         <form id="form" action='https://formsubmit.co/asilvazavala@gmail.com' method='POST'>
           <h3>¡Te escuchamos!</h3>
-          <input required type='text' name='name' id='name' placeholder='Tu nombre...' />
-          <input required type='email' name='email' id='email' placeholder='tu@correo.com...' />
-          <textarea required name='message' id='message' placeholder='Tu comentario...' />
+          <input onChange={(e) => handleChange(e)} value={input.name} required type='text' name='name' id='name' placeholder='Tu nombre...' />
+          <input onChange={(e) => handleChange(e)} value={input.email} required type='email' name='email' id='email' placeholder='tu@correo.com...' />
+          <textarea onChange={(e) => handleChange(e)} value={input.message} required name='message' id='message' placeholder='Tu comentario...' />
           <div>
-            <button type="submit">ENVIAR</button>
+            <button onClick={handleNotification} type="submit">ENVIAR</button>
           </div>
           {/* Redirigir al enviar mensaje */}
           <input type="hidden" name="_next" value="https://blog-barcelona.vercel.app/contacto" />

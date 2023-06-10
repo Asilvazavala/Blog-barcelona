@@ -7,7 +7,7 @@ export const LoginButton = () => {
   return (
     <section className={styles.navbar}>
       <div className={styles.login}>
-        <span onClick={() => loginWithRedirect()} className={styles.sigIn}>Iniciar sesión</span>
+        <a onClick={() => loginWithRedirect()} className={styles.sigIn}>Iniciar sesión</a>
         <button onClick={() => loginWithRedirect()} className={styles.register}>Registro</button>
       </div>
     </section>

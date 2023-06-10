@@ -1,16 +1,17 @@
 .navbar {
-  position: absolute;
-  right: 5%;
-  top: 14%;
+  width: 100%;
 }
 
 .navbar .login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   overflow: hidden;
-  cursor: pointer;
+  margin-right: 65px;
 }
 
 .navbar .sigIn {
-  margin-right: 45px;
+  cursor: pointer;
 }
 
 .navbar .register {
@@ -23,7 +24,6 @@
   transition: all .5s;
   cursor: pointer;
   font-weight: 600;
-  position: relative;
   overflow: hidden;
 }
 
@@ -61,33 +61,17 @@
   }
 }
 
-@media (max-width: 760px) {
-  .navbar {
-    margin-left: 5%;
-    position: relative;
-    width: 100%;
-  }
-
-  .navbar .register,
-  .navbar .sigIn {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    width: 100%;
-    margin-left: 5%;
+@media (max-width: 900px) {
+  .navbar .login {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 1.5rem 0 0 10px;
   }
 
   .navbar .register {
-    font-size: 1.2rem;
-    width: 140px;
-    height: 50px;
+    margin: 5px 20px 0 0;  
+    padding: 4px 8px;  
   }
-}
 
-@media (max-width: 390px) {
-  .navbar .register {
-    font-size: 0.9rem;
-    width: 80px;
-    padding: 2px;
-    height: 50px;
-  }
 }

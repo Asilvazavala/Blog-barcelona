@@ -1,11 +1,15 @@
 import styles from './Footer.module.css'
 import LogoAS from '../../assets/images/LogoAS.png'
+import { useInputFooter } from '../../hooks/useInputFooter'
+import { ToastContainer } from 'react-toastify'
 
 export const Footer = () => {
+  const { input, handleChange, handleNotification } = useInputFooter()
 
   return (
     <footer>
       <div className={styles.main}>
+      <ToastContainer />
 
         <div className={styles.leftContainer}>
           <img src={LogoAS} alt='LogoAS' />
@@ -24,8 +28,8 @@ export const Footer = () => {
         <div className={styles.rightContainer}>
           <h3>Subscríbete a las últimas noticias.</h3>
           <form id="form" action='https://formsubmit.co/asilvazavala@gmail.com' method='POST'>
-            <input required type='email' name='email' id='email' placeholder='tu@correo.com'></input>
-            <button type="submit">Suscribirse</button>
+            <input onChange={(e) => handleChange(e)} value={input.email} required type='email' name='email' id='email' placeholder='tu@correo.com'></input>
+            <button onClick={handleNotification} type="submit">Suscribirse</button>
             {/* Redirigir al enviar mensaje */}
             <input type="hidden" name="_next" value="https://blog-barcelona.vercel.app/" />
             {/* Autoresponse */}

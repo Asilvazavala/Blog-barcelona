@@ -1,5 +1,4 @@
 import styles from './HomeHero.module.css'
-import { NavLink } from 'react-router-dom'
 import Avatar from '../../assets/images/home/avatar.webp'
 
 export const HomeHero = () => {
@@ -10,9 +9,7 @@ export const HomeHero = () => {
           <h1>¡Culemania!</h1>
           <p>Bienvenido a tu blog, donde encontrarás la mejor información sobre el FC Barcelona en cuánto a noticias, fichajes, jugadores, técnicos, alineaciones y más... <br></br> “Más que un club”.</p>
           <div className={styles.btnBox}>
-            <NavLink to='/blog'>
-              <span className={styles.btnMain}>Ver noticias</span>
-            </NavLink>
+            <a href='/blog' className={styles.btnMain}>Ver noticias</a>
           </div>
         </main>
 

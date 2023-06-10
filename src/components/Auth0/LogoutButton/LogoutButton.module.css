@@ -1,8 +1,9 @@
 .navbar {
+  width: 100%;
   display: flex;
-  position: absolute;
-  right: 5%;
-  top: 14%;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
 }
 
 .navbar .buttonLogout {
@@ -18,7 +19,9 @@
   font-weight: 600;
   position: relative;
   overflow: hidden;
+  margin-right: 65px;
 }
+
 
 .navbar .buttonLogout:hover {
   -webkit-animation: pulsate-fwd 0.5s ease-in-out both;
@@ -54,11 +57,11 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .navbar {
-    margin-left: 5%;
     position: relative;
     width: 100%;
+    margin-top: 30px;
   }
 
   .navbar .buttonLogout {
@@ -66,5 +69,6 @@
     margin-top: 5rem;
     width: 120px;
     padding: 3px;
+    margin-right: 20px;
   }
 }
