@@ -19,6 +19,7 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+require('dotenv').config()
 const { addPubsToDb } = require('./src/addPublicationsDb.js');
 const port = process.env.PORT || 3001
 
