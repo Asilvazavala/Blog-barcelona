@@ -1,11 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
-const {
-  ACCESS_FRONT
-} = process.env;
+const { ACCESS_FRONT } = process.env;
 
 require('./db.js');
 
