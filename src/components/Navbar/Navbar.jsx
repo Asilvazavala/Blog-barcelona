@@ -20,28 +20,25 @@ function Navbar () {
           <i onClick={showNav} className={showNavbar === false ? 'bx bx-menu' : 'bx bx-x'} />
         </div>
         <nav className={isSmallScreen && showNavbar === false ? styles.hide : styles.navbar}>
-          <ul>
-            <li onClick={goTop}>
-              <a 
-                onClick={closeNavbar} 
+          <ul onClick={goTop}>
+            <li onClick={closeNavbar}>
+              <a  
                 className={window.location.href === BASE_URL 
                   ? `${styles.active} ${styles.navLinkMobile}` 
                   : styles.navLinkMobile} 
                 href="/">Inicio
               </a>
             </li>
-            <li onClick={goTop}>
-              <a 
-                onClick={closeNavbar} 
+            <li onClick={closeNavbar}>
+              <a  
                 className={window.location.href === BASE_URL + 'blog' 
                   ? `${styles.active} ${styles.navLinkMobile}` 
                   : styles.navLinkMobile} 
                 href="/blog">Blog
               </a>
             </li>
-            <li onClick={goTop}>
-              <a 
-                onClick={closeNavbar} 
+            <li onClick={closeNavbar}>
+              <a  
                 className={window.location.href === BASE_URL + 'contacto' 
                   ? `${styles.active} ${styles.navLinkMobile}` 
                   : styles.navLinkMobile} 
