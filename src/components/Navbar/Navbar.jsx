@@ -5,6 +5,7 @@ import { LoginButton } from '../Auth0/LoginButton/LoginButton'
 import { LogoutButton } from '../Auth0/LogoutButton/LogoutButton'
 import { useFunction } from '../../hooks/useFunction'
 import { useNavBar } from '../../hooks/useNavBar'
+import { NavLink } from 'react-router-dom'
 
 function Navbar () {
   const BASE_URL = import.meta.env.VITE_BASE_URL
@@ -21,30 +22,36 @@ function Navbar () {
         </div>
         <nav className={isSmallScreen && showNavbar === false ? styles.hide : styles.navbar}>
           <ul onClick={goTop}>
+            <NavLink to={`/`}>
             <li onClick={closeNavbar}>
               <a  
                 className={window.location.href === BASE_URL 
                   ? `${styles.active} ${styles.navLinkMobile}` 
                   : styles.navLinkMobile} 
-                href="/">Inicio
+                >Inicio
               </a>
             </li>
+            </NavLink>
+            <NavLink to={`/blog`}>
             <li onClick={closeNavbar}>
               <a  
                 className={window.location.href === BASE_URL + 'blog' 
                   ? `${styles.active} ${styles.navLinkMobile}` 
                   : styles.navLinkMobile} 
-                href="/blog">Blog
+                >Blog
               </a>
             </li>
+            </NavLink>
+            <NavLink to={`/contacto`}>
             <li onClick={closeNavbar}>
               <a  
                 className={window.location.href === BASE_URL + 'contacto' 
                   ? `${styles.active} ${styles.navLinkMobile}` 
                   : styles.navLinkMobile} 
-                href="/contacto">Contacto
+               >Contacto
               </a>
             </li>
+            </NavLink>
           </ul>
         </nav>
 
