@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 import { usePublications } from '../../hooks/usePublications'
 import { useFunction } from '../../hooks/useFunction'
 import { Paginado } from '../../components/Paginado/Paginado'
+import { SkeletonLoaderBlog } from '../../components/SkeletonLoader/SkeletonLoaderBlog'
 
 export const Blog = () => {
   const { publications } = usePublications()
@@ -16,18 +17,23 @@ export const Blog = () => {
       <main className={styles.main}>
         {window.location.search && <h2><u>Resultados de: #{window.location.search.includes('%') ? 'Fútbol Mundial' : window.location.search.slice(10,20)}</u></h2>}
 
-        {items && items.map(el => {
-          return (
-            <ul key={el.id}>
-              <li>
-                <NavLink onClick={goTop} className={styles.mainComment} to={`/blog/${el.id}`}><h1 className={styles.titlePub}>{el.title}</h1></NavLink>
-                <p className={styles.mainDateAuthor}>{el.date} por {el.author} - #{el.category}</p>
-                <img src={el.image} alt={el.title} />
-                <p className={styles.mainDescription}>{el.description.slice(0, 200) + '...'}<NavLink onClick={goTop} style={{ textDecoration: 'none' }} to={`/blog/${el.id}`}><span>Leer más</span></NavLink></p>
-              </li>
-            </ul>
-          )
-        })}
+        {
+          items.length > 0
+            ? items.map(el => {
+              return (
+                <ul key={el.id}>
+                  <li>
+                    <NavLink onClick={goTop} className={styles.mainComment} to={`/blog/${el.id}`}><h1 className={styles.titlePub}>{el.title}</h1></NavLink>
+                    <p className={styles.mainDateAuthor}>{el.date} por {el.author} - #{el.category}</p>
+                    <img src={el.image} alt={el.title} />
+                    <p className={styles.mainDescription}>{el.description.slice(0, 200) + '...'}<NavLink onClick={goTop} style={{ textDecoration: 'none' }} to={`/blog/${el.id}`}><span>Leer más</span></NavLink></p>
+                  </li>
+                </ul>
+              )
+            })
+            : <SkeletonLoaderBlog />
+        }
+
         { window.location.href === 'http://localhost:3002/blog' || window.location.href === 'https://blog-barcelona.vercel.app/'&&
           <div className={styles.paginado}>
             <h3>Página {currentPage} de {totalItems}</h3>
