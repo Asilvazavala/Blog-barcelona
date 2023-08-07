@@ -7,21 +7,17 @@
 }
 
 .navbar .buttonLogout {
-  padding: 10px;
-  height: 60px;
-  color: var(--text-white);
-  background-color: var(--button-bg);
-  border: 2px solid var(--button-border);
-  font-size: 20px;
+  padding: 5px 10px;
+  color: var(--white);
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
+  font-size: 1rem;
   border-radius: 6px;
-  transition: all .5s;
+  transition: all .5s ease;
   cursor: pointer;
   font-weight: 600;
-  position: relative;
   overflow: hidden;
-  margin-right: 65px;
 }
-
 
 .navbar .buttonLogout:hover {
   -webkit-animation: pulsate-fwd 0.5s ease-in-out both;

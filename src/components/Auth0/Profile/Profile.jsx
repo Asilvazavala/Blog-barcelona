@@ -5,11 +5,8 @@ export const Profile = () => {
   const { user } = useAuth0()
 
   return (
-    <section>
-      <div className={styles.containerProfile}>
-        {/* <span>{user.given_name}</span> */}
-        <img src={user.picture} alt={user.name} title={user.name} />
-      </div>
+    <section className={styles.containerProfile}>
+      <img className={styles.imgProfile} src={user.picture} alt={user.name} title={user.name} />
     </section>
   )
 }

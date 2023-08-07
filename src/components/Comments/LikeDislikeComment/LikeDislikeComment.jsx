@@ -1,11 +1,14 @@
 import { useComments } from '../../../hooks/useComments'
+import { useFunction } from '../../../hooks/useFunction'
 import styles from './LikeDislikeComment.module.css'
 
 export const LikeDislikeComment = ({ el }) => {
+  const { notificationError } = useFunction();
   const { 
     handleLike,
     handleDislike,
-    user, 
+    user,
+    isAuthenticated
   } = useComments()
 
   return (
@@ -14,7 +17,10 @@ export const LikeDislikeComment = ({ el }) => {
       <div className={styles.like}>
         <span
           className={styles.buttonLike}
-          onClick={() => handleLike(el.id, user.email)} 
+          onClick={() => isAuthenticated
+            ? handleLike(el.id, user.email)
+            : notificationError('Inicia sesión primero para dar like')
+          } 
           title='Me gusta'
         >
           <i className='bx bx-like'></i>
@@ -26,7 +32,10 @@ export const LikeDislikeComment = ({ el }) => {
       <div className={styles.dislike}>
         <span
           className={styles.buttonDislike}
-          onClick={() => handleDislike(el.id, user.email)} 
+          onClick={() => isAuthenticated
+            ? handleDislike(el.id, user.email)
+            : notificationError('Inicia sesión primero para dar dislike')
+          } 
           title='No me gusta'
         >
           <i className='bx bx-dislike' ></i>

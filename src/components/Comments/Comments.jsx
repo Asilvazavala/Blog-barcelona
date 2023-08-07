@@ -11,8 +11,7 @@ export const Comments = () => {
 
   const { 
     comments, 
-    id, 
-    isAuthenticated,
+    id
   } = useComments()
 
   return (
@@ -24,7 +23,7 @@ export const Comments = () => {
         {
           comments.length > 0 && comments?.map(el => {
             return (
-              <li className={isAuthenticated && id === el.publicationId ? '' : styles.hide} key={el.id}>
+              <li className={id === el.publicationId ? '' : styles.hide} key={el.id}>
                 <header>
                   <img src={el.image} alt={el.username} title={el.username} />
                   <span>{el.username}</span>
