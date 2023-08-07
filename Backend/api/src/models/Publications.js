@@ -41,6 +41,11 @@ module.exports = (sequelize) => {
         allowNull: false,
       },
 
+      theme: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
+
     },
     {
       timestamps: true,

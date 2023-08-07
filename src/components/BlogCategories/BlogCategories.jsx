@@ -1,20 +1,10 @@
 import styles from './BlogCategories.module.css'
 import { usePublications } from '../../hooks/usePublications'
-import { useDispatch } from 'react-redux'
-import { searchPublicationByCategory } from '../../redux/actions'
 import { NavLink } from 'react-router-dom'
-import { useFunction } from '../../hooks/useFunction'
-import { SkeletonLoaderCategories } from '../SkeletonLoader/SkeletonLoaderCategories'
+import { SLCategories } from '../SkeletonLoader/SLCategories'
 
 export const BlogCategories = () => {
-  const { category } = usePublications()
-  const dispatch = useDispatch()
-  const { goTop } = useFunction()
-
-  const handleCategory = (category) => {
-    dispatch(searchPublicationByCategory(category))
-    goTop()
-  }
+  const { category, handleCategory } = usePublications()
 
   return (
     <div className={styles.rightMenu}>
@@ -32,7 +22,7 @@ export const BlogCategories = () => {
                 </ul>
               )
             })
-            : <SkeletonLoaderCategories />
+            : <SLCategories />
         }
     </div>
   )

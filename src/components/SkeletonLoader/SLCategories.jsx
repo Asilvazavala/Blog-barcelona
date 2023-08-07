@@ -1,6 +1,8 @@
 import ContentLoader from 'react-content-loader'
+import { useNavBar } from '../../hooks/useNavBar';
 
-export const SkeletonLoaderCategories = () => {
+export const SLCategories = () => {
+  const { isSmallScreen } = useNavBar();
 
   const skeletons = []
   for (let i = 0; i < 3; i++) {
@@ -9,13 +11,12 @@ export const SkeletonLoaderCategories = () => {
         <ContentLoader 
           speed={1.2}
           interval={0.25}
-          width={350}
-          height={40}
-          viewBox="0 0 350 40"
+          width={isSmallScreen ? '85vw' : '25vw'}
+          height={'7vh'}
           backgroundColor="#f0f0f0"
           foregroundColor="#dedede"
         >
-          <rect x="0" y="10" rx="3" ry="3" width="350" height="18" />
+          <rect x="0" y={'1vh'} rx="3" ry="3" width={isSmallScreen ? '85vw' : '25vw'} height={'4vh'} />
         </ContentLoader>
       </div>
     )

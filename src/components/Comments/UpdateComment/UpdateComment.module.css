@@ -5,7 +5,7 @@
   padding: 0 5px 2px 0;
   transition: all linear 0.3s;
   overflow: hidden;
-  color: var(--text-semiBlack);
+  color: var(--semiBlack);
 }
 
 .editButton span {
@@ -15,16 +15,16 @@
 }
 
 .editButton .isEditing {
-  color: var(--text-secondary);
+  color: var(--blue);
 }
 
 .editButton .isEditing:hover {
-  color: var(--text-semiBlack);
+  color: var(--semiBlack);
   transform: scale(1.2);
 }
 
 .editButton span:hover {
-  color: var(--text-secondary);
+  color: var(--blue);
   transform: scale(1.2);
 }
 
@@ -37,8 +37,8 @@
   font-size: 13px;
   padding: 2px;
   cursor: pointer;
-  color: var(--text-white);
-  background: var(--text-secondary);
+  color: var(--white);
+  background: var(--blue);
 }
 
 .updateButton button:hover {
@@ -54,8 +54,8 @@
   font-size: 13px;
   padding: 2px;
   cursor: pointer;
-  color: var(--text-white);
-  background: var(--text-secondary);
+  color: var(--white);
+  background: var(--blue);
 }
 
 .editInput {

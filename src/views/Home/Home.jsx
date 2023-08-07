@@ -1,11 +1,11 @@
-import { HomeHero } from '../../components/HomeHero/HomeHero'
-import { BlogHome } from '../../components/BlogHome/BlogHome'
-import { FAQ } from '../../components/FAQ/FAQ'
+import { BlogHome } from '../../components/BlogHome/BlogHome';
+import { FAQ } from '../../components/FAQ/FAQ';
+import { Hero } from '../../components/Hero/Hero';
 
 export const Home = () => {
   return (
     <div>
-      <HomeHero />
+      <Hero />
       <BlogHome />
       <FAQ />
     </div>

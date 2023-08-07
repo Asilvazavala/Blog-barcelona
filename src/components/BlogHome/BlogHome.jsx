@@ -2,7 +2,7 @@ import styles from './BlogHome.module.css'
 import { NavLink } from 'react-router-dom'
 import { usePublications } from '../../hooks/usePublications'
 import { useFunction } from '../../hooks/useFunction'
-import { SkeletonLoader } from '../SkeletonLoader/SkeletonLoader'
+import { SLNewsHome } from '../SkeletonLoader/SLNewsHome'
 
 export const BlogHome = () => {
   const { publications } = usePublications()
@@ -35,7 +35,7 @@ export const BlogHome = () => {
               </ul>
             )
           })
-          : <SkeletonLoader />
+          : <SLNewsHome />
         }
       </main>
 

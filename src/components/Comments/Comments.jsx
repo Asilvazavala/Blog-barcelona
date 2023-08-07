@@ -22,7 +22,7 @@ export const Comments = () => {
         <h2>Comentarios</h2>
         <ul>
         {
-          isAuthenticated && comments.length > 0 && comments.map(el => {
+          comments.length > 0 && comments?.map(el => {
             return (
               <li className={isAuthenticated && id === el.publicationId ? '' : styles.hide} key={el.id}>
                 <header>

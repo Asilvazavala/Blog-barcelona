@@ -9,7 +9,8 @@ const addPubsToDb = () => {
       author: el.author,
       image: el.image,
       category: el.category,
-      description: el.description
+      description: el.description,
+      theme: el.theme
     }
   }))
 

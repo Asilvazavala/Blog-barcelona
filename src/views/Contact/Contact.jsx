@@ -6,12 +6,12 @@ export const Contact = () => {
   const { input, handleChange, handleNotification } = useInputContact()
 
   return (
-    <div className={styles.main}>
+    <main className={styles.main}>
     <ToastContainer />
 
-      <div className={styles.leftContainer}>
+      <section className={styles.leftContainer}>
         <h2>¿Tienes alguna sugerencia?</h2>
-        <p>Tu opinión es muy importante, por lo que si tienes alguna propuesta no dudes en enviarnos un mensaje para poder entenderte y mejorar tu blog Culemanía.</p>
+        <p>Tu opinión es muy importante, por lo que si tienes alguna propuesta no dudes en enviarnos un mensaje para mejorar nuestro blog Culemanía.</p>
         <div className={styles.containerInfo}>
           <div className={styles.infoBottom}>
             <h3>Información:</h3>
@@ -24,9 +24,9 @@ export const Contact = () => {
             <a target='_blank' rel='noopener noreferrer' href='https://github.com/Asilvazavala'><i className='bx bxl-github' /></a>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className={styles.rightContainer}>
+      <section className={styles.rightContainer}>
         <form id="form" action='https://formsubmit.co/asilvazavala@gmail.com' method='POST'>
           <h3>¡Te escuchamos!</h3>
           <input onChange={(e) => handleChange(e)} value={input.name} required type='text' name='name' id='name' placeholder='Tu nombre...' />
@@ -40,8 +40,8 @@ export const Contact = () => {
           {/* Autoresponse */}
           <input type="hidden" name="_autoresponse" value="Gracias por tu mensaje, Forca Barca!." />
         </form>
-      </div>
+      </section>
 
-    </div>
+    </main>
   )
 }

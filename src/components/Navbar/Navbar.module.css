@@ -14,96 +14,193 @@
 
 /* Header */
 .header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 5%; 
+  margin-top: .2rem;
+  column-gap: 2.5rem;
+  row-gap: .3rem;
+}
+
+.header ul {
+  display: flex;
+  column-gap: 2.5rem;
+  list-style: square inside;
+}
+
+.header p {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.header li {
+  font-size: .8rem;
+  color: var(--gray);
+  font-weight: 400;
+  cursor: pointer;
+  transition: .3s ease;
+  transition-property: text-decoration;
+}
+
+.header li:hover {
+  text-decoration: solid underline var(--gray) 2px;
+}
+
+.navbarContainer {
   position: fixed;
-  top: 0;
+  top: 5%;
   left: 0;
   width: 100%;
-  padding: 20px 0;
-  background: var(--text-main);
+  padding: .5rem 0;
+  background-image: var(--linear-grad);
   display: flex;
   align-items: center;
-  justify-content: space-between;
   z-index: 100;
 }
 
-.menuIcon {
-  font-size: 2rem;
-  color: var(--text-secondary);
-  cursor: pointer;
-  display: none;
+.navbarContainer li {
+  list-style: none;
 }
 
-.header img {
-  width: 60px;
-  height: 45px;
-  border-radius: 100%;
-  margin-left: 5%;
+.navbarContainer.scrolled {
+  top: 0;
 }
 
+.navbarMobile,
 .navbar {
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  column-gap: 2.5rem;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
-.navbar ul {
-  display: flex;
+.logoCulemania {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--blue);
 }
 
 .navbarSession a,
 .navbar a {
-  font-size: 20px;
-  color: var(--text-white);
+  font-size: 1rem;
+  color: var(--white);
   text-decoration: none;
-  font-weight: 700;
-  margin-right: 50px;
-  transition: .3s;
+  font-weight: 400;
+  transition: .3s ease;
+  transition-property: color;
 }
 
 .navbarSession a:hover,
 .navbar a:hover,
 .navbar a.active {
-  color: var(--text-secondary);
+  color: var(--blue);
+}
+
+.containerLogIn {
+  position: absolute;
+  right: 5%;
+}
+
+/* Mobile */
+.navbarMobile {
+  display: none;
+}
+
+.close_sidebar i,
+.navbarMobile i {
+  color: var(--white);
+  font-size: 2.2rem;
+}
+
+.sidebar{
+  position: absolute;
+  top: 0;
+  right: -30rem;
+  height: 100vh;
+  width: min(30rem, 100%);
+  background-image: var(--linear-grad);
+  transition: .4s ease-in-out transform;
+}
+
+.active_sidebar{
+  transform: translateX(-30rem)
+}
+
+.close_sidebar{
+  position: absolute;
+  top: 0;
+  right: -2rem;
+  height: 5rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.sidebar_content{
+  position: relative;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 9rem;
+}
+
+.sidebar_content hr{
+  margin-top: -2rem;
+  border: none;
+  border-bottom: 1px solid var(--semiWhite);
+  margin-bottom: 0;
+}
+
+.sidebar_content a {
+  color: var(--white);
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--semiWhite);
+}
+
+.sidebar_content a svg{
+  width: 2.4rem;
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-  .header {
-    justify-content: start;
-    min-height: 35px;  
+@media (max-width: 1050px) {
+  .navbar{
+    display: none;
   }
 
-  .header img {
-    position: absolute;
-    top: 0;
-    margin-top: 17px;
-  }
-
-  .menuIcon {
-    position: absolute;
-    display: block;
-    top: 0;  
-    right: 2%;
-    font-size: 60px;
-  }
-
-  .navbar {
-    transition: .25s ease;
-    transition-delay: .25s;
-    width: 100%;
-    margin: 2rem 0 0 0.5rem;
-  }
-
-  .navbar ul {
-    justify-content: center;
+  .navbarMobile{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
   }
-  
-  .navbar .navLinkMobile {
-    display: block;
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    width: 100%;
+
+  .sidebar_content a {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 435px) {
+  .navbarContainer {
+    top: 8%;
+  }
+}
+
+@media (max-width: 385px) {
+  .navbarContainer {
+    top: 11%;
+  }
+}
+
+@media (max-width: 340px) {
+  .navbarContainer {
+    top: 18%;
   }
 }

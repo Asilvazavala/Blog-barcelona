@@ -5,44 +5,42 @@ body {
 }
 
 .main {
-  padding-left: 5%;
-  margin-top: 150px;
+  padding: 0 5%;
+  margin-top: 100px;
   display: flex;
-  height: 100%;
 }
 
 /* leftContainer */
 .main .leftContainer {
-  padding: 30px 100px 0 0;
-  width: 50%;
+  width: 45%;
+  margin-right: 5rem;
 }
 
 .main .leftContainer .containerInfo {
  display: flex;
- gap: 12%;
+ flex-direction: column;
  flex-wrap: wrap;
 }
 
-.main .leftContainer .containerInfo .icons {
- margin-left: 10px;
-}
-
 .main .leftContainer h2 {
-  font-size: 35px;
-  margin-bottom: 30px;
-  color: var(--text-main);
+  font-size: 2.2rem;
+  margin-bottom: .3rem;
+  color: var(--red);
 }
 
 .main .leftContainer h3 {
-  text-decoration: underline var(--text-underline) 10px;
+  text-decoration: underline var(--blue) 10px;
+  margin-bottom: .5rem;
+  font-size: 1.4rem;
 }
 
 .main .leftContainer p {
-  color: var(--text-semiBlack);
+  color: var(--semiBlack);
   padding: 10px 0;
   font-style: italic;
   font-weight: 100;
-  margin-bottom: 30px;
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
 }
 
 /* Iconos  */
@@ -54,10 +52,10 @@ body {
   width: 40px;
   height: 40px;
   background: transparent;
-  border: 2px solid var(--text-main);
+  border: 2px solid var(--red);
   border-radius: 50%;
   font-size: 20px;
-  color: var(--text-main);
+  color: var(--red);
   text-decoration: none;
   z-index: 1;
   overflow: hidden;
@@ -67,17 +65,16 @@ body {
 }
 
 .leftContainer .icons a:hover {
-  color: var(--text-secondary);
-  background: var(--text-main);
+  color: var(--blue);
+  background: var(--red);
 }
 
 
 /* rightContainer */
 .main .rightContainer {
-  padding: 30px 60px;
-  margin-right: 3%;
-  width: 50%;
-  background: var(--bg-white);
+  padding: 10px 30px 20px 30px;
+  width: 45%;
+  background: var(--white);
 }
 
 .main .rightContainer form {
@@ -88,13 +85,13 @@ body {
 .main .rightContainer form h3, 
 .main .rightContainer form input, 
 .main .rightContainer form textarea {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .main .rightContainer form h3 {
   font-weight: 600;
-  font-size: 30px;
-  text-decoration: underline var(--text-underline) 10px;
+  font-size: 2.1rem;
+  text-decoration: underline var(--blue) 10px;
 }
 
 .main .rightContainer form input {
@@ -112,19 +109,18 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  height: 100px;
 }
 
 /* Button Submit */
 .main .rightContainer button {
   position: relative;
-  width: 200px;
-  padding: 12px 17px;
+  width: 100%;
+  padding: 12px 0;
   font-size: 15px;
   cursor: pointer;
-  border-radius: 8px;
-  background: var(--button-bg);
-  color: var(--text-white);
+  border-radius: .3rem;
+  background: var(--blue);
+  color: var(--white);
   font-weight: 700;
   z-index: 1;
   overflow: hidden;
@@ -166,38 +162,32 @@ body {
 }
 
 /* Resposive */
-@media (max-width: 851px) {
+@media (max-width: 900px) {
   .main {
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
   }
 
+  .main .rightContainer,
   .main .leftContainer {
     width: 100%;
-    padding-right: 5%;
+    margin: 0;
   }
 
-  .main .rightContainer {
-    width: 100%;
-    margin-right: 5%;
-    margin-top: 30px;
+  .main .leftContainer .containerInfo {
+    flex-direction: row;
+    justify-content: space-between;
+   }
+
+   .main .rightContainer {
+    padding-top: 20px;
+    margin-top: 20px;
   }
 }
 
-@media (max-width: 500px) {
-  .main .rightContainer form h3 {
-    font-size: 22px;
-    text-align: center;
+@media (max-width: 450px) {
+   .main .rightContainer {
+    margin-top: 50px;
   }
-
-  .main .leftContainer h2 {
-    font-size: 25px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .main {
-    margin-top: 80px;
-  }  
-  
 }

@@ -8,12 +8,12 @@
 }
 
 .containerMain .containerTitle .spanTitle {
-  color: var(--text-main);
+  color: var(--red);
   letter-spacing: 2px;
   font-family: 'Lobster', cursive;
   -webkit-text-decoration-line: overline; /* Safari */
    text-decoration-line: overline; 
-   text-decoration-color: var(--text-secondary);
+   text-decoration-color: var(--blue);
   padding: 5px 10px;
   font-size: 50px;
   font-weight: 600;
@@ -29,8 +29,12 @@
 
 .accordion {
   width: 80%;
-  background: var(--text-white);
+  background: var(--white);
   box-shadow: 2px 5px 4px 5px #888888;
+}
+
+.accordion ul {
+  list-style: none;
 }
 
 .itemSelected,
@@ -40,17 +44,17 @@
 }
 
 .itemSelected {
-  background: #8794e6;
+  background: #8794e674;
 }
 
 .item span {
-  color: var(--text-main);
+  color: var(--red);
   font-size: 25px;
   font-weight: 400;
 }
 
 .title {
-  color: var(--text-black);
+  color: var(--black);
   font-size: 13px;
   display: flex;
   justify-content: space-between;
@@ -60,14 +64,14 @@
 
 .content {
   max-height: 0;
-  color: var(--text-semiBlack);
+  color: var(--semiBlack);
   overflow: hidden;
   transition: max-height 0.7s cubic-bezier(0, 1, 0, 1);
 }
 
 .show {
   height: auto;
-  color: var(--text-semiBlack);
+  color: var(--semiBlack);
   max-height: 9999px;
   overflow: hidden;
   padding: 15px 0;
@@ -77,5 +81,14 @@
 @media (max-width: 500px) {
   .containerMain .containerTitle .spanTitle {
     font-size: 30px;
+  }
+
+  .itemSelected,
+  .item {
+    padding: 20px;
+  }
+
+  .accordion {
+    width: 100%;
   }
 }

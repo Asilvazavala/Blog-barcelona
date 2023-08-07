@@ -5,7 +5,7 @@
   padding: 0 5px 2px 0;
   transition: all linear 0.3s;
   overflow: hidden;
-  color: var(--text-semiBlack);
+  color: var(--semiBlack);
 }
 
 .like {
@@ -28,12 +28,12 @@
 }
 
 .buttonLike:hover {
-  color: var(--text-secondary);
+  color: var(--blue);
   transform: scale(1.2);
 }
 
 .buttonDislike:hover {
-  color: var(--text-main);
+  color: var(--red);
   transform: scale(1.2);
 }
 

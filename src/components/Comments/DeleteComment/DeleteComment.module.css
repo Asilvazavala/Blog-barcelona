@@ -4,7 +4,7 @@
   padding: 0 5px 2px 0;
   transition: all linear 0.3s;
   overflow: hidden;
-  color: var(--text-semiBlack);
+  color: var(--semiBlack);
 }
 
 .deleteButton span {
@@ -14,7 +14,7 @@
 }
 
 .deleteButton span:hover {
-  color: var(--text-main);
+  color: var(--red);
   transform: scale(1.2);
 }
 

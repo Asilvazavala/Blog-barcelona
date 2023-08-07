@@ -2,7 +2,7 @@
 .rightMenu {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 30vw;
 }
 
 .rightMenu .rightMenuItem {
@@ -10,13 +10,13 @@
   flex-direction: row;
   margin-bottom: 15px;
   padding-bottom: 15px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.142);
+  border-bottom: 1px solid var(--lightWhite);
 }
 
 .rightMenu h2 {
   margin-bottom: 20px;
-  color: var(--text-secondary);
-  background: var(--text-main);
+  color: var(--blue);
+  background-image: var(--linear-grad);
   padding: 5px 10px;
 }
 
@@ -25,10 +25,11 @@
 }
 
 .containerBlog .rightMenu img {
-  width: 250px;
+  width: 35%;
   height: 100px;
-  border-radius: 10px;
-  transition: all 1s ease;
+  object-fit: cover;
+  border-radius: .4rem;
+  cursor: pointer;
 }
 
 .rightMenuItemText {
@@ -36,7 +37,7 @@
 }
 
 .rightMenu span {
-  color: var(--text-semiBlack);
+  color: var(--semiBlack);
   font-size: 15px;
 }
 
@@ -44,13 +45,24 @@
   font-size: 17px;
   cursor: pointer;
   transition: color 0.7s ease;
-  color: var(--text-black);
+  color: var(--black);
+  transition: .3s ease;
+  transition-property: color;
+}
+
+.rightMenu h3:hover {
+  color: var(--blue);
 }
 
 @media (max-width: 1000px) {
+  .rightMenu {
+    width: 90vw;
+  }
+
   .containerBlog .rightMenu img {
-    width: 250px;
-    height: 150px;
+    width: 20%;
+    height: auto;
+    border-radius: .3rem;
   }
 
   .rightMenu span {
@@ -64,8 +76,8 @@
 
 @media (max-width: 500px) {
   .containerBlog .rightMenu img {
-    width: 200px;
-    height: 100px;
+    width: 30%;
+    border-radius: .3rem;
   }
 
   .rightMenu span {

@@ -1,73 +1,87 @@
 import styles from './Navbar.module.css'
-import LogoAS from '../../assets/images/LogoAS.png'
 import { useAuth0 } from '@auth0/auth0-react'
 import { LoginButton } from '../Auth0/LoginButton/LoginButton'
 import { LogoutButton } from '../Auth0/LogoutButton/LogoutButton'
 import { useFunction } from '../../hooks/useFunction'
 import { useNavBar } from '../../hooks/useNavBar'
-import { NavLink } from 'react-router-dom'
+import { usePublications } from '../../hooks/usePublications';
+import { NavItem } from './NavItem/NavItem'
 
 function Navbar () {
-  const BASE_URL = import.meta.env.VITE_BASE_URL
   const { isAuthenticated } = useAuth0()
-  const { goTop } = useFunction()
-  const { closeNavbar, isSmallScreen, showNavbar, showNav } = useNavBar()
+  const { goTop, NavLink } = useFunction()
+  const { isActiveNavMobile, showNavMobile } = useNavBar()
+  const { handleCategory, category } = usePublications()
 
   return (
-    <div>
-      <header id='navBar' className={styles.header}>
-        <img src={LogoAS} alt='LogoAS' title='Antonio Silva' />
-        <div id='menuIcon' className={styles.menuIcon}>
-          <i onClick={showNav} className={showNavbar === false ? 'bx bx-menu' : 'bx bx-x'} />
-        </div>
-        <nav className={isSmallScreen && showNavbar === false ? styles.hide : styles.navbar}>
-          <ul onClick={goTop}>
-            <NavLink to={`/`}>
-            <li onClick={closeNavbar}>
-              <a  
-                className={window.location.href === BASE_URL 
-                  ? `${styles.active} ${styles.navLinkMobile}` 
-                  : styles.navLinkMobile} 
-                >Inicio
-              </a>
-            </li>
-            </NavLink>
-            <NavLink to={`/blog`}>
-            <li onClick={closeNavbar}>
-              <a  
-                className={window.location.href === BASE_URL + 'blog' 
-                  ? `${styles.active} ${styles.navLinkMobile}` 
-                  : styles.navLinkMobile} 
-                >Blog
-              </a>
-            </li>
-            </NavLink>
-            <NavLink to={`/contacto`}>
-            <li onClick={closeNavbar}>
-              <a  
-                className={window.location.href === BASE_URL + 'contacto' 
-                  ? `${styles.active} ${styles.navLinkMobile}` 
-                  : styles.navLinkMobile} 
-               >Contacto
-              </a>
-            </li>
-            </NavLink>
-          </ul>
-        </nav>
+    <main className={styles.container}>
+      <header id='header' className={styles.header}>
+        <p>TEMAS</p>
+        { category?.map(el => {
+          return (
+            <ul key={el.id}>
+              <NavLink to={`/blog/${el.id}`}><li>{el.theme}</li></NavLink>
+            </ul>
+          )
+        })}
+      </header>
 
-        <nav className={isSmallScreen && showNavbar === false ? styles.hide : styles.navbarSession}>
-          <ul>
-            <li>
+      <nav 
+        id='nav' 
+        className={styles.navbarContainer}
+      >
+        <ul className={styles.navbar} onClick={goTop}>
+
+          <NavItem link={`/`} clickSpan= '' classSpan={styles.logoCulemania} text= 'CULEMANIA'/>
+          <NavItem link={`/blog?category=Jugadores`} clickSpan={() => handleCategory('Jugadores')} 
+          classSpan={styles.navLinkMobile} text='JUGADORES'/>
+          <NavItem link={`/blog?category=Futbol Mundial`} clickSpan={() => handleCategory('Fútbol Mundial')} 
+          classSpan={styles.navLinkMobile} text='FÚTBOL MUNDIAL'/>
+          <NavItem link={`/blog?category=Fichajes`} clickSpan={() => handleCategory('Fichajes')} 
+          classSpan={styles.navLinkMobile} text='FICHAJES'/>
+          <NavItem link={`/contacto`} clickSpan='' classSpan={styles.navLinkMobile} text='CONTACTO'/>
+                    
+          <li className={styles.containerLogIn}>
+            {
+              isAuthenticated 
+              ? <LogoutButton /> 
+              : <LoginButton />
+            }
+          </li>
+        </ul>
+
+        {/* Mobile Navbar */}
+        <ul className={styles.navbarMobile} onClick={goTop}>
+          <NavItem link={`/`} clickSpan= '' classSpan={styles.logoCulemania} text= 'CULEMANIA'/>
+          <i onClick={showNavMobile} className='bx bx-menu' />
+        </ul>
+
+        { isActiveNavMobile &&
+        <main className={`${styles.sidebar} ${isActiveNavMobile ? styles.active_sidebar : null}`}>
+          <aside className={styles.sidebar_content}>
+            <span className={styles.close_sidebar}>
+              <i onClick={showNavMobile} className='bx bx-x' />
+            </span>
+            <hr />
+            <section onClick={showNavMobile}>
+              <NavItem link={`/blog?category=Jugadores`} clickSpan={() => handleCategory('Jugadores')} 
+              classSpan={styles.navLinkMobile} text='JUGADORES'/>
+              <NavItem link={`/blog?category=Futbol Mundial`} clickSpan={() => handleCategory('Fútbol Mundial')} 
+              classSpan={styles.navLinkMobile} text='FÚTBOL MUNDIAL'/>
+              <NavItem link={`/blog?category=Fichajes`} clickSpan={() => handleCategory('Fichajes')} 
+              classSpan={styles.navLinkMobile} text='FICHAJES'/>
+              <NavItem link={`/contacto`} clickSpan='' classSpan={styles.navLinkMobile} text='CONTACTO'/>
               {
                 isAuthenticated 
-                ? <LogoutButton /> 
-                : <LoginButton />
+                  ? <LogoutButton /> 
+                  : <LoginButton />
               }
-            </li>
-          </ul>
-        </nav>
-      </header>
-    </div>
+            </section>
+          </aside>
+        </main>
+        }
+      </nav>
+    </main>
   )
 }
 export default Navbar

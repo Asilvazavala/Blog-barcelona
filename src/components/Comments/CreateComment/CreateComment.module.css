@@ -8,8 +8,8 @@
 .form .buttonAddComment {
   margin: 10px 0px 50px 0;
   padding: 7px 14px;
-  color: var(--text-white);
-  background-color: var(--text-secondary);
+  color: var(--white);
+  background-color: var(--blue);
   font-size: 18px;
   border-radius: 6px;
   transition: all .5s;

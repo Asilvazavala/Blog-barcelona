@@ -1,28 +1,46 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import styles from '../components/Navbar/Navbar.module.css';
 
 export const useNavBar = () => {
-  // Estado para mostrar el menú que despliega la Navbar
-  const [showNavbar, setShowNavBar] = useState(false)
-  const showNav = () => {
-    setShowNavBar(!showNavbar)
-  }
+  const [isActiveNavMobile, setIsActiveNavMobile] = useState(false)
 
   // Estado para mostar NavBar responsive de acuerdo al max-width de la pantalla
   const [isSmallScreen, setIsSmallScreen] = useState(false)
   useEffect(() => {
     function handleResize () {
-      setIsSmallScreen(window.innerWidth < 900)
+      setIsSmallScreen(window.innerWidth < 1050)
     }
 
+    function handleScroll () {
+      const scroll = window.scrollY;
+      const nav = document.getElementById('nav');
+
+      if (nav) {
+        if (scroll < 50) {
+          nav.classList.remove(styles.scrolled); 
+        } else {
+          nav.classList.add(styles.scrolled); 
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize)
     handleResize()
 
-    return () => window.removeEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize)
+    };
   }, [])
 
-  // Cuando la pantalla es de dispositivo movil, cerrar la navbar cuando se hace clic en una pestaña
   const closeNavbar = () => {
-    if (isSmallScreen) showNav()
+    if (isSmallScreen) showNavMobile()
   }
-  return { closeNavbar, isSmallScreen, showNavbar, showNav }
+
+  const showNavMobile = () => {
+    setIsActiveNavMobile(prevState => !prevState)
+  }
+
+  return { closeNavbar, isSmallScreen, showNavMobile, isActiveNavMobile }
 }

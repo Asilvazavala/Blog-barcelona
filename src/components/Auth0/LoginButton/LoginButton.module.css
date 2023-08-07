@@ -4,24 +4,18 @@
 
 .navbar .login {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   overflow: hidden;
-  margin-right: 65px;
-}
-
-.navbar .sigIn {
-  cursor: pointer;
 }
 
 .navbar .register {
-  padding: 10px 20px;
-  color: var(--text-white);
-  background-color: var(--button-bg);
-  border: 2px solid var(--button-border);
-  font-size: 20px;
+  padding: 5px 10px;
+  color: var(--white);
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
+  font-size: 1rem;
   border-radius: 6px;
-  transition: all .5s;
+  transition: all .5s ease;
   cursor: pointer;
   font-weight: 600;
   overflow: hidden;
@@ -61,17 +55,11 @@
   }
 }
 
-@media (max-width: 900px) {
-  .navbar .login {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 1.5rem 0 0 10px;
-  }
-
+/* Responsive */
+@media (max-width: 1050px) {
   .navbar .register {
-    margin: 5px 20px 0 0;  
-    padding: 4px 8px;  
+    font-size: 1.7rem;
+    width: 100%;
+    margin-top: 2rem;
   }
-
 }

@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
-import { toast, ToastContainer } from 'react-toastify'
+import { useDispatch } from 'react-redux';
+import { useParams, NavLink } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const useFunction = () => {
@@ -56,6 +56,7 @@ export const useFunction = () => {
     dispatch, 
     id, 
     goTop, 
+    NavLink,
     notificationSuccess, 
     notificationError, 
     notificationWarning, 

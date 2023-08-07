@@ -1,35 +1,22 @@
 :root {
-  --text-main: #9d2c3d;
-  --text-secondary: #4657c3;
-  --text-third: #4657c3;
-  --text-white: #fff;
-  --text-black: #000;
-  --text-semiBlack: #333333c1;
-  --text-underline: #4657c3;
+  --red: #9d2c3d;
+  --blue: #4657c3;
+  --white: #fff;
+  --black: #000;
+  --gray: #333333c1;
+  --semiBlack: rgba(0, 0, 0, 0.6);
+  --semiWhite: rgba(255, 255, 255, 0.6);
+  --lightWhite: rgba(0, 0, 0, 0.142);
+  --linear-grad: linear-gradient(to right, #DB0125, #7D0E22, #421520);
 
-  --bg-main: #9d2c3d;
-  --bg-secondary: #4657c3;
-  --bg-semiBlack: rgba(0, 0, 0, 0.885);
-  --bg-black: #000;
-  --bg-white: #fff;
-
-  --border-black: #000;
-  --border-green: #4657c3;
-
-  --button-text: #000;
-  --button-bg: #4657c3;
-  --button-border: #9d2c3d;
-
-  --social-text: #9d2c3d;
-  --social-bg: #4657c3;
-  --social-border: #4657c3;
+  --font-main: 'Poppins', sans-serif;
+  --font-titles: 'Lobster', cursive;
 }
 
 
 body {
   text-decoration: none;
   scroll-behavior: smooth;
-  box-sizing: border-box;
   display: flex;
   place-items: center;
   background: rgb(232, 232, 232);
@@ -38,6 +25,6 @@ body {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }

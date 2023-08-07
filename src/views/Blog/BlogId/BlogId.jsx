@@ -25,7 +25,7 @@ export const BlogId = () => {
           return (
             <ul key={el.id}>
               <li>
-                <h1>{el.title}</h1>
+                <h1 className={styles.titleDetail}>{el.title}</h1>
                 <p className={styles.mainDateAuthor}>{el.date} por {el.author} - #{el.category} -
                   <Link className={styles.mainComment} activeClass="active" smooth={true}
                     offset={-70} duration={500} spy={true} to={'comments'}>Deja tu comentario

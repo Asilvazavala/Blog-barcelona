@@ -1,6 +1,10 @@
 .containerBlog {
-  margin: 140px 5% 30px 5%;
+  margin: 100px 5% 30px 5%;
   display: flex;
+}
+
+.containerBlog ul li {
+  list-style: none;
 }
 
 .containerBlog .main {
@@ -11,29 +15,36 @@
 }
 
 .containerBlog .main h2 {
-  color: var(--text-semiBlack);
+  color: var(--gray);
   font-weight: 600;
-  font-size: 20px;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .containerBlog .main .titlePub {
   cursor: pointer;
-  font-size: 35px;
-  line-height: 1.5;
+  font-size: 2rem;
   overflow: hidden;
   transition: color 0.7s ease-in-out;
-  color: var(--text-black);
+  color: var(--black);
+}
+
+.containerBlog .main .titleDetail {
+  font-size: 2rem;
+  line-height: 1.5;
+  overflow: hidden;
+  color: var(--black);
 }
 
 .containerBlog .rightMenu h3:hover,
 .containerBlog .main .titlePub:hover {
-  color: var(--text-secondary);
+  color: var(--blue);
 }
 
 .containerBlog .main .mainDateAuthor {
   margin: 10px 0 20px 0;
-  color: var(--text-semiBlack);
-  font-size: 15px;
+  color: var(--semiBlack);
+  font-size: 1rem;
 }
 
 .containerBlog .main img {
@@ -53,7 +64,7 @@
 }
 
 .containerBlog .main .mainDescription span {
-  color: var(--text-third);
+  color: var(--blue);
   padding: 2px 5px;
   background-color: transparent;
   font-size: 15px;
@@ -63,21 +74,21 @@
 }
 
 .containerBlog .main .mainDescription span:hover {
-  background: var(--text-secondary);
-  color: var(--text-main);
+  background: var(--blue);
+  color: var(--red);
 }
 
 .containerBlog .main .mainComment {
   text-decoration: none;
-  color: var(--text-third);
+  color: var(--blue);
   font-weight: 600;
   transition: all 1s ease-in-out;
   cursor: pointer;
 }
 
 .containerBlog .main .mainComment:hover {
-  background: var(--text-secondary);
-  color: var(--text-main);
+  background: var(--blue);
+  color: var(--red);
 }
 
 .containerBlog .main .paginado {

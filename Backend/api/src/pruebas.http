@@ -2,12 +2,12 @@
 GET  http://localhost:3001/publications HTTP/1.1
 
 
-### // Buscar publicación por categoría
-GET  http://localhost:3001/publications?category=Jugadores HTTP/1.1
+### // Buscar publicaciones por categoría
+GET  http://localhost:3001/publications?category=Fichajes HTTP/1.1
 
 
 ### // Buscar publicación por ID
-GET  http://localhost:3001/publications/5e240ce1-8dc7-471c-b5f5-9540dcada92c HTTP/1.1
+GET  http://localhost:3001/publications/b26bdcb1-dbe6-41b6-bdf2-f72c109bf55d HTTP/1.1
 
 
 
