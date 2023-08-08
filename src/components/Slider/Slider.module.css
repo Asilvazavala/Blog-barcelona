@@ -6,7 +6,7 @@
 
 .container .rightArrow,
 .container .leftArrow {
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: var(--blue);
   position: absolute;
   cursor: pointer;
@@ -16,7 +16,7 @@
 .container .rightArrow.disabled,
 .container .leftArrow.disabled {
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0;
   cursor: default;
 }
 
