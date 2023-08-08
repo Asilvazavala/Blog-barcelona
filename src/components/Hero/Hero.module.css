@@ -1,5 +1,5 @@
 .mainContainer {
-  margin: 4rem 5%;
+  margin: .2rem 5% 4rem 5%;
   display: flex;
 }
 
@@ -46,7 +46,7 @@
   }
 
   .mainContainer main .containerTextBlog h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: .7rem;
   }
 
   .mainContainer main .containerTextBlog,
@@ -55,7 +55,7 @@
   }
 
   .mainContainer main .imgBlog {
-    margin-top: 1.2rem;
+    margin-top: 0;
   }
 }
 
@@ -63,9 +63,5 @@
   .mainContainer main .containerTextBlog h2 {
     line-height: 1.1;
     font-size: 1.5rem;  
-  }
-
-  .mainContainer main .imgBlog {
-    margin-top: .7rem;
   }
 }

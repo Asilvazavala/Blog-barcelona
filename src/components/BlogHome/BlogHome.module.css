@@ -14,12 +14,9 @@
 .containerBlogHome .containerTitle span {
   color: var(--red);
   letter-spacing: 2px;
-  font-family: 'Lobster', cursive;
-  -webkit-text-decoration-line: overline; /* Safari */
-   text-decoration-line: overline; 
-   text-decoration-color: var(--blue);
+  font-family: var(--font-titles);
   padding: 5px 10px;
-  font-size: 50px;
+  font-size: 3.5rem;
   font-weight: 600;
 }
 
@@ -84,51 +81,16 @@
 }
 
 .buttonShowMore {
-  margin: 20px 30px;
+  margin: 20px 0;
   padding: 10px 20px;
-  color: var(--white);
-  background-color: var(--blue);
-  font-size: 20px;
-  border-radius: 6px;
-  transition: all .5s;
-  cursor: pointer;
-  font-weight: 600;
+  font-size: 1.2rem;
   position: relative;
-  overflow: hidden;
+  box-shadow: none;
 }
 
 .buttonShowMore:hover {
-  -webkit-animation: pulsate-fwd 0.5s ease-in-out both;
-	        animation: pulsate-fwd 0.5s ease-in-out both;
-}
-
-@-webkit-keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
+  color: var(--blue);
+  box-shadow: inset 0 0 1px rgba(56, 75, 169, 0.6), 0 0 6px 3px rgba(56, 75, 169, 0.2);
 }
 
 /* Responsive */

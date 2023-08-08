@@ -6,52 +6,6 @@
   overflow: hidden;
 }
 
-.navbar .buttonLogout {
-  padding: 5px 10px;
-  color: var(--white);
-  background-color: var(--blue);
-  border: 2px solid var(--blue);
-  font-size: 1rem;
-  border-radius: 6px;
-  transition: all .5s ease;
-  cursor: pointer;
-  font-weight: 600;
-  overflow: hidden;
-}
-
-.navbar .buttonLogout:hover {
-  -webkit-animation: pulsate-fwd 0.5s ease-in-out both;
-	        animation: pulsate-fwd 0.5s ease-in-out both;
-}
-
-@-webkit-keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@keyframes pulsate-fwd {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
 
 /* Responsive */
 @media (max-width: 1050px) {

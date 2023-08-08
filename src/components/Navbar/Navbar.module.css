@@ -5,7 +5,6 @@
   box-sizing: 0;
   text-decoration: none;
   scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
 }
 
 .hide {
@@ -78,9 +77,10 @@
 }
 
 .logoCulemania {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--blue);
+  font-family: var(--font-titles);
 }
 
 .navbarSession a,
@@ -168,6 +168,17 @@
 
 .sidebar_content a svg{
   width: 2.4rem;
+}
+
+.navItemsMobile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navItemsMobile i {
+  font-size: 2rem;
 }
 
 /* Responsive */

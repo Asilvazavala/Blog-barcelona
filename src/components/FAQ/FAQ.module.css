@@ -10,12 +10,9 @@
 .containerMain .containerTitle .spanTitle {
   color: var(--red);
   letter-spacing: 2px;
-  font-family: 'Lobster', cursive;
-  -webkit-text-decoration-line: overline; /* Safari */
-   text-decoration-line: overline; 
-   text-decoration-color: var(--blue);
-  padding: 5px 10px;
-  font-size: 50px;
+  font-family: var(--font-titles);
+  padding: 0 10px;
+  font-size: 3.5rem;
   font-weight: 600;
 }
 
@@ -24,13 +21,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .accordion {
   width: 80%;
   background: var(--white);
-  box-shadow: 2px 5px 4px 5px #888888;
+  box-shadow: 1px 1px 0 0 #888888;
 }
 
 .accordion ul {

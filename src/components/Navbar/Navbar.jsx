@@ -6,6 +6,7 @@ import { useFunction } from '../../hooks/useFunction'
 import { useNavBar } from '../../hooks/useNavBar'
 import { usePublications } from '../../hooks/usePublications';
 import { NavItem } from './NavItem/NavItem'
+import { NavItemMobile } from './NavItem/NavItemMobile';
 
 function Navbar () {
   const { isAuthenticated } = useAuth0()
@@ -64,13 +65,13 @@ function Navbar () {
             </span>
             <hr />
             <section onClick={showNavMobile}>
-              <NavItem link={`/blog?category=Jugadores`} clickSpan={() => handleCategory('Jugadores')} 
-              classSpan={styles.navLinkMobile} text='JUGADORES'/>
-              <NavItem link={`/blog?category=Futbol Mundial`} clickSpan={() => handleCategory('Fútbol Mundial')} 
-              classSpan={styles.navLinkMobile} text='FÚTBOL MUNDIAL'/>
-              <NavItem link={`/blog?category=Fichajes`} clickSpan={() => handleCategory('Fichajes')} 
-              classSpan={styles.navLinkMobile} text='FICHAJES'/>
-              <NavItem link={`/contacto`} clickSpan='' classSpan={styles.navLinkMobile} text='CONTACTO'/>
+              <NavItemMobile link={`/blog?category=Jugadores`} clickSpan={() => handleCategory('Jugadores')} 
+              classSpan={styles.navLinkMobile} text='JUGADORES' icon='bx bx-run' />
+              <NavItemMobile link={`/blog?category=Futbol Mundial`} clickSpan={() => handleCategory('Fútbol Mundial')} 
+              classSpan={styles.navLinkMobile} text='FÚTBOL MUNDIAL' icon='bx bx-football' />
+              <NavItemMobile link={`/blog?category=Fichajes`} clickSpan={() => handleCategory('Fichajes')} 
+              classSpan={styles.navLinkMobile} text='FICHAJES' icon='bx bx-transfer-alt'/>
+              <NavItemMobile link={`/contacto`} clickSpan='' classSpan={styles.navLinkMobile} text='CONTACTO'  icon='bx bxs-contact'/>
               {
                 isAuthenticated 
                   ? <LogoutButton /> 

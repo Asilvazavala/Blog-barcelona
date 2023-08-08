@@ -132,6 +132,7 @@
   
   .containerBlog .main {
     width: 100%;
+    padding: 0;
   }
 
   .containerBlog .main .titlePub {
