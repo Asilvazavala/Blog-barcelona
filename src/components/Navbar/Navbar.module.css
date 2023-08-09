@@ -77,9 +77,10 @@
 }
 
 .logoCulemania {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  letter-spacing: .1rem;
   font-weight: 700;
-  color: var(--blue);
+  color: var(--white);
   font-family: var(--font-titles);
 }
 

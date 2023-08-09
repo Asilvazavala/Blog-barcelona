@@ -15,9 +15,11 @@
 
 .rightMenu h2 {
   margin-bottom: 20px;
-  color: var(--blue);
+  color: var(--white);
   background-image: var(--linear-grad);
   padding: 5px 10px;
+  font-family: var(--font-titles);
+  letter-spacing: .1rem;
 }
 
 .categories {

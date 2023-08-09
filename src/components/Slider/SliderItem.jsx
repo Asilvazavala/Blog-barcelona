@@ -1,6 +1,6 @@
 import styles from './Slider.module.css';
 
-export const SliderItem = ({ firstTeam='Suiza', firstResult=1, secondTeam='España', secondResult=2 }) => {
+export const SliderItem = ({ firstTeam='Suiza', firstResult=1, secondTeam='España', secondResult=2, current='FINALIZADO' }) => {
   return (
     <main>
       <article className={styles.card}>
@@ -15,8 +15,8 @@ export const SliderItem = ({ firstTeam='Suiza', firstResult=1, secondTeam='Espa�
         </footer>
 
         <aside className={styles.finalized}>
-          <i className='bx bxs-circle'></i>
-          <span>FINALIZADO</span>
+          <i className={current === 'EN JUEGO' ? `${styles.inGame} bx bxs-circle` : 'bx bxs-circle'}></i>
+          <span>{current}</span>
         </aside>
       </article>
     </main>

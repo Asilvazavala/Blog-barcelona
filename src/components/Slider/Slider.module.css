@@ -4,17 +4,25 @@
   position: relative;
 }
 
-.container .rightArrow,
-.container .leftArrow {
+.rightArrow,
+.leftArrow {
+  opacity: .5;
   font-size: 1.7rem;
-  color: var(--blue);
+  color: var(--white);
   position: absolute;
   cursor: pointer;
   top: 40%;
+  transition: .3s ease-in-out;
+  transition-property: opacity;
 }
 
-.container .rightArrow.disabled,
-.container .leftArrow.disabled {
+.rightArrow:hover,
+.leftArrow:hover {
+  opacity: 1;
+}
+
+.rightArrow.disabled,
+.leftArrow.disabled {
   pointer-events: none;
   opacity: 0;
   cursor: default;
@@ -37,7 +45,7 @@
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   background: var(--grayDark);
-  padding: .7rem;
+  padding: .7rem;  
 }
 
 .slider::-webkit-scrollbar {
@@ -76,20 +84,47 @@
   column-gap: .3rem;
 }
 
+.inGame {
+  animation: turnOn 2.5s infinite;
+}
+
+@keyframes turnOn {
+  0% {
+    color: var(--white);
+  }
+
+  50% {
+    color: var(--blue);
+  }
+}
+
 @media (max-width: 800px) {
   .container .rightArrow,
   .container .leftArrow {
-    display: none;
+    opacity: 0;
   }
 
   .container {
     width: 88vw;
+  }
+
+  .card {
+    min-width: 150px;
   }
 }
 
 @media (max-width: 500px) {
   .container {
     width: 86vw;
+  }
+
+  .card {
+    min-height: 30px;
+    min-width: 130px;
+  }
+
+  .secondTeam {
+    margin-bottom: .7rem;
   }
 }
 

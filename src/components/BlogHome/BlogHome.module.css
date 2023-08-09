@@ -86,11 +86,7 @@
   font-size: 1.2rem;
   position: relative;
   box-shadow: none;
-}
-
-.buttonShowMore:hover {
-  color: var(--blue);
-  box-shadow: inset 0 0 1px rgba(56, 75, 169, 0.6), 0 0 6px 3px rgba(56, 75, 169, 0.2);
+  font-weight: bold;
 }
 
 /* Responsive */

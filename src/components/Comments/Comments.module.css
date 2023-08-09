@@ -1,9 +1,11 @@
 .comments .usersComments h2 {
   margin-bottom: 20px;
   font-size: 25px;
-  color: var(--blue);
+  color: var(--white);
   background: var(--linear-grad);
   padding: 5px 10px;
+  font-family: var(--font-titles);
+  letter-spacing: .1rem;
 }
 
 .comments .usersComments ul li {

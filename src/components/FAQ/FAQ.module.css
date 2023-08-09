@@ -75,6 +75,10 @@
   transition: max-height 0.7s cubic-bezier(1, 0, 1, 0);
 }
 
+.containerAnswer {
+  margin-top: -1rem;
+}
+
 @media (max-width: 500px) {
   .containerMain .containerTitle .spanTitle {
     font-size: 30px;

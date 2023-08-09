@@ -32,7 +32,11 @@ export const BlogId = () => {
                   </Link> 
                 </p>
                 <img src={el.image} alt={el.title} />
-                <p className={styles.mainDescriptionId}>{el.description}</p>
+                <div className={styles.mainDescriptionId}>
+                  {el.description.split('\n\n').map((paragraph, index) => (
+                    <p key={index}><br></br>{paragraph}</p>
+                  ))}
+                </div>
               </li>
             </ul>
           )

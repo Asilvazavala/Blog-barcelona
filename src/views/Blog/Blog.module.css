@@ -60,7 +60,8 @@
 }
 
 .containerBlog .main .mainDescriptionId {
-  text-align: justify;
+  text-align: left;
+  margin-top: -10px;
 }
 
 .containerBlog .main .mainDescription span {

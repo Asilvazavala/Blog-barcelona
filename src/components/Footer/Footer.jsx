@@ -1,5 +1,4 @@
 import styles from './Footer.module.css'
-import LogoAS from '../../assets/images/LogoAS.png'
 import { useInputFooter } from '../../hooks/useInputFooter'
 import { ToastContainer } from 'react-toastify'
 
@@ -11,7 +10,7 @@ export const Footer = () => {
       <ToastContainer />
       <section className={styles.main}>
         <header className={styles.leftContainer}>
-          <img src={LogoAS} alt='LogoAS' />
+          <h1>CULEMANIA</h1>
           <p>“Perdonaré a los jugadores que no acierten, pero nunca les perdonaré que no se esfuercen” <span>Pep Guardiola</span></p>
         </header>
 

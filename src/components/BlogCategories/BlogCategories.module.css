@@ -23,3 +23,9 @@
   transition: color 0.7s ease;
   color: var(--black);
 }
+
+.rightMenu h2 {
+  color: var(--white) !important;
+  font-family: var(--font-titles);
+  letter-spacing: .1rem !important;
+}
