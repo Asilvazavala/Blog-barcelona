@@ -9,7 +9,7 @@ export const SLBlog = () => {
     skeletons.push(
       <div key={i}>
         <ContentLoader 
-          s3eed={1.3}
+          speed={1.3}
           interval={0.25}
           width={isSmallScreen ? '85vw' : '50vw'}
           height={isSmallScreen ? '75vh' : '110vh'}
