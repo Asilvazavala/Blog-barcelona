@@ -2,7 +2,6 @@ import styles from './Comments.module.css'
 import { useComments } from '../../hooks/useComments'
 import { useFunction } from '../../hooks/useFunction'
 import { CreateComment } from './CreateComment/CreateComment'
-import { LikeDislikeComment } from './LikeDislikeComment/LikeDislikeComment'
 import { DeleteComment } from './DeleteComment/DeleteComment'
 import { UpdateComment } from './UpdateComment/UpdateComment'
 
@@ -33,7 +32,6 @@ export const Comments = () => {
                   <span>{el.createdAt.slice(0, 10) + ' — ' + el.createdAt.slice(11, 16)}</span>
                 </div>
 
-                <LikeDislikeComment el={el}/>
                 <DeleteComment el={el} />
                 <UpdateComment el={el} />
               </li>

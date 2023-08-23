@@ -12,7 +12,7 @@ export const LikeDislikeComment = ({ el }) => {
   } = useComments()
 
   return (
-    <section>
+    <section className={styles.container}>
 
       <div className={styles.like}>
         <span

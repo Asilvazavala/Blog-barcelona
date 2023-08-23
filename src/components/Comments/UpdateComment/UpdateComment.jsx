@@ -1,5 +1,6 @@
 import { useComments } from '../../../hooks/useComments'
 import styles from './UpdateComment.module.css'
+import { LikeDislikeComment } from '../LikeDislikeComment/LikeDislikeComment';
 
 export const UpdateComment = ({ el }) => {
   const { 
@@ -19,7 +20,10 @@ export const UpdateComment = ({ el }) => {
       { 
         isEditing && editingItem === el.id
         ? <textarea ref={isEditing && editingItem === el.id ? textareaRef  : null} className={styles.editInput} type="text" onChange={handleChange} name='text' value={comment.text}></textarea>
-        : <p className={styles.text}>{el.text}</p>
+        : <div className={styles.containerTextLikeDislike}>   
+            <p className={styles.text}>{el.text}</p>
+            <LikeDislikeComment el={el}/>
+          </div>
       }
 
        <div className={isAuthenticated && el.userID === user.email ? styles.editButton : styles.hide}>

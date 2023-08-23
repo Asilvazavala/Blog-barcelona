@@ -47,27 +47,4 @@
 }
 
 @media (max-width: 550px) {
-  .comments .usersComments ul li {
-    min-height: 150px;
-  } 
-
-  .comments .usersComments ul li .fecha span {
-    font-size: 10px;
-  }
-
-  .comments .usersComments ul li header img {
-    height: 50px;
-    width: 50px;
-  }
-  
-  .comments .usersComments ul li header span {
-    text-align: center;
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 420px) {
-  .comments .usersComments ul li {
-    min-height: 200px;
-  } 
 }

@@ -1,28 +1,20 @@
+.container {
+  display: flex;
+  column-gap: .5rem;
+  padding: 0 0 5px 15px;
+}
+
 .like,
 .dislike {
-  position: absolute;
-  padding: 0 5px 2px 0;
   overflow: hidden;
   color: var(--semiBlack);
+  font-size: 20px;
+  display: flex;
 }
 
 .like i,
 .dislike i {
   cursor: pointer;
-}
-
-.like {
-  bottom: 0;
-  left: 15%;
-  font-size: 20px;
-  display: flex;
-}
-
-.dislike {
-  bottom: 0;
-  left: 21%;
-  font-size: 20px;
-  display: flex;
 }
 
 .buttonLike,
@@ -43,56 +35,4 @@
 
 .counter {
   font-size: 15px;
-  text-align: center;
-}
-
-@media (max-width: 700px) {
-  .like {
-    left: 19%;
-    font-size: 20px;
-  }
-  
-  .dislike {
-    left: 25%;
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 558px) {
-  .like {
-    left: 23%;
-    font-size: 18px;
-  }
-  
-  .dislike {
-    left: 31%;
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 470px) {
-  .like {
-    left: 28%;
-    font-size: 18px;
-  }
-  
-  .dislike {
-    left: 36%;
-    font-size: 18px;
-  }
-
-  .counter {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 390px) {
-  .like {
-    left: 33%;
-  }
-  
-  .dislike {
-    left: 43%;
-  }
-  
 }
