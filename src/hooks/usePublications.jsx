@@ -17,14 +17,14 @@ export function usePublications() {
   const handleCategory = (category) => {
     navigate(`/blog?category=${category}`);
     goTop();
-    setTimeout(() => {
-      dispatch(searchPublicationByCategory(category));
-    },200)
+    dispatch(searchPublicationByCategory(category));
   }
 
   useEffect(() => {
-    dispatch(getPublications())
-  }, [dispatch])
+    if(!category.length) {
+      dispatch(getPublications())
+    }
+  }, [])
 
   return { publications, category, detailPublication, handleCategory }
 }
