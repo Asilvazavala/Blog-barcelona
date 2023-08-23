@@ -16,7 +16,7 @@ export const UpdateComment = ({ el }) => {
   } = useComments()
 
   return (
-    <section>
+    <section className={styles.mainContainer}>
       { 
         isEditing && editingItem === el.id
         ? <textarea ref={isEditing && editingItem === el.id ? textareaRef  : null} className={styles.editInput} type="text" onChange={handleChange} name='text' value={comment.text}></textarea>
@@ -26,12 +26,12 @@ export const UpdateComment = ({ el }) => {
           </div>
       }
 
-       <div className={isAuthenticated && el.userID === user.email ? styles.editButton : styles.hide}>
+      <div className={isAuthenticated && el.userID === user.email ? styles.editButton : styles.hide}>
         <span
           className={isEditing && editingItem === el.id ? styles.isEditing : ''}
           onClick={() => handleEdit(el.id, el.text)}
           title='Editar comentario'>
-          <i className='bx bx-edit'></i>
+            <i className='bx bx-edit'></i>
         </span>
       </div>
 

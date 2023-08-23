@@ -6,7 +6,7 @@
   --gray: #333333c1;
   --grayDark: #444444;
   
-  --semiBlack: rgba(0, 0, 0, 0.6);
+  --semiBlack: rgba(0, 0, 0, 0.5);
   --semiWhite: rgba(255, 255, 255, 0.6);
   --lightWhite: rgba(0, 0, 0, 0.142);
   --linear-grad: linear-gradient(to right, #DB0125, #7D0E22, #421520);

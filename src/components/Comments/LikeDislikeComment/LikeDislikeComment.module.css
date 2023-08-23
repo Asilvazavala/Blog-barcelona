@@ -1,7 +1,7 @@
 .container {
   display: flex;
   column-gap: .5rem;
-  padding: 0 0 5px 15px;
+  padding: 0 0 0 15px;
 }
 
 .like,
@@ -20,19 +20,18 @@
 .buttonLike,
 .buttonDislike {
   transition:  0.3s linear;
-  transition-property: color, transform;
+  transition-property: color;
 }
 
 .buttonLike:hover {
   color: var(--blue);
-  transform: scale(1.2);
 }
 
 .buttonDislike:hover {
   color: var(--red);
-  transform: scale(1.2);
 }
 
 .counter {
   font-size: 15px;
 }
+

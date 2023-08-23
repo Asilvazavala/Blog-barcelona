@@ -2,7 +2,7 @@
   position: absolute;
   cursor: pointer;
   padding: 0 5px 2px 0;
-  transition: all linear 0.3s;
+  transition: color linear 0.3s;
   overflow: hidden;
   color: var(--semiBlack);
 }
@@ -15,15 +15,8 @@
 
 .deleteButton span:hover {
   color: var(--red);
-  transform: scale(1.2);
 }
 
 .hide {
   display: none !important;
-}
-
-@media (max-width: 470px) {
-  .deleteButton span {
-    font-size: 18px;
-  }
 }

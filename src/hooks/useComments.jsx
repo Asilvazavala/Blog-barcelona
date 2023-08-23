@@ -70,7 +70,7 @@ export function useComments () {
     if (comment.text.length < 10) {
       notificationWarning('Los comentarios deben tener mínimo 10 carácteres')
     } else if(comment.text.length > 255) {
-        notificationWarning('Los comentarios deben tener máimo 255 carácteres')
+        notificationWarning('Los comentarios deben tener máximo 255 carácteres')
      } else {
         const updateText = { text: text }
         dispatch(updateComment(idUpdate, updateText))

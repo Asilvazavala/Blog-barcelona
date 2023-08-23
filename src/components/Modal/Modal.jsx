@@ -18,7 +18,7 @@ export const Modal = ({ setModal, titulo='titulo', mensaje='mensaje', textButton
 
         <div onClick={() => setModal(false)} className={styles.footer}>
           <button className={styles.fisrtButton} onClick={() => handleFunction(el.id)}>{textButton1}</button>
-          <button onClick={() => setModal(false)}>{textButton2}</button>
+          <button className={styles.cancelButton} onClick={() => setModal(false)}>{textButton2}</button>
         </div>
 
       </div>

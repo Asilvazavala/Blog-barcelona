@@ -1,9 +1,28 @@
+.mainContainer {
+  width: 100%;
+}
+
+.containerTextLikeDislike {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1.3rem;
+  height: 100%;
+  width: 100%;
+}
+
+.text {
+  padding: 15px 15px 0 15px;
+  font-size: 15px;
+}
+
 .editButton span,
 .updateButton button {
   position: absolute;
   cursor: pointer;
   padding: 0 5px 2px 0;
-  transition: all linear 0.3s;
+  transition: 0.3s linear;
+  transition-property: color;
   overflow: hidden;
   color: var(--semiBlack);
 }
@@ -20,64 +39,34 @@
 
 .editButton .isEditing:hover {
   color: var(--semiBlack);
-  transform: scale(1.2);
 }
 
 .editButton span:hover {
   color: var(--blue);
-  transform: scale(1.2);
 }
 
 .updateButton button {
-  right: 10%;
+  right: 65px;
   bottom: 5px;
-  font-size: 20px;
-  width: 80px;
-  height: 25px;
   font-size: 13px;
-  padding: 2px;
+  padding: 1px 4px;
   cursor: pointer;
   color: var(--white);
   background: var(--blue);
+  transition: .3s background ease-in-out;
 }
 
 .updateButton button:hover {
-  transform: scale(1.1);
-}
-
-.updateButton button {
-  right: 10%;
-  bottom: 5px;
-  font-size: 20px;
-  width: 80px;
-  height: 25px;
-  font-size: 13px;
-  padding: 2px;
-  cursor: pointer;
-  color: var(--white);
-  background: var(--blue);
+  background: #4657c3b1;
 }
 
 .editInput {
-  width: 45vw;
-  min-height: 80px;
-  padding: 3px;
-  margin-top: 3%;
-  margin-bottom: 5%;
+  width: 97%;
+  min-height: 15vh;
+  padding: .2rem;
+  margin: 1rem 0 2rem 0;
   background: transparent;
   overflow: hidden;
-  font-size: 15px;
-}
-
-.containerTextLikeDislike {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.text {
-  padding: 15px 15px 0 15px;
   font-size: 15px;
 }
 
@@ -86,5 +75,14 @@
 }
 
 @media (max-width: 1000px) {
+  .editInput {
+    height: auto;
+    min-height: 20vh;
+  }
+}
 
+@media (max-width: 500px) {
+  .editInput {
+    min-height: 40vh;
+  }
 }
