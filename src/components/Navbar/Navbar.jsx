@@ -33,14 +33,14 @@ function Navbar () {
       >
         <ul className={styles.navbar} onClick={goTop}>
 
-          <NavItem link={`/`} clickSpan= '' classSpan={styles.logoCulemania} text= 'CULEMANIA'/>
+          <NavItem link={`/`} clickSpan={goTop} classSpan={styles.logoCulemania} text= 'CULEMANIA'/>
           <NavItem link={`/blog?category=Jugadores`} clickSpan={() => handleCategory('Jugadores')} 
           classSpan={styles.navLinkMobile} text='JUGADORES'/>
           <NavItem link={`/blog?category=Futbol Mundial`} clickSpan={() => handleCategory('Fútbol Mundial')} 
           classSpan={styles.navLinkMobile} text='FÚTBOL MUNDIAL'/>
           <NavItem link={`/blog?category=Fichajes`} clickSpan={() => handleCategory('Fichajes')} 
           classSpan={styles.navLinkMobile} text='FICHAJES'/>
-          <NavItem link={`/contacto`} clickSpan='' classSpan={styles.navLinkMobile} text='CONTACTO'/>
+          <NavItem link={`/contacto`} clickSpan={goTop} classSpan={styles.navLinkMobile} text='CONTACTO'/>
                     
           <li className={styles.containerLogIn}>
             {
@@ -53,7 +53,7 @@ function Navbar () {
 
         {/* Mobile Navbar */}
         <ul className={styles.navbarMobile} onClick={goTop}>
-          <NavItem link={`/`} clickSpan= '' classSpan={styles.logoCulemania} text= 'CULEMANIA'/>
+          <NavItem link={`/`} clickSpan={goTop} classSpan={styles.logoCulemania} text= 'CULEMANIA'/>
           <i onClick={showNavMobile} className='bx bx-menu' />
         </ul>
 
@@ -71,7 +71,7 @@ function Navbar () {
               classSpan={styles.navLinkMobile} text='FÚTBOL MUNDIAL' icon='bx bx-football' />
               <NavItemMobile link={`/blog?category=Fichajes`} clickSpan={() => handleCategory('Fichajes')} 
               classSpan={styles.navLinkMobile} text='FICHAJES' icon='bx bx-transfer-alt'/>
-              <NavItemMobile link={`/contacto`} clickSpan='' classSpan={styles.navLinkMobile} text='CONTACTO'  icon='bx bxs-contact'/>
+              <NavItemMobile link={`/contacto`} clickSpan={goTop} classSpan={styles.navLinkMobile} text='CONTACTO'  icon='bx bxs-contact'/>
               {
                 isAuthenticated 
                   ? <LogoutButton /> 

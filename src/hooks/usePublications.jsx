@@ -21,10 +21,9 @@ export function usePublications() {
   }
 
   useEffect(() => {
-    if(window.location.href === import.meta.env.VITE_BASE_URL) {
+    if (window.location.href.includes('category')) return 
       dispatch(getPublications())
-    }
-  }, [])
+  }, [dispatch])
 
   return { publications, category, detailPublication, handleCategory }
 }

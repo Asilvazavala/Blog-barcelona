@@ -1,7 +1,7 @@
 import { useFunction } from '../../../hooks/useFunction';
 import { useNavBar } from '../../../hooks/useNavBar';
 
-export const NavItem = ({ link= '', clickSpan= '', classSpan= '', text= '' }) => {
+export const NavItem = ({ link, clickSpan, classSpan, text }) => {
   const { NavLink } = useFunction();
   const { closeNavbar } = useNavBar();
 

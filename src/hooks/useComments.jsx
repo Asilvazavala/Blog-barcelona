@@ -87,9 +87,9 @@ export function useComments () {
       }
   }
 
-  const handleLike = (pubID, userID) => {
+  const handleLike = (commentID, userID) => {    
     if(!isAuthenticated) return notificationError('Inicia sesión primero para dar like')
-    const commentToLike = comments.find((c) => c.id === pubID);
+    const commentToLike = comments.find((c) => c.id === commentID);
     if (commentToLike.dislikedBy.includes(userID)) return
 
     if (!commentToLike.likedBy.includes(userID)) {
@@ -97,22 +97,22 @@ export function useComments () {
         like: commentToLike.like + 1,
         likedBy: [...commentToLike.likedBy, userID]
       };
-      dispatch(updateComment(pubID, updateLikes));
+      dispatch(updateComment(commentID, updateLikes));
     } else {
-        const indexToRemove = comments.findIndex((c) => c.id === pubID); 
+        const indexToRemove = comments.findIndex((c) => c.id === commentID); 
         const removeComment = comments.splice(indexToRemove, 1)
         const updateLikes = {
           like: commentToLike.like - 1,
           likedBy: [removeComment]
         };
-        dispatch(updateComment(pubID, updateLikes));
+        dispatch(updateComment(commentID, updateLikes));
       }
   }
 
 
-  const handleDislike = (pubID, userID) => {
+  const handleDislike = (commentID, userID) => {
     if(!isAuthenticated) return notificationError('Inicia sesión primero para dar dislike')
-    const commentToDislike = comments.find((c) => c.id === pubID);
+    const commentToDislike = comments.find((c) => c.id === commentID);
     if (commentToDislike.likedBy.includes(userID)) return
 
     if (!commentToDislike.dislikedBy.includes(userID)) {
@@ -120,15 +120,15 @@ export function useComments () {
         dislike: commentToDislike.dislike + 1,
         dislikedBy: [...commentToDislike.dislikedBy, userID]
       };
-      dispatch(updateComment(pubID, updateDislikes));
+      dispatch(updateComment(commentID, updateDislikes));
     } else {
-        const indexToRemove = comments.findIndex((c) => c.id === pubID); 
+        const indexToRemove = comments.findIndex((c) => c.id === commentID); 
         const removeComment = comments.splice(indexToRemove, 1)
         const updateDislikes = {
           dislike: commentToDislike.dislike - 1,
           dislikedBy: [removeComment]
         };
-        dispatch(updateComment(pubID, updateDislikes));
+        dispatch(updateComment(commentID, updateDislikes));
       }
   }
 

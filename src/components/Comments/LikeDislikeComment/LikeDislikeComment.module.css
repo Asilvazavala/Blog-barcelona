@@ -1,11 +1,14 @@
 .like,
 .dislike {
   position: absolute;
-  cursor: pointer;
   padding: 0 5px 2px 0;
-  transition: all linear 0.3s;
   overflow: hidden;
   color: var(--semiBlack);
+}
+
+.like i,
+.dislike i {
+  cursor: pointer;
 }
 
 .like {
@@ -24,7 +27,8 @@
 
 .buttonLike,
 .buttonDislike {
-  transition: all linear 0.3s;
+  transition:  0.3s linear;
+  transition-property: color, transform;
 }
 
 .buttonLike:hover {
