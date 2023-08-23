@@ -21,7 +21,7 @@ export function usePublications() {
   }
 
   useEffect(() => {
-    if(!category.length) {
+    if(window.location.href === import.meta.env.VITE_BASE_URL) {
       dispatch(getPublications())
     }
   }, [])
