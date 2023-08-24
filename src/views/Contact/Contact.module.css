@@ -37,7 +37,7 @@ body {
 }
 
 .main .leftContainer p {
-  color: var(--semiBlack);
+  color: var(--black);
   padding: 10px 0;
   font-style: italic;
   font-weight: 100;
