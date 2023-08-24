@@ -7,9 +7,9 @@ import { Paginado } from '../../components/Paginado/Paginado'
 import { SLBlog } from '../../components/SkeletonLoader/SLBlog'
 
 export const Blog = () => {
-  const { publications } = usePublications()
+  const { publications, handleLoadPublication } = usePublications()
   const { totalItems, currentPage, handlePrev, handleNext } = Paginado()
-  const { goTop, NavLink } = useFunction()
+  const { NavLink } = useFunction()
 
   return (
     <section className={styles.containerBlog}>
@@ -22,10 +22,10 @@ export const Blog = () => {
               return (
                 <ul key={el.id}>
                   <li>
-                    <NavLink onClick={goTop} className={styles.mainComment} to={`/blog/${el.id}`}><h1 className={styles.titlePub}>{el.title}</h1></NavLink>
+                    <NavLink onClick={handleLoadPublication} className={styles.mainComment} to={`/blog/${el.id}`}><h1 className={styles.titlePub}>{el.title}</h1></NavLink>
                     <p className={styles.mainDateAuthor}>{el.date} por {el.author} - #{el.category}</p>
                     <img src={el.image} alt={el.title} />
-                    <p className={styles.mainDescription}>{el.description.slice(0, 200) + '...'}<NavLink onClick={goTop} style={{ textDecoration: 'none' }} to={`/blog/${el.id}`}><span>Leer más</span></NavLink></p>
+                    <p className={styles.mainDescription}>{el.description.slice(0, 200) + '...'}<NavLink onClick={handleLoadPublication} style={{ textDecoration: 'none' }} to={`/blog/${el.id}`}><span>Leer más</span></NavLink></p>
                   </li>
                 </ul>
               )

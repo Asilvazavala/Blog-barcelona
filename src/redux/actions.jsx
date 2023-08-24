@@ -6,6 +6,7 @@ export const GET_COMMENTS = 'GET_COMMENTS'
 export const CREATE_COMMENT = 'CREATE_COMMENT'
 export const DELETE_COMMENT = 'DELETE_COMMENT'
 export const UPDATE_COMMENT = 'UPDATE_COMMENT'
+export const LOAD_PUBLICATION = 'LOAD_PUBLICATION'
 
 export const getPublications = () => {
   return async function (dispatch) {
@@ -84,6 +85,16 @@ export const updateComment = (id, comment) => {
       dispatch({ type: UPDATE_COMMENT, payload: comments.data });
     } catch (error) {
         console.log(`No se pudo actualizar el comentario, no existe el comentario con ID ${id}`)
+      }
+  }
+}
+
+export const loadPublication = () => {
+  return async function (dispatch) {
+    try {
+      dispatch({ type: LOAD_PUBLICATION, payload: ''});
+    } catch (error) {
+        console.log(error);
       }
   }
 }

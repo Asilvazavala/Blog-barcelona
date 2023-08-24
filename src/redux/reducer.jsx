@@ -6,6 +6,7 @@ import {
   CREATE_COMMENT,
   DELETE_COMMENT,
   UPDATE_COMMENT,
+  LOAD_PUBLICATION,
 } from './actions'
 
 const initialState = {
@@ -45,6 +46,11 @@ const rootReducer = (state = initialState, action) => {
     case UPDATE_COMMENT:    
       return { ...state, 
         comments: action.payload };
+
+    case LOAD_PUBLICATION:    
+      return { ...state, 
+        publications: [], 
+        detailPublication: [] };
 
     default:
       return { ...state };

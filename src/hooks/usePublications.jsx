@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getPublications, searchPublicationByCategory } from '../redux/actions';
+import { getPublications, searchPublicationByCategory, loadPublication } from '../redux/actions';
 import { useEffect } from 'react';
 import { useFunction } from './useFunction';
 import { useNavigate } from 'react-router-dom';
@@ -17,7 +17,13 @@ export function usePublications() {
   const handleCategory = (category) => {
     navigate(`/blog?category=${category}`);
     goTop();
+    dispatch(loadPublication());
     dispatch(searchPublicationByCategory(category));
+  }
+
+  function handleLoadPublication() {
+    dispatch(loadPublication());
+    goTop();
   }
 
   useEffect(() => {
@@ -25,5 +31,5 @@ export function usePublications() {
       dispatch(getPublications())
   }, [dispatch])
 
-  return { publications, category, detailPublication, handleCategory }
+  return { publications, category, detailPublication, handleCategory, handleLoadPublication }
 }
