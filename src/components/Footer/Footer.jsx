@@ -16,7 +16,7 @@ export const Footer = () => {
 
         <main className={styles.centerContainer}>
           <div className={styles.homeSci}>
-            <a target='_blank' rel='noopener noreferrer' href='https://antonio-silva-portfolio.onrender.com'><i className='bx bx-desktop' /></a>
+            <a target='_blank' rel='noopener noreferrer' href='https://as-work.vercel.app/'><i className='bx bx-desktop' /></a>
             <a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/antonio-silva-developer/'><i className='bx bxl-linkedin' /></a>
             <a target='_blank' rel='noopener noreferrer' href='https://github.com/Asilvazavala'><i className='bx bxl-github' /></a>
           </div>
