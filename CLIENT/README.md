@@ -1,35 +1,68 @@
-<div id="header">
- <h1 align="left">BLOG BARCELONA</h1>
- <h3 align="left">FC Barcelona and world football news blog, has user authentication, CRUD of comments with the possibility of giving (like/dislike), saving information in the database, filtering by category/ID, conditional rendering, pagination, contact form, responsive design.
-  </h3>
-</div>
+# Acerca de Blog Barcelona
 
----
+Proyecto full-stack creado para mostrar noticias del FC Barcelona, implementé autenticación de usuario, CRUD de comentarios con posibilidad de dar like/dislike, guardado de información en base de datos, filtrado por id, renderizado condicional.
 
-### BUILD WITH:
+Tecnologías: JavaScript, React, Redux, Auth0, CSSVanilla, Express, Node.js & PostgreSQL.
 
-<h3>- Javascript</h3>
-<h3>- React</h3>
-<h3>- Redux</h3>
-<h3>- Sequelize</h3>
-<h3>- NodeJS</h3>
-<h3>- PostgreSQL</h3>
+👉 Ve el proyecto aquí: [Blog Barcelona](https://blog-barcelona.vercel.app/)
 
----
+## 🧞 Comandos básicos
 
-### DEPENDENCIES :
-<h3>- React Router DOM: npm i react-router-dom</h3>
-<h3>- Redux Devtools: npm i redux-devtools-extension -E</h3>
-<h3>- React Redux: npm i react-redux redux -E</h3>
-<h3>- Middleware: npm i redux-thunk -E</h3>
-<h3>- Toolkit: npm i @reduxjs/toolkit -E</h3>
+Proyecto creado con:
 
----
-### RUN THE PROJECT:
-<p>Backend: npm start</p>
-<p>Frontend: npm run dev</p>
----
+```sh
+npm create vite@latest
+```
 
-### LIVE DEMO: 
+Todos los comandos son ejecutados en la raíz del proyecto, desde la terminal:
 
-<h3><a href="https://blog-barcelona.vercel.app/" >BLOG BARCELONA</a></h3>
+| Command         | Action                                      |
+| :-------------- | :------------------------------------------ |
+| `npm install`   | Installs dependencies                       |
+| `npm run dev`   | Starts local dev server at `localhost:3000` |
+| `npm run build` | Build your production site to `./dist/`     |
+
+## 👀 Comandos de las dependencias Frontend
+
+| Command                             | Action                          |
+| :---------------------------------- | :------------------------------ |
+| `npm i react-router-dom`            | Installs react-router-dom       |
+| `npm i redux-devtools-extension -E` | Installs redux-devtools         |
+| `npm i react-redux redux -E`        | Installs react-redux            |
+| `npm i redux-thunk -E`              | Installs react-thunk            |
+| `npm i @reduxjs/toolkit -E`         | Installs redux-toolkit          |
+| `npm i react-toastify`              | Installs react-toastify         |
+| `npm i react-content-loader`        | Installs react-content-loader   |
+| `npm i react-loading-skeleton`      | Installs react-loading-skeleton |
+
+Instalar todas las dependencias Frontend:
+
+```sh
+npm install react-router-dom redux-devtools-extension -E react-redux redux -E redux-thunk -E @reduxjs/toolkit -E react-toastify react-content-loader  react-loading-skeleton
+```
+
+## 👀 Comandos de las dependencias Backend
+
+| Command               | Action                 |
+| :-------------------- | :--------------------- |
+| `npm i nodemon`       | Installs nodemon       |
+| `npm i express`       | Installs express       |
+| `npm i axios`         | Installs axios         |
+| `npm i body-parser`   | Installsbody-parser    |
+| `npm i cookie-parser` | Installs cookie-parser |
+| `npm i cors`          | Installs cors          |
+| `npm i dotenv`        | Installs dotenv        |
+| `npm i morgan`        | Installs morgan        |
+| `npm i sequelize`     | Installs sequelize     |
+
+Instalar todas las dependencias Backend:
+
+```sh
+npm install nodemon express axios body-parser cookie-parser cors dotenv morgan sequelize
+```
+
+## 🎆 Imágenes del proyecto
+
+![logo](https://github.com/Asilvazavala/Astro-Portfolio/blob/f27e9df41230ec6e43c14b41cf33b136cb3f0e03/public/imagenes/Projects/blog-barcelona.webp)
+
+![logo](https://github.com/Asilvazavala/My-Portfolio/blob/906a0fd188d53e75381934341341652a4db1e025/src/imagenes/Mobile/Blog/blogMobile.png)
